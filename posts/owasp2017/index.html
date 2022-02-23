@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/posts/owasp2017/" />
+
+
+    <title>
+        
+            Um resumo sobre a OWASP TOP 10 [2017] :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Um resumo sobre a OWASP TOP 10 [2017]">
+<meta itemprop="description" content="O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades.">
+<meta itemprop="datePublished" content="2021-06-24T15:20:50-03:00" />
+<meta itemprop="dateModified" content="2021-06-24T15:20:50-03:00" />
+<meta itemprop="wordCount" content="2088">
+<meta itemprop="image" content="https://b1d0ws.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="Um resumo sobre a OWASP TOP 10 [2017]"/>
+<meta name="twitter:description" content="O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades."/>
+
+
+
+
+    <meta property="og:title" content="Um resumo sobre a OWASP TOP 10 [2017]" />
+<meta property="og:description" content="O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/posts/owasp2017/" />
+<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="article:published_time" content="2021-06-24T15:20:50-03:00" />
+<meta property="article:modified_time" content="2021-06-24T15:20:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2021-06-24 15:20:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts/">posts</a></li><li><a href="/whoami/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        10 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://b1d0ws.github.io/posts/owasp2017/">Um resumo sobre a OWASP TOP 10 [2017]</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h2 id="o-que-é">O que é?</h2>
+<p>OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.</p>
+<p>OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.</p>
+<p>Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades. Como esse artigo abrange a lista inteira, não vou entrar em muitos detalhes em cada tópico, mas você pode facilmente encontrar materiais sobre eles por aí, inclusive no próprio site da OWASP.</p>
+<p>OWASP → <a href="https://owasp.org/">https://owasp.org/</a>
+OWASP top 10 → <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></p>
+<h2 id="1-injection">1. Injection</h2>
+<p>Falhas de Injeção como injeções SQL, NoSQL, OS e LDAP, ocorrem quando dados não confiáveis são enviados para um interpretador como parte de um comando ou query.</p>
+<p>O dado enviado pelo atacante pode enganar o interpretador para executar comandos não intencionais ou acessar dados sem a autorização apropriada.</p>
+<h3 id="exemplos">Exemplos</h3>
+<p>SQL Injection — Quando conseguimos injetar um trecho de código por um input que afetará o banco de dados.</p>
+<p><strong>Uma situação simples para explicar essa técnica é usar o trecho:</strong><br>
+password&rsquo; OR 1=1<br>
+Como resultado, o banco rodará a seguinte query:<br>
+SELECT id FROM users WHERE username='username&rsquo; AND password='password&rsquo; OR 1=1&rsquo;</p>
+<h3 id="impactos">Impactos</h3>
+<p>Injeções podem resultar em perda e corrupção de dados, negação de acesso, acessos não autorizados e até mesmo perda total do sistema. Tudo depende do qual é a aplicação e seus dados.</p>
+<h3 id="prevenção">Prevenção</h3>
+<p>Usar uma lista de controle que retorna se o caractere é seguro ou não. Se não for seguro, o servidor retornará como erro.</p>
+<p>Stripping Input — Remover os caracteres perigosos antes de processar o input inserido.</p>
+<h3 id="referências">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection">https://owasp.org/www-project-top-ten/2017/A1_2017-Injection</a> <a href="https://www.acunetix.com/websitesecurity/sql-injection/">https://www.acunetix.com/websitesecurity/sql-injection/</a></p>
+<h2 id="2-broken-authentication">2. Broken Authentication</h2>
+<p>Funções de aplicação relacionadas à autenticação e gerenciamento de sessões são frequentemente implementadas incorretamente, permitindo atacantes a comprometer senhas, chaves ou tokens de sessão, ou explorar outras falhas de implementação para assumir a identidade de outros usuários.</p>
+<h3 id="exemplos-1">Exemplos</h3>
+<p>Ataques de Força Bruta — Se o site usa usuário e senha, a chance de brute force é existente.</p>
+<p>Credenciais Fracas — Aplicações web devem colocar políticas de senhas fortes para evitar ataques de força bruta ou até mesmo adivinhações de senha.</p>
+<p>Sessões de Cookies Fracas — Se o site usa cookies previsíveis e não controlados, o atacante pode manipular seus cookies para conseguir acessos indevidos.</p>
+<p>Timeout de sessões não configuradas também não são ideais, pois alguém mal intencionado por vir a usar o usuário de outra pessoa e ter acesso ao login dela por estar salvo no navegador.</p>
+<h3 id="impactos-1">Impactos</h3>
+<p>Atacantes podem ganhar acesso a algumas contas de usuário ou apenas uma conta de administrador que pode comprometer todo o sistema. Dependendo da aplicação do sistema, isso pode permitir lavagem de dinheiro, fraude social, roubo de identidade e divulgação de informação sensíveis.</p>
+<h3 id="prevenção-1">Prevenção</h3>
+<p>Para evitar força bruta, coloque limite de tentativas para login e determine uma política forte de senha.</p>
+<p>Para evitar adivinhações, requisite senhas fortes na criação do usuário. Outra maneira fortíssima de evitar sessões indevidas é colocar autenticação em dois fatores.</p>
+<p>Não mantenha sessões ativas por muito tempo.</p>
+<h3 id="referências-1">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication">https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication</a></p>
+<h2 id="3-sensitive-data-exposure">3. Sensitive Data Exposure</h2>
+<p>Muitas aplicações web e APIs não protegem dados sensíveis, como finanças, saúde e PII (Informação pessoalmente identificável), de maneira apropriada.</p>
+<p>Dados confidenciais sem proteção extra, como criptografia, podem ser comprometidos, e requerem precauções especiais quando trocados com o navegador.</p>
+<h3 id="exemplos-2">Exemplos</h3>
+<p>A falha mais comum desse tipo é a não encriptação de dados sensíveis. Uma aplicação criptografa números de cartão de crédito para armazená-los em um banco de dados. Contudo, esse dado é descriptografado quando retornado, permitindo um SQL Injection para retornar os números de cartão em texto puro.</p>
+<p>Um atacante conseguiu acesso à base de dados com as senhas. Para aplicar os hashes, não foi usado Salt/Pepper e isso é um problema, pois agora ele pode comparar as senhas hasheadas com uma tabela rainbow para descobrir quais são elas.</p>
+<p>Um site não usa TLS (Transport Layer Security) para todas as páginas ou usa criptografias fracas. Um atacante pode monitorar o tráfego de rede, transformar conexões HTTPS em HTTP, interceptar as requisições e roubar o cookie de sessão do usuário. Fazendo isso, ele terá acesso ao perfil do mesmo.</p>
+<h3 id="impactos-2">Impactos</h3>
+<p>Nos últimos anos, esse vem sendo o ataque de impacto mais comum. Atacantes podem roubar ou modificar tais dados para conduzir fraudes de cartão de crédito, roubo de identidade, entre outros crimes.</p>
+<h3 id="prevenção-2">Prevenção</h3>
+<p>Classificar os dados processados e tratá-los com a segurança necessária.</p>
+<p>Não armazenar dados sensíveis sem necessidade.</p>
+<p>Verificar se não existem dados transmitidos em texto puro e algoritmos de criptografias fracos/antigos.</p>
+<p>Armazenar senhas usando hashs adaptadas com uso de salt e funções como Argon2 e PBKDF2.</p>
+<h3 id="referências-2">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure">https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure</a></p>
+<h2 id="4-xml-external-entities-xxe">4. XML External Entities (XXE)</h2>
+<p>Processadores XML antigos ou mal configurados validam referências de entidades externas dentro de documentos XML. Entidades externas podem ser usadas para incluir conteúdos maliciosos, assim explorando vulnerabilidades de código, dependências e integrações.</p>
+<p>XML é uma linguagem de marcação legível tanto para humanos quanto para máquinas e serve para armazenar e transportar dados.</p>
+<h3 id="exemplos-3">Exemplos</h3>
+<p>Abaixo segue um exemplo de XML que pode extrair dados do arquivo /etc/passwd:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->&amp;xxe;<!-- raw HTML omitted --></p>
+<h3 id="impactos-3">Impactos</h3>
+<p>Essa vulnerabilidade pode ser usada para leitura e compartilhamentos de arquivos internos, escaneamento de portas, execução remota de códigos, negação de serviço e diversos outros ataques.</p>
+<h3 id="prevenção-3">Prevenção</h3>
+<p>Sempre que possível use formatos de dados menos complexos como JSON e evite serialização de dados sensíveis.</p>
+<p>Serialização é o processo de converter objetos em formatos mais simples e compatível para transmiti-los entre sistemas de maneira mais prática.</p>
+<p>Implemente validações ou filtros de input no servidor (whitelisting).
+Desabilite entidades externas em todos os parsers XML da aplicação.</p>
+<h3 id="referências-3">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE)">https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE)</a></p>
+<h2 id="5-broken-access-control">5. Broken Access Control</h2>
+<p>Restrições sobre o que o usuário tem acesso para fazer são frequentemente não apropriadas. Atacantes podem explorar essas falhas para acessar funcionalidades ou dados não autorizados, como acessar contas de outros usuários, ver dados sensíveis, modificar dados alheios e direitos de acesso, etc.</p>
+<h3 id="exemplos-4">Exemplos</h3>
+<p>Usuários não autorizados acessam páginas que deveriam ser restritas como /admin.</p>
+<p>IDOR, Insecure Direct Object Reference — Ato de explorar um configuração mal feita de referência de objeto.
+Ex: <a href="https://example.com/bank?account_number=1234">https://example.com/bank?account_number=1234</a>. Se eu trocar o account_number eu acessarei a conta de outro usuário.</p>
+<h3 id="impactos-4">Impactos</h3>
+<p>O atacante pode ter acessos a conta de outro usuário ou até mesmo de administrador e a partir disso fazer o que bem entender com os privilégios alcançados, principalmente atualizando e deletando registros.</p>
+<h3 id="prevenção-4">Prevenção</h3>
+<p>Tokens JWT devem ser invalidados no servidor após o logout.</p>
+<p>Implementar mecanismos de controle de acesso e reusá-lo em toda aplicação, incluindo minimizar o uso de CORS.</p>
+<p>Ter logs de falha de acessos e alertar os administradores quando apropriado (falhas repetidas).</p>
+<h3 id="referências-4">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control">https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control</a></p>
+<h2 id="6-security-misconfiguration">6. Security Misconfiguration</h2>
+<p>Configurações incorretas são as vulnerabilidades mais comum entre as citadas. Isso acontece por uma variedade de configurações padrões inseguras, armazenamentos em nuvem abertos, cabeçalhos HTTP incorretos e mensagens de erro contendo informações sensíveis.</p>
+<p>Não só todos os sistemas operacionais, frameworks, bibliotecas e aplicações devem ser seguramente configuradas, mas também corrigidas e atualizadas em tempo hábil.</p>
+<h3 id="exemplos-5">Exemplos</h3>
+<p>A aplicação do servidor vem com outras aplicações de amostra que não foram removidos do servidor de produção. Essas amostras têm vulnerabilidades conhecidas, oferecendo um potencial de comprometimento do servidor.</p>
+<p>Senhas padrão mantidas em aplicações que estão disponível a todos.</p>
+<h3 id="impactos-5">Impactos</h3>
+<p>Essas vulnerabilidades frequentemente dão aos atacantes acessos não autorizados a dados ou funcionalidades do sistema. Ocasionalmente, elas podem resultar no comprometimento completo da aplicação.</p>
+<h3 id="prevenção-5">Prevenção</h3>
+<p>Não use sistemas com credenciais padrão, especialmente para contas de admin.</p>
+<p>Um sistema de backup deve existir para rapidamente subir um novo ambiente para substituir o que está atualmente em produção caso algo aconteça.</p>
+<p>A plataforma de aplicação deve ter o mínimo necessário, sem recursos e componentes desnecessários.</p>
+<p>Deve existir a prática de revisar e atualizar as configurações de todas as medidas de segurança.</p>
+<p>Os softwares e processos usados devem ser instalados de maneira compatível com a aplicação.</p>
+<h3 id="referências-5">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration">https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration</a></p>
+<h2 id="7-cross-site-scripting-xss">7. Cross-Site Scripting (XSS)</h2>
+<p>Falhas de XSS ocorrem quando uma aplicação inclui dados não confiáveis em uma nova página web sem a validação apropriada. XSS permite atacantes executarem scripts no navegador da vítima que podem roubar sessões de usuário, desfigurar sites ou redirecionar outros clientes para sites maliciosos.</p>
+<h3 id="exemplos-6">Exemplos</h3>
+<p>A forma mais clássica de se testar um XSS é colocando em algum formulário o código abaixo.</p>
+<!-- raw HTML omitted -->
+<p>Se um alerta for exibido na tela, a aplicação está vulnerável a XSS. Se o alerta não for exibido, não podemos confirmar que não existem outras brechas para XSS no site.</p>
+<h3 id="impactos-6">Impactos</h3>
+<p>XSS refletidos e DOM XSS tem impactos moderados. XSS armazenados são severos com execução remota de códigos no navegador da vítima, como roubo de credenciais e sessões ou entregando um malware para ela.</p>
+<h3 id="prevenção-6">Prevenção</h3>
+<p>A melhor prevenção para XSS é validar todo tipo de entrada e tratá-las corretamente limitando o tamanho do campo a ser inserido, definindo o conjunto de caracteres aceitos ou estabelecendo uma expressão regular para os dados.</p>
+<p>Existem frameworks que já “escapam” os códigos inseridos através de XSS.</p>
+<h3 id="referências-6">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)">https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)</a></p>
+<h2 id="8-insecure-deserialization">8. Insecure Deserialization</h2>
+<p>Serialização é o processo de converter objetos em formatos mais simples e compatível para transmiti-los entre sistemas de maneira mais prática.</p>
+<p>Deserialização é o processo inverso e atacantes podem usar de processos internos se essa for mal configurada.</p>
+<h3 id="exemplos-7">Exemplos</h3>
+<p>Um site PHP usa deserialização de objeto para salvar um super cookie, contento informações do usuário como ID, função, senha hashada e estado:<br>
+a:4:{i:0;i:132;i:1;s:7:&ldquo;Mallory&rdquo;;i:2;s:4:&ldquo;user&rdquo;; i:3;s:32:&ldquo;b6a8b3bea87fe0e05022f8f3c88bc960&rdquo;;}</p>
+<p>Um atacante pode modificar o objeto serializado para conseguir permissões de admin:<br>
+a:4:{i:0;i:1;i:1;s:5:&ldquo;Alice&rdquo;;i:2;s:5:&ldquo;admin&rdquo;; i:3;s:32:&ldquo;b6a8b3bea87fe0e05022f8f3c88bc960&rdquo;;}</p>
+<h3 id="impactos-7">Impactos</h3>
+<p>Deserialização insegura frequentemente leva em execução remota de código. Mesmo se a deserialização não resulte nisso, ela pode ser usada para executar ataques, incluindo ataques de injeção e elevação de privilégio.</p>
+<h3 id="prevenção-7">Prevenção</h3>
+<p>A maioria das linguagens de programação contêm bibliotecas que provêm deserializações seguras. Se a linguagem não conter uma, você terá que checar os inputs do usuário antes de qualquer outro processo.</p>
+<h3 id="referências-7">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization">https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization</a></p>
+<h2 id="9-using-components-with-known-vulnerabilities">9. Using Components with Known Vulnerabilities</h2>
+<p>Componentes como bibliotecas, frameworks, e outros módulos de software, rodam com os mesmos privilégios que a aplicação. Se um componente vulnerável é explorado, um ataque desses pode facilitar sérias perdas de dados ou derrubamentos de servidor.</p>
+<h3 id="exemplos-8">Exemplos</h3>
+<p>Os exemplos nesse caso são vulnerabilidades já descobertas. Um caso é a execução remota de códigos do Struts 2. Você pode encontrá-la nesse link.</p>
+<h3 id="impactos-8">Impactos</h3>
+<p>Aplicações e APIs usando componentes com vulnerabilidades conhecidas podem enfraquecer as defesas do aplicativo e permitir vários outros ataques. Dependendo da falha encontrada o impacto pode ser desastroso.</p>
+<h3 id="prevenção-8">Prevenção</h3>
+<p>Remover componentes, arquivos, dependências e recursos não utilizados.</p>
+<p>Apenas obter componentes de sites oficiais e links seguros.</p>
+<p>Monitorar se bibliotecas e recursos têm versões mais atualizadas de patches de segurança.</p>
+<h3 id="referências-8">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities">https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities</a></p>
+<h2 id="10-insufficient-logging--monitoring">10. Insufficient Logging &amp; Monitoring</h2>
+<p>Log e monitoramento insuficiente, junto com integrações ineficazes com resposta a incidentes, permite que o atacante mantenha seus ataques com mais persistência, mova-se para mais sistemas e altere ou destrua dados.</p>
+<p>Estudos dizem que o tempo para detectar uma violação é de mais de 200 dias, normalmente detectado por partes externas em vez de processos internos de monitoramento.</p>
+<h3 id="exemplos-9">Exemplos</h3>
+<p>Um atacante usa scans para usuários com senhas comuns, assim ele pode conseguir acesso a vários perfis usando essas senhas. Para todos os outros usuários, esse scan deixa apenas um login incorreto registrado. Depois de alguns dias, isso pode ser repetido com uso de outras senhas.</p>
+<h3 id="impactos-9">Impactos</h3>
+<p>A maioria dos ataques sucedidos vêm de investigações de vulnerabilidades. Permitir que essas investigações continuem aumentam a chance de você ser atacado quase em 100%.</p>
+<p>Em 2016, identificar tentativas de invasão demoravam em média 191 dias, tempos suficiente para o dano ser causado.</p>
+<h3 id="prevenção-9">Prevenção</h3>
+<p>Garantir que os logs são gerados em um formato facilmente compreensível por um gerenciador de log centralizado.</p>
+<p>Estabelecer monitoramentos e alertas que detectem casos de atividades suspeitas em tempo hábil.</p>
+<p>Estabelecer ou adotar uma plano de recuperação ou de resposta a incidentes.</p>
+<h3 id="referências-9">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring">https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring</a></p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Após entendermos sobre as vulnerabilidades mais comuns, podemos entender a maioria dos ataques feitos em aplicações web.</p>
+<p>Esse top 10 é apenas uma parte do conteúdo gigantesco que a OWASP proporciona sobre segurança da informação. Se você trabalha na área é provável que vá acompanhar esse projeto aberto em grande parte da sua carreira.</p>
+<p>Acredito que essa lista também passe uma boa noção para os desenvolvedores que querem manter suas aplicações um pouco mais seguras. Aplicando os conceitos tratados você com certerá deixará seu desenvolvimento extremamente mais seguro.</p>
+<p>Obrigado por ler até aqui e qualquer dúvida você pode entrar em contato comigo pelo Linkedin.</p>
+<p>Até mais ver =).</p>
+
+      </div>
+    </article>
+
+    
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://b1d0ws.github.io/posts/ccna/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">Minha experiência com a CCNA</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://b1d0ws.github.io/posts/lpic-1/">
+                    <span class="button__text">Minha experiência com a LPIC-1</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

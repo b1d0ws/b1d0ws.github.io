@@ -6,17 +6,552 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Wed, 23 Feb 2022 15:20:50 -0300</lastBuildDate>
+        <lastBuildDate>Thu, 20 Jan 2022 15:20:50 -0300</lastBuildDate>
         <atom:link href="https://b1d0ws.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Primeiro</title>
-            <link>https://b1d0ws.github.io/posts/primeiro/</link>
-            <pubDate>Wed, 23 Feb 2022 15:20:50 -0300</pubDate>
+            <title>Minha experiência com a CCNA</title>
+            <link>https://b1d0ws.github.io/posts/security&#43;/</link>
+            <pubDate>Thu, 20 Jan 2022 15:20:50 -0300</pubDate>
             
-            <guid>https://b1d0ws.github.io/posts/primeiro/</guid>
-            <description>Alow!!!</description>
-            <content type="html"><![CDATA[<p>Alow!!!</p>
+            <guid>https://b1d0ws.github.io/posts/security&#43;/</guid>
+            <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.
+A Certificação A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters.</description>
+            <content type="html"><![CDATA[<p><img src="/security+.png" alt="Security+"></p>
+<p>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.</p>
+<h2 id="quem-sou-eu">Quem Sou Eu?</h2>
+<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.</p>
+<h2 id="a-certificação">A Certificação</h2>
+<p>A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters. Também possui tópicos como Cloud e Governança/Compliance.</p>
+<p>A prova é constituída entre 80–90 questões, sendo que até 5 delas podem ser questões de performance (PBQs) que não são apenas múltiplas alternativas, normalmente envolvendo um raciocínio mais prático por trás. A nota máxima é de 900 pontos e é necessário fazer 750 para ser aprovado.</p>
+<p>O tempo para realização é de 90 minutos, mas por inglês não ser meu idioma nativo, eu acabei ganhando 30 minutos a mais, totalizando assim 120 minutos para concluir o exame.</p>
+<h2 id="os-estudos">Os Estudos</h2>
+<p>Eu estudei cerca de 5 meses para a prova, comecei em setembro de 2021 e realizei a prova dia 19 de janeiro de 2022. Acredito que dê para se preparar para ele em menos tempo, porém, realizei os estudos paralelamente com a faculdade e outros conteúdos, então foi esse o tempo que levei para realizar tudo o que eu havia planejado para estudar.</p>
+<p>Os materiais que utilizei foram os seguintes:</p>
+<ul>
+<li>
+<p><a href="https://www.amazon.com.br/CompTIA-Security-Study-Guide-SY0-601/dp/1119736250/ref=sxts_rp_s1_0?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=9J9U69VJXY51&amp;cv_ct_cx=security%2B&amp;keywords=security%2B&amp;pd_rd_i=1119736250&amp;pd_rd_r=905313a8-3bdb-4c12-8615-cd756a8587f3&amp;pd_rd_w=sOtaj&amp;pd_rd_wg=Tr93v&amp;pf_rd_p=2ed3c95d-fb99-4567-8b9a-89b24a300075&amp;pf_rd_r=3E3XTMMMZHGQFQD7DX9J&amp;psc=1&amp;qid=1642682199&amp;sprefix=security+%2Caps%2C351&amp;sr=1-1-f0029781-b79b-4b60-9cb0-eeda4dea34d6&amp;ufe=app_do%3Aamzn1.fos.4bddec23-2dcf-4403-8597-e1a02442043d">Livro - Comptia Security+ Study Guide: Exam Sy0–601</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/securityplus/">Curso em Vídeo - CompTIA Security+ (SY0–601) Complete Course &amp; Exam</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/security-601-exams/">Simulados - CompTIA Security+ (SY0–601) Practice Exams &amp; Simulated PBQs</a></p>
+</li>
+</ul>
+<p>Acredito que essa escolha de material foi ótima, pois ambos se complementaram. O curso do Jason Dion traz um PDF contendo anotações que são muito úteis para utilizar e os simulados ajudam a fixar o conteúdo.</p>
+<p>O livro é de fácil compreensão e acaba sendo bem divertido conseguir ler um livro inteiro de 600 páginas todo em inglês. Os temas não são muito complexos, por isso não exige tanto esforço mental quanto parece.</p>
+<p>Ao terminar de ler e sublinhar tudo de interessante e assistir todo o curso na Udemy, juntei as anotações dos dois materiais e sintetizei no meu GitBook. Assim eu montei um resumo bem bom para utilizar como fonte de consulta e constante estudo.</p>
+<p><img src="/gitbook-security+.png" alt="Gitbook Security+"></p>
+<h2 id="custos">Custos</h2>
+<p>Chegou a hora que todo mundo teme, os valores gastos nessa brincadeira toda! Obter certificações no Brasil sempre foi caro e aqui não foi diferente. A Security+ custou 381$, ou seja, com impostos, gastei R$2.340,06.</p>
+<p>Você adquire a prova pelo site da PersonVUE e marca por lá se quer fazer online ou presencial. Todas as certificações que eu fiz até hoje foram online devido a grande distância da minha cidade para os centros presenciais.</p>
+<p>Voucher Security+ → R$2.340,06<br>
+Curso em Vídeo Jason Dion → R$22,90<br>
+Simulados Jason Dion → R$22,90<br>
+Livro Security+ SY0–601 → R$ 231,97<br>
+Total → R$2.617,83</p>
+<p>Sim, é um valor bem absurdo para uma simples certificação, mas eu penso nisso como um investimento. Além de aproveitar todo conteúdo que aprendi, certamente portas são abertas e no médio/longo prazo você recupera esse dinheiro.</p>
+<p>Você também pode pedir para a sua empresa reembolsar o valor total ou parcial do voucher como investimento em educação e treinamento. Lembrando que esses valores frequentemente estão variando, por exemplo, o voucher há 2 meses atrás era 11$ mais barato. O livro hoje em dia está mais caro e os cursos na Udemy sempre entram em promoção na casa dos 20 reais, então se o preço estiver acima disso, espere um pouco e logo ele abaixará para esse valor.</p>
+<h2 id="a-prova">A Prova</h2>
+<p>Como dito anteriormente, fiz minha prova na modalidade online. Como eu já estou acostumado a fazer provas desse tipo (meu 4º teste nesse estilo), fiquei bem tranquilo na realização do exame. Você marca a prova no horário X e o seu check-in começa 30 minutos antes. Nesse check-in você precisa mandar algumas fotos suas, do ambiente e da identidade, pelo seu celular, tudo bem orientado pela plataforma da PersonVUE. Após esse processo, um pouco antes da prova, o examinador entra em contato com você e pede para movimentar a webcam ao redor da mesa para conferir se não tem nada inadequado (colas, anotações, etc).</p>
+<p>A única diferença que notei dessa vez para as outras é que tive que fazer um teste de sistema antes de começar a prova. Esse teste normalmente é recomendado para ver se a sua máquina possui tudo necessário para realização do exame: microfone, câmera, áudio e uma internet estável.</p>
+<p>Entretanto, dessa vez eu fui obrigado a fazer esse teste antes do início da prova, sendo que das outras vezes o teste não era obrigatório, era apenas um método de conferir que tudo está certo para realização do exame. Fiquei um pouco nervoso porque na hora de checagem do sistema minha máquina falhou duas vezes na parte de rede, dizendo que a banda não estava boa e constante, sendo que no dia anterior fiz esse teste e estava tudo certo. Na terceira vez desliguei o wi-fi do celular e deu tudo certo, partiu prova!</p>
+<p>Em todos os exames que fiz, o proctor tinha um sotaque indiano e falava em inglês, mas como normalmente ele fala pouca coisa, dava pra entender perfeitamente. Dessa vez ele perguntou se o documento que utilizei para me identificar era “Life-time”, só que ele falou muito rápido e eu tive que pedir 2 vezes para ele repetir.</p>
+<p>Assim que comecei o exame, me deparei com 4 questões de performance. Dei uma olhada por cima, me assustei um pouco e fui para as próximas. Minha prova era composta por 82 questões. Entre essas, haviam as que eu tinha certeza da resposta, haviam as que eu fiquei em dúvida entre 2 alternativas e também as que eu não fazia do que se tratava. No início do exame eles comentam que podem existir perguntas um pouco diferentes dos tópicos cobrados, mas que essas são apenas para avaliação interna deles e não conta na nota final.</p>
+<p>Ao finalizar as questões de alternativa, voltei para os simulados e com calma consegui desenrolar os 2 primeiros. Nunca tinha feito nenhum simulado parecido, eram questões de configurar máquinas como servidor, computadores e controladores wifi, mas tendo uma noção básica de redes dá para acertar uns 75% em cada questão prática. O terceiro era sobre tipos de malwares e remediações, bem tranquilo de fazer, e o quarto era sobre a estrutura de um certificado digital, o qual eu chutei absolutamente tudo.</p>
+<p>Na primeira passada pelas perguntas é natural ficar mais nervoso, portanto revisei novamente todas as questões e me senti mais confiante. Parece que na revisão você percebe que tem mais domínio sobre o conteúdo cobrado.</p>
+<p>Levei cerca de 1h20min para finalizar tudo, faltando ainda 40 minutos caso precisasse de mais tempo, então acho que o período para realização do exame é bem justa. Caso eu não tivesse a meia hora adicional, talvez ficasse um pouco apertado se eu me enrolasse em alguma questão.</p>
+<p>Ao concluir e finalizar a prova, já é exibido na tela o meu resultado e minha nota final. Acabei tirando 795 de 900, o que não é a nota mais extraordinária, mas é suficiente para passar, então estou extremamente satisfeito.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Nesses 5 meses de estudo eu aprendi muita coisa e recomendo a todos que trabalham com segurança da informação a obter a Security+. Estudar para ela te dá uma base absurda sobre segurança que com certeza vai te auxiliar, independente da área de especialização que você seguir.
+Para onde agora?</p>
+<p>Como atuo diretamente com segurança ofensiva, pretendo focar em certificações mais focadas na área como a DCPT. Para 2022 não tenho como objetivo tirar alguma certificação e sim focar em CTFs no TryHackMe e as próprias aulas da Desec. A faculdade também vai ser bem puxada esse ano, então o tempo dedicado à segurança não vai ser tão alto.</p>
+<p>Obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar pelo LinkedIn que irei responder com muito gosto →
+<a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
+<p>Até mais ver =).</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Tipos de Malware</title>
+            <link>https://b1d0ws.github.io/posts/malwares/</link>
+            <pubDate>Thu, 30 Dec 2021 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/malwares/</guid>
+            <description>Introdução O termo malware descreve uma variedade de software que é intencionalmente projetado para causar danos a sistemas, dispositivos ou redes, sem o conhecimento ou consentimento dos usuários. Neste artigo descreverei os principais tipos de malware existentes dentro da cibersegurança.
+Vírus Antes de mais nada, quero esclarecer aqui a diferença entre malware e vírus, pois, muita gente acaba confundindo os dois.
+Como dito na introdução, malware é um conceito mais genérico que se refere aos softwares usados com intuitos maliciosos, enquanto o vírus é um tipo de malware existente, ou seja, todo vírus de computador é um malware, mas nem todo malware é um vírus.</description>
+            <content type="html"><![CDATA[<p><img src="/malware-banner.jpg" alt="Malware Banner"></p>
+<h2 id="introdução">Introdução</h2>
+<p>O termo malware descreve uma variedade de software que é intencionalmente projetado para causar danos a sistemas, dispositivos ou redes, sem o conhecimento ou consentimento dos usuários. Neste artigo descreverei os principais tipos de malware existentes dentro da cibersegurança.</p>
+<h2 id="vírus">Vírus</h2>
+<p>Antes de mais nada, quero esclarecer aqui a diferença entre malware e vírus, pois, muita gente acaba confundindo os dois.</p>
+<p>Como dito na introdução, malware é um conceito mais genérico que se refere aos softwares usados com intuitos maliciosos, enquanto o vírus é um tipo de malware existente, ou seja, todo vírus de computador é um malware, mas nem todo malware é um vírus.</p>
+<p>Vírus são códigos maliciosos que rodam em uma máquina e que, quando executados, infectam o computador, normalmente exigindo uma ação do usuário a fim de se reproduzir e se espalhar utilizando da sua capacidade de autorreplicação.</p>
+<h3 id="tipos-de-vírus">Tipos de vírus</h3>
+<ul>
+<li>
+<p>Programa — Executável ou aplicativo infectado (mais comum).</p>
+</li>
+<li>
+<p>Setor de Inicialização — Os vírus são armazenados no primeiro setor de um disco rígido e são carregados na memória no momento da inicialização.</p>
+</li>
+<li>
+<p>Macro — Embutido em um documento e é executado quando o documento é aberto pelo usuário.</p>
+</li>
+<li>
+<p>Multipartido — Combina vírus de inicialização e de programa para primeiro se conectar ao setor de inicialização e aos arquivos do sistema antes de atacar outros arquivos no computador.</p>
+</li>
+<li>
+<p>Criptografado — Vírus criptografado.</p>
+</li>
+<li>
+<p>Polimórfico — Versão avançada de um vírus criptografado que se altera cada vez que é executado, alterando o módulo de descriptografia para evitar a detecção.</p>
+</li>
+<li>
+<p>Metamórfico — Capaz de se reescrever inteiramente antes de tentar infectar um arquivo.</p>
+</li>
+<li>
+<p>Blindado — Tem uma camada de proteção para confundir um programa ou pessoa que o analisa.</p>
+</li>
+</ul>
+<h2 id="ransomware">Ransomware</h2>
+<p>Ransomwares são malwares que restringem o acesso ao seu sistema ou dados, criptografando o máximo de arquivos possíveis de uma vítima, até que um resgate seja recebido. O Ransomware usa uma vulnerabilidade em seu ambiente para obter acesso e depois criptografa seus arquivos, mantendo-os assim até que o resgate seja pago.</p>
+<p>Ultimamente esse tipo de ataque vem sendo muito popular e trazendo grandes prejuízos às empresas. Com o aumento dessa exploração, muitas instituições estão investindo pesado em resposta a incidentes para saber como lidar caso uma situação dessa aconteça.</p>
+<p>Normalmente, a existência de um bom backup faz com que essa ação maliciosa seja contida, porém, ainda se faz necessário a investigação de qual foi a porta de entrada para o atacante e conter essa vulnerabilidade. Não é recomendado que o resgate seja pago.</p>
+<h2 id="trojans">Trojans</h2>
+<p>Trojans ou cavalos de troia são um tipo de malware que normalmente é disfarçado como um software legítimo e inofensivo. Existem também os trojans de acesso remoto (RAT) que fornecem ao atacante o controle remoto do computador da vítima e são utilizados para manter um acesso constante, sendo normalmente o mais utilizado.</p>
+<h2 id="worms">Worms</h2>
+<p>Os worms (vermes), ao contrário dos cavalos de Troia que requerem interação do usuário, são capazes de replicação sem a interação do usuário.</p>
+<p>Os worms podem causar perturbações no tráfego normal da rede e nas atividades computacionais devido a capacidade de alta de propagação.</p>
+<h2 id="rootkits">Rootkits</h2>
+<p>Rootkits são malwares projetados especificamente para permitir o acesso de atacantes a um sistema através de uma porta traseira (backdoor).</p>
+<p>A injeção de DLL é comumente usada por rootkits para manter seu controle persistente, onde o código malicioso é inserido em um processo em execução em uma máquina Windows, aproveitando as bibliotecas Dynamic Link Libraries que são carregadas em tempo de execução.</p>
+<h2 id="backdoors">Backdoors</h2>
+<p>Backdoors são métodos ou ferramentas que permitem o acesso que ultrapassa os procedimentos normais de autenticação e autorização, permitindo aos atacantes o acesso a sistemas, dispositivos ou aplicações.</p>
+<h2 id="bots">Bots</h2>
+<p>Os bots ou zumbis são sistemas ou dispositivos controlados remotamente que já sofreram uma infecção por malware e que agora estão sob controle do atacante. Grupos de bots são conhecidos como botnets e são utilizados para realizar várias ações utilizando do processamento da máquina da vítima.</p>
+<p>As botnets podem ser usadas para atacar serviços e aplicações. Os ataques distribuídos de negação de serviço (DDoS) contra aplicações são extremamente comuns nesse caso. Esses ataques também vêm sendo cada mais frequentes no cenário atual e se o ataque é massivo podemos ter certeza que envolve uma rede de bots por trás.</p>
+<p>Conforme representa a imagem abaixo, o atacante também pode usar seus zumbis para realizar diversos ataques, desviando a origem desses ataques da sua máquina para às máquinas infectadas.</p>
+<p><img src="/botnet.png" alt="Botnet"></p>
+<h2 id="keyloggers">Keyloggers</h2>
+<p>Os keyloggers são programas que principalmente capturam toques de teclas de teclados, embora também possam capturar outras entradas como movimento do mouse, entradas de tela sensível ao toque ou utilizações de cartão de crédito de dispositivos anexados.
+Logic Bombs</p>
+<p>As bombas lógicas não são programas maliciosos independentes. Elas são funções ou códigos que são colocados dentro de outros programas que serão ativados somente quando as condições estabelecidas forem cumpridas.</p>
+<h2 id="fileless-malware">Fileless Malware</h2>
+<p>Os ataques de malware sem arquivos (fileless) se espalham através de métodos como e-mail de spam e sites maliciosos e exploram falhas em plug-ins de navegadores e nos próprios navegadores da web. Em nenhum momento eles precisam de armazenamento local de arquivos, pois permanecem residentes na memória durante toda a sua vida ativa.</p>
+<h2 id="spywares">Spywares</h2>
+<p>Spyware (malware espião) é um malware que é projetado para obter informações sobre um indivíduo, organização ou sistema. Eles reúnem secretamente dados sobre o usuário sem o seu consentimento, capturando toques de teclas feitos pela vítima e realizando capturas de tela que são enviados ao atacante.</p>
+<h2 id="adware">Adware</h2>
+<p>Adwares ou malwares de anúncios são softwares que exibem anúncios indesejados baseados em espionagem sobre você. Normalmente eles vêm junto com programas ou softwares que baixados da internet.
+Outros</p>
+<p>Ataques realizados contra sistemas de inteligência artificial é um campo em desenvolvimento onde a inteligência artificial (IA) é utilizada por atacantes para fins maliciosos, fornecendo-lhes dados ruins ou modificando sua programação para produzir os efeitos maliciosos desejados. Com o avançado dessa tecnologia, esse ataque pode se tornar cada vez mais comum.</p>
+<p>Programas Potencialmente Indesejados (PUPs) são programas que podem não ser desejados pelo usuário, mas não são tão perigosos quanto outros tipos de malwares.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Ao conhecer os tipos de malwares, podemos ter uma noção melhor de possíveis ataques que nossa empresa pode vir a sofrer. É extremamente importante que uma corporação empresarial possua antivírus e anti malwares que identifiquem esses tipos de ataques e evitem os mesmos, pois, ataques visando prejuízos financeiros ou ganho de lucros por parte do atacante estão cada vez mais comuns.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Controles Físicos em Segurança da Informação</title>
+            <link>https://b1d0ws.github.io/posts/controles-fisicos/</link>
+            <pubDate>Mon, 06 Dec 2021 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/controles-fisicos/</guid>
+            <description>Introdução Quanto o assunto é Segurança da Informação, provavelmente a maioria das pessoas pensam imediatamente em conceitos lógicos como defesa de redes através de firewalls, proteção de dados através de aplicações seguras, restrições de acesso remoto a servidores e afins.
+Entretanto, muito se esquece dos controles físicos a esses elementos, o que deveria ser bem aplicado de maneira fundamental em qualquer empresa, visto que se um atacante pode tocar fisicamente em seus dispositivos, ele pode ganhar acesso sobre eles.</description>
+            <content type="html"><![CDATA[<h2 id="introdução">Introdução</h2>
+<p>Quanto o assunto é Segurança da Informação, provavelmente a maioria das pessoas pensam imediatamente em conceitos lógicos como defesa de redes através de firewalls, proteção de dados através de aplicações seguras, restrições de acesso remoto a servidores e afins.</p>
+<p>Entretanto, muito se esquece dos controles físicos a esses elementos, o que deveria ser bem aplicado de maneira fundamental em qualquer empresa, visto que se um atacante pode tocar fisicamente em seus dispositivos, ele pode ganhar acesso sobre eles.</p>
+<p>Alguns controles físicos comuns que mitigam ameaças são sistemas de alarmes, fechaduras, câmeras de vigilância, cartões de identificação e guardas de segurança.</p>
+<p>O primeiro passo para prevenir o acesso físico é implementando um plano de segurança do local. A segurança do local analisa todas as instalações utilizadas por uma organização e implementa um plano baseado nas ameaças e riscos que são relevantes para cada local específico.</p>
+<h2 id="segurança-das-instalações">Segurança das Instalações</h2>
+<p>Algumas organizações usam <strong>camuflagem industrial</strong> para protegê-las e escondê-las de atacantes. Um exemplo comum são os locais discretos que as empresas escolhem para seus data centers.</p>
+<p>Muitas instalações utilizam <strong>cercas</strong> como primeira linha de defesa. As cercas atuam como um elemento dissuasor, tanto fazendo parecer um desafio o acesso a uma instalação, quanto como uma defesa física real.</p>
+<p>Um segundo controle físico comum é a colocação de <strong>barreiras de proteção</strong>. Os <strong>pilaretes (dissuasores)</strong> são postes ou outros obstáculos, como os mostrados abaixo, que impedem que veículos atravessem uma determinada área. Eles podem parecer postes, pilares ou até mesmo plantas para uma segurança mais despercebida. Alguns são projetados para serem removíveis ou acionados mecanicamente para que sejam levantados e abaixados conforme necessário.</p>
+<p><img src="/bollards.jpg" alt="Pilaretes"></p>
+<h2 id="câmeras-e-sensores">Câmeras e Sensores</h2>
+<p>Os sistemas de câmeras são maneiras comuns de controle de segurança física, permitindo aos profissionais de segurança e outros observarem o que está acontecendo em tempo real e capturar imagens de vídeo de áreas e locais para uso futuro ao conduzir investigações.</p>
+<p>As <strong>câmeras de reconhecimento</strong> de movimento são ativadas somente quando ocorre movimento, dessa forma poupando espaço em disco para armazenamento dos vídeos gravados.</p>
+<p>As <strong>câmeras de detecção</strong> de objetos e tecnologias similares podem detectar objetos específicos ou possuem áreas específicas que vigiam possíveis mudanças.</p>
+<p>Outra forma de câmera é um <strong>circuito fechado de televisão (CCTV)</strong> que exibe o que a câmera está vendo em uma tela em tempo real.</p>
+<h2 id="fechaduras-de-portas">Fechaduras de Portas</h2>
+<p>As fechaduras de portas podem utilizar chaves, pinos, sinais sem fios ou biométricos. Elas são um dos controles de segurança física mais comuns que você encontrará. A <strong>fechadura de cabo</strong> é uma solução comum para garantir que dispositivos como computadores ou outros hardwares não sejam removidos de um local.</p>
+<h2 id="mantraps">Mantraps</h2>
+<p>Algumas organizações usam <strong>vestíbulos de controle de acesso</strong> (frequentemente chamados de mantraps) como um meio de garantir que somente indivíduos autorizados tenham acesso a áreas seguras e que os atacantes não usem ataques de piggybacking/tailgating para entrar em lugares onde não deveriam estar.</p>
+<p>Esse sistema é muito semelhante aos detectores de metal usados em bancos.</p>
+<blockquote>
+<p>Piggybacking e tailgating consistem em pegar “carona” com alguém que tem permissão e acesso, ou seja, tentar entrar despercebido em determinada região passando junto com uma pessoa autorizada.</p>
+</blockquote>
+<p><img src="/mantrap.jpg" alt="Mantrap"></p>
+<h2 id="leitores-biométricos">Leitores Biométricos</h2>
+<p>Baseiam-se em características físicas de uma pessoa para identificá-las, sendo as partes mais comuns: <strong>impressão digital, olhos e vasos sanguíneos da mão.</strong> Biometria é considerado “algo que você é” (something you are).</p>
+<p>Sistemas biométricos possuem avaliações sobre taxas de sucesso e falha baseadas em 3 métricas chamadas FAR, FRR e CER, na qual não entraremos em detalhes nesse artigo.</p>
+<h2 id="supressão-de-fogo">Supressão de Fogo</h2>
+<p>Os sistemas de supressão de fogo são uma parte importante de segurança do local e ajudam na resiliência, <strong>reduzindo o potencial de incêndios</strong> catastróficos, protegendo funcionários, dados e edificações de uma organização.</p>
+<p>Existem diversos tipos de extintores, cada um específico para uma situação. Normalmente os extintores de Pó Químico e Gás Carbônico são os recomendados para incêndios da Classe C (equipamentos elétricos energizados).
+Sprinkler (Chuveiro Automático)</p>
+<p>Um sprinkler é um dispositivo comumente utilizado no combate a incêndios que age de maneira automática. Ele é composto de uma “armadura” e um elemento sensível, chamado bulbo.</p>
+<p><strong>Sistemas de Sprinklers de Tubos Molhados</strong> — Os tubos estão cheios de água até à cabeça do chuveiro e estão apenas à espera que o bulbo seja derretido ou partido.</p>
+<p><strong>Sistema de Sprinklers de Tubos Secos</strong> — Os tubos são enchidos com ar pressurizado e só empurram água para dentro quando necessário para combater o fogo.</p>
+<p><strong>Sistema de Sprinklers com Proteção Especial</strong> — O sistema de tubulação é preenchido com gás (HALON, FM-200 ou CO2) em vez de água.</p>
+<h2 id="blindagem">Blindagem</h2>
+<p>O Par trançado blindado (STP) adiciona uma camada de blindagem no interior do cabo para evitar possíveis danos e modificações.</p>
+<p><strong>Gaiola de Faraday</strong> — Blindagem instalada em volta de uma sala inteira que impede a entrada ou saída de energia eletromagnética, bloqueando campos eletromagnéticos e frequência de rádio da sala.</p>
+<p><strong>TEMPEST</strong> — Norma governamental dos Estados Unidos para o nível de blindagem exigido em um edifício para assegurar que as emissões e interferências não possam entrar ou sair da instalação. Essas instalações também são resistentes aos EMPs (pulsos eletromagnéticos).</p>
+<h2 id="sistema-de-controle-de-acesso-físico-pacs">Sistema de Controle de Acesso Físico (PACS)</h2>
+<p>Componentes e protocolos que facilitam a <strong>configuração centralizada</strong> e o monitoramento dos mecanismos de segurança dentro dos escritórios e datacenters. O PACS pode ser implementado como parte de um sistema de automação predial ou como um sistema separado.</p>
+<p>Esse sistema concede acesso aos funcionários que trabalham ou visitam um local, autenticando eletronicamente suas credenciais. Embora os PACS sejam sistemas de TI, eles devem ser projetados, implantados e operados em cooperação com as equipes de Segurança Física para atender com sucesso as necessidades da empresa.</p>
+<h2 id="outros">Outros</h2>
+<p>A <strong>iluminação</strong> desempenha um papel na segurança exterior e interior, tanto sendo usada para desencorajar intrusos ou para ajudar os funcionários a se sentirem mais seguros.</p>
+<p>Os <strong>crachás</strong> podem desempenhar uma série de papéis na segurança física. Além de serem processados por acesso de entrada via banda magnética e sistemas de radiofrequência (RFID), os crachás frequentemente incluem uma foto e outras informações que podem rapidamente permitir ao pessoal e aos guardas determinar se a pessoa é quem dizer ser, que áreas e acessos devem ter, e se é funcionário ou convidado.</p>
+<p><strong>Sistemas e alarmes</strong> são usados para detectar e alertar sobre problemas, incluindo acesso não autorizado, problemas ambientais e incêndios.</p>
+<p><strong>Guardas de segurança</strong> são usados em áreas onde a interação humana é necessária ou útil. Os <strong>registros de visitantes</strong> são um controle comum, usados em conjunto com os guardas, porque evidenciam quem passou pela empresa naquele momento caso aconteça algo suspeito.</p>
+<h2 id="zonas-de-segurança-melhoradas-e-áreas-seguras">Zonas de Segurança Melhoradas e Áreas Seguras</h2>
+<p>Um projetor de corredor quente/corredor frio coloca entradas e exaustores de ar em corredores alternados para garantir um fluxo de ar adequado, permitindo que os projetistas de datacenter saibam onde fornecer ar frio e onde o exaustor precisa ser colocado.</p>
+<p>A segurança de rede também desempenha um papel em áreas seguras, incluindo o uso de uma <strong>sub-rede com tela</strong> (também frequentemente chamada de <strong>zona desmilitarizada [DMZ]</strong>). As sub-redes dependem de dispositivos de segurança como firewalls para fornecer <strong>segmentações</strong> que limitam o fluxo de tráfego de entrada e saída delas, mantendo assim zonas de segurança mais elevadas seguras.</p>
+<p><img src="/DMZ.png" alt="Zona Desmilitarizada (DMZ)"></p>
+<p><strong>Air-gaps</strong> são arquiteturas utilizadas para segmentar redes fisicamente, impedindo assim a conectividade entre elas.</p>
+<p>As instalações governamentais e outras instalações de segurança extremamente alta podem utilizar travas, fixar conduítes e canais de cabos, vedações invioláveis e até mesmo cabos que possam detectar tentativas de acesso através de mudanças de pressão, mudanças na condutividade da blindagem, entre outras técnicas.</p>
+<h2 id="destruição-segura-de-dados">Destruição Segura de Dados</h2>
+<p>Quando os dados chegam ao fim de sua utilidade, a <strong>destruição da mídia</strong> que os contém é uma medida importante de segurança física. A destruição segura ajuda a prevenir problemas com dados e informações, incluindo ataques intencionais como “mergulho no lixo” (dumpster diving), bem como perdas não intencionais através da reutilização de mídias, sistemas ou outros dispositivos de armazenamento de dados.</p>
+<h2 id="métodos-de-destruição-de-dados">Métodos de Destruição de Dados</h2>
+<p><strong>Queima</strong><br>
+A maioria das vezes é feito em um incinerador de alta temperatura. Usado principalmente para registros em papel, embora alguns incineradores possam suportar dispositivos eletrônicos. Normalmente feito fora do local através de um terceiro, não deixa materiais recuperáveis.</p>
+<p><strong>Trituração</strong><br>
+Pode ser feito no local, suportando papel ou dispositivos usando uma trituradora industrial. As trituradoras de papel tradicionais <strong>podem permitir a recuperação de documentos</strong>, mesmo de documentos triturados transversalmente. Para ambientes de alta segurança, pode ser necessária a queima ou a polpação.</p>
+<p><strong>Polpação</strong><br>
+Quebra dos documentos de papel em farelos de madeira, <strong>removendo a tinta</strong>. Os materiais podem ser reciclados. Destrói completamente os documentos para evitar a recuperação.</p>
+<p><strong>Pulverização</strong><br>
+Quebra dos dispositivos em <strong>pedaços</strong> para impedir a recuperação. O tamanho do material de saída pode determinar o potencial de recuperação dos dados. Tipicamente a pulverização resulta em fragmentos muito pequenos.</p>
+<p><strong>Desmagnetização</strong><br>
+Limpa <strong>magneticamente</strong> os dados de fitas e meios magnéticos tradicionais como discos rígidos. Somente eficaz em mídia magnética; não funcionará em SSDs, mídia flash, mídia óptica ou papel.</p>
+<p>A <strong>destruição física</strong> é a forma mais segura de garantir a destruição de dados, mas as opções não destrutivas são muitas vezes desejáveis em um ambiente comercial para permitir a reutilização de mídias ou dispositivos.</p>
+<p>Uma opção final que muitas organizações optam por colocar em prática para a destruição segura é o uso de soluções de terceiros.</p>
+<h2 id="conclusão">Conclusão</h2>
+<p>É de extrema importância que o acesso físico aos dados da empresa ou aos equipamentos que contém essas informações sejam devidamente protegidos. Caso algum atacante malicioso consiga esse acesso, danos irreversíveis podem vir a acontecer.</p>
+<p>Como citados acima, existem muitos controles para garantir que esses acesso sejam feitos de maneira segura e confiável, seja com controles automáticos ou manuais, ou até mesmo, com a mistura dos dois elementos.</p>
+<p>Também é de suma importância garantir que as mídias que não são mais utilizadas tenham um destino correto, para evitar que os dados contidos nelas não acabem caindo em mãos erradas.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Minha experiência com a CCNA</title>
+            <link>https://b1d0ws.github.io/posts/ccna/</link>
+            <pubDate>Mon, 16 Aug 2021 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/ccna/</guid>
+            <description>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: Cisco Certified Network Associate, mais conhecida como CCNA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</description>
+            <content type="html"><![CDATA[<p>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: <strong>Cisco Certified Network Associate</strong>, mais conhecida como CCNA.</p>
+<h2 id="quem-sou-eu">Quem Sou Eu?</h2>
+<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</p>
+<h2 id="a-certificação">A Certificação</h2>
+<p>A CCNA é uma certificação oferecida pela Cisco (empresa que trabalha com equipamentos de rede) que comprova que você tem os conhecimentos básicos de rede e dos equipamentos oferecidos por ela. É uma das certificações mais reconhecidas no mercado atualmente, se não a mais popular no âmbito de infraestrutura e redes.</p>
+<p>A prova é constituída de 100 a 105 questões para serem realizadas no período de 120 minutos caso seu idioma nativo seja inglês/japonês, que são as línguas oferecidas para realização do exame. Caso contrário, são cedidos 30 minutos a mais (150 minutos) para a conclusão da mesma.</p>
+<p>Os conteúdos cobrados são: Fundamentos de Rede, Acesso à Rede, Conectividade IP, Serviços IP, Fundamentos de Segurança e Automação e Programabilidade. Você acha o conteúdo mais detalhe nesse link → <a href="https://learningnetwork.cisco.com/s/ccna-exam-topics">https://learningnetwork.cisco.com/s/ccna-exam-topics</a>.</p>
+<h2 id="por-que-ela">Por que ela?</h2>
+<p>As certificações me ajudam a traçar um plano de estudos e me manter focado nos estudos, por isso resolvi obter a CCNA, para solidificar meus conhecimentos em redes.</p>
+<p>Esse assunto é fundamental pra quem quer ser um bom profissional em Segurança da Informação, então segui o cronograma de estudos e ao mesmo tempo que conquistei a aprovação, aprendi bastante sobre redes de computadores.</p>
+<p>Pra quem é da área de redes, com certeza a CCNA precisa ser um objetivo, realmente agrega muito no técnico e também no reconhecimento em geral do profissional.</p>
+<h2 id="os-estudos">Os Estudos</h2>
+<p>Eu estudei cerca de 4 meses até o dia da prova. É impossível eu determinar uma média de horas líquidas de estudos, pois eu estudava mais no sábado do que na semana toda. Como eu trabalho e faço faculdade, o tempo para estudo diário era bem limitado. Haviam semanas que eu estudava 1 hora por dia, haviam semanas que eu nem estudava, principalmente nos períodos de prova.</p>
+<p>No último mês aproveitei para focar bastante porque entrei nas férias da faculdade. A questão é que nessa reta final eu tentei manter a constância, considero mais importante estudar um pouquinho por dia, do que muitas hora seguidas, mas sem frequência. A qualidade de aprendizado do primeiro método é infinitamente superior.</p>
+<blockquote>
+<p>Sobre a preparação, pode-se aprender todo conteúdo cobrado em menos tempo, mas não estava apressado e fui no meu ritmo.</p>
+</blockquote>
+<p>Meus materiais de estudo foram esses: <strong>Curso do Gustavo Kalau, livro Análise de Tráfego em Redes TCP/IP e muitas questões.</strong></p>
+<p>O custo do Kalau é ótimo, os PDFs que ele entrega são realmente de ótima qualidade e ele faz umas analogias bem boas. O livro é bem famoso também, mas pra certificação eu só utilizei 1/3 dele. Acredito que o aprendizado por livros é mais válido para uma aprofundamento maior dos conteúdos, o que não é necessário para essa prova. Resumindo, o livro é bom, mas não é preciso para a aprovação.</p>
+<p>Como eu já tinha feito uma matéria de Redes de Computadores na faculdade, alguns conteúdos foram facilmente absorvidos, principalmente cálculo de sub-rede. No geral, o conteúdo é bem tranquilo de aprender, o mais difícil é memorizar alguns comandos e suas diferenças, mas nada que a prática não resolva.</p>
+<p>Exercícios, faça exercícios!! O Gustavo disponibiliza questões para revisão depois de todo conteúdo ensinado e um simulado para cada tópico também. Como a meta é acertar 80% das questões para prosseguir, você “meio que é obrigado” a saber um conteúdo para passar para os outros.</p>
+<p>Nas últimas semanas, eu reassisti todas as aulas e refiz os exercícios para tirar tudo a limpo. Como você já tem as anotações e já absorveu grande parte do conteúdo, dá até pra aumentar a velocidade dos vídeos e não demora muito para passar por tudo de novo.</p>
+<p>Para toda aula assistida, eu fazia anotações e colocava num Word. Na hora de passar a limpo, eu joguei tudo no GitBook, um aplicativo Web que eu uso para deixar meus resumos.</p>
+<p><img src="/gitbook-ccna.png" alt="GitBook CCNA"></p>
+<h2 id="custos">Custos</h2>
+<p>Chegou a hora que todo mundo teme, os valores gastos nessa brincadeira toda! Obter certificações no Brasil sempre foi caro e aqui não foi diferente. A CCNA custa míseros 300$, ou seja, na casa dos R$1600 + impostos.</p>
+<p>Você adquire ela no site da PersonVUE, plataforma responsável pelo agendamento desses tipos de exame. No meu caso, fiz a prova online, mas ela também pode ser presencial. Como a Person é estrangeira, você precisará de um cartão internacional para realizar a transação.</p>
+<p>Voucher CCNA → R$1.758,80<br>
+Curso Gustavo Kalau (Sem Risco Zero) → R$ 624,08<br>
+Livro Análise de Tráfego em Redes TCP/IP → R$ 65,05<br>
+Total → R$2.447,93</p>
+<p>Sim, é um valor bem absurdo para uma simples certificação, mas eu penso nisso como um investimento. Além de aproveitar todo conteúdo que aprendi, certamente portas são abertas e no médio/longo prazo você recupera esse dinheiro.</p>
+<h2 id="a-prova">A Prova</h2>
+<p>Como dito anteriormente, fiz minha prova na modalidade online. Escolhi um dia que teoricamente deveria ser calmo aqui em casa, para evitar qualquer tipo de problema com os proctors (quem vai acompanhar o seu teste). Eu disse teoricamente porque na prática não foi assim. A casa ficou bastante movimentada e eu realmente fiquei com receio de que cancelassem minha prova pelo barulho externo, mas felizmente deu tudo certo.</p>
+<p>Como eu já estou acostumado a fazer provas desse tipo (meu 3º teste nesse estilo), fiquei bem tranquilo na realização do exame. Você marca a prova no horário X e o seu check-in começa 30 minutos antes. Nesse check-in você precisa mandar algumas fotos suas, do ambiente e da identidade, pelo seu celular, tudo bem orientado pela plataforma da PersonVUE. Após esse processo, um pouco antes da prova, o examinador entra em contato com você e pede para movimentar a webcam ao redor da mesa para conferir se não tem nada inadequado (colas, anotações, etc).</p>
+<p>Em todos os exames que fiz, o proctor tinha um sotaque indiano e falava em inglês, mas como ele fala pouca coisa, deu pra entender perfeitamente. Feito o check-in, comecei a prova. As primeiras questões me deram um pouco de confiança, não eram extremamente fáceis, mas eram do meu conhecimento.</p>
+<p>No meio do teste, as questões começaram a complicar. Lembro de ter alguns questões (2 ou 3) que eu não fazia ideia da resposta, chutei com base nos outros conhecimentos que eu tinha. No final da prova eu tinha certeza de que não tinha atingido os 80% necessários para a aprovação, estava muito pessimista. Ao todo foram 104 questões no meu exame.</p>
+<p>Quando concluí, fiquei muito surpreso. Fiz 901 pontos!! Não é uma nota extraordinária, visto que é necessário fazer 825 pontos dos 1000, porém, é ótimo pra quem achou que não ia passar haha.</p>
+<h2 id="para-onde-agora">Para onde agora?</h2>
+<p>Como não atuo diretamente com redes, não pretendo realizar outras certificações mais avançadas da área (CCNP, CCIE). Acredito que o conteúdo aprendido foi o suficiente para ter um boa base.</p>
+<p>Então é isso, obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar pelo LinkedIn que irei responder com muito gosto →
+<a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
+<p>Até mais ver =).</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Um resumo sobre a OWASP TOP 10 [2017]</title>
+            <link>https://b1d0ws.github.io/posts/owasp2017/</link>
+            <pubDate>Thu, 24 Jun 2021 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/owasp2017/</guid>
+            <description>O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades.</description>
+            <content type="html"><![CDATA[<h2 id="o-que-é">O que é?</h2>
+<p>OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.</p>
+<p>OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.</p>
+<p>Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades. Como esse artigo abrange a lista inteira, não vou entrar em muitos detalhes em cada tópico, mas você pode facilmente encontrar materiais sobre eles por aí, inclusive no próprio site da OWASP.</p>
+<p>OWASP → <a href="https://owasp.org/">https://owasp.org/</a>
+OWASP top 10 → <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a></p>
+<h2 id="1-injection">1. Injection</h2>
+<p>Falhas de Injeção como injeções SQL, NoSQL, OS e LDAP, ocorrem quando dados não confiáveis são enviados para um interpretador como parte de um comando ou query.</p>
+<p>O dado enviado pelo atacante pode enganar o interpretador para executar comandos não intencionais ou acessar dados sem a autorização apropriada.</p>
+<h3 id="exemplos">Exemplos</h3>
+<p>SQL Injection — Quando conseguimos injetar um trecho de código por um input que afetará o banco de dados.</p>
+<p><strong>Uma situação simples para explicar essa técnica é usar o trecho:</strong><br>
+password&rsquo; OR 1=1<br>
+Como resultado, o banco rodará a seguinte query:<br>
+SELECT id FROM users WHERE username='username&rsquo; AND password='password&rsquo; OR 1=1&rsquo;</p>
+<h3 id="impactos">Impactos</h3>
+<p>Injeções podem resultar em perda e corrupção de dados, negação de acesso, acessos não autorizados e até mesmo perda total do sistema. Tudo depende do qual é a aplicação e seus dados.</p>
+<h3 id="prevenção">Prevenção</h3>
+<p>Usar uma lista de controle que retorna se o caractere é seguro ou não. Se não for seguro, o servidor retornará como erro.</p>
+<p>Stripping Input — Remover os caracteres perigosos antes de processar o input inserido.</p>
+<h3 id="referências">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A1_2017-Injection">https://owasp.org/www-project-top-ten/2017/A1_2017-Injection</a> <a href="https://www.acunetix.com/websitesecurity/sql-injection/">https://www.acunetix.com/websitesecurity/sql-injection/</a></p>
+<h2 id="2-broken-authentication">2. Broken Authentication</h2>
+<p>Funções de aplicação relacionadas à autenticação e gerenciamento de sessões são frequentemente implementadas incorretamente, permitindo atacantes a comprometer senhas, chaves ou tokens de sessão, ou explorar outras falhas de implementação para assumir a identidade de outros usuários.</p>
+<h3 id="exemplos-1">Exemplos</h3>
+<p>Ataques de Força Bruta — Se o site usa usuário e senha, a chance de brute force é existente.</p>
+<p>Credenciais Fracas — Aplicações web devem colocar políticas de senhas fortes para evitar ataques de força bruta ou até mesmo adivinhações de senha.</p>
+<p>Sessões de Cookies Fracas — Se o site usa cookies previsíveis e não controlados, o atacante pode manipular seus cookies para conseguir acessos indevidos.</p>
+<p>Timeout de sessões não configuradas também não são ideais, pois alguém mal intencionado por vir a usar o usuário de outra pessoa e ter acesso ao login dela por estar salvo no navegador.</p>
+<h3 id="impactos-1">Impactos</h3>
+<p>Atacantes podem ganhar acesso a algumas contas de usuário ou apenas uma conta de administrador que pode comprometer todo o sistema. Dependendo da aplicação do sistema, isso pode permitir lavagem de dinheiro, fraude social, roubo de identidade e divulgação de informação sensíveis.</p>
+<h3 id="prevenção-1">Prevenção</h3>
+<p>Para evitar força bruta, coloque limite de tentativas para login e determine uma política forte de senha.</p>
+<p>Para evitar adivinhações, requisite senhas fortes na criação do usuário. Outra maneira fortíssima de evitar sessões indevidas é colocar autenticação em dois fatores.</p>
+<p>Não mantenha sessões ativas por muito tempo.</p>
+<h3 id="referências-1">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication">https://owasp.org/www-project-top-ten/2017/A2_2017-Broken_Authentication</a></p>
+<h2 id="3-sensitive-data-exposure">3. Sensitive Data Exposure</h2>
+<p>Muitas aplicações web e APIs não protegem dados sensíveis, como finanças, saúde e PII (Informação pessoalmente identificável), de maneira apropriada.</p>
+<p>Dados confidenciais sem proteção extra, como criptografia, podem ser comprometidos, e requerem precauções especiais quando trocados com o navegador.</p>
+<h3 id="exemplos-2">Exemplos</h3>
+<p>A falha mais comum desse tipo é a não encriptação de dados sensíveis. Uma aplicação criptografa números de cartão de crédito para armazená-los em um banco de dados. Contudo, esse dado é descriptografado quando retornado, permitindo um SQL Injection para retornar os números de cartão em texto puro.</p>
+<p>Um atacante conseguiu acesso à base de dados com as senhas. Para aplicar os hashes, não foi usado Salt/Pepper e isso é um problema, pois agora ele pode comparar as senhas hasheadas com uma tabela rainbow para descobrir quais são elas.</p>
+<p>Um site não usa TLS (Transport Layer Security) para todas as páginas ou usa criptografias fracas. Um atacante pode monitorar o tráfego de rede, transformar conexões HTTPS em HTTP, interceptar as requisições e roubar o cookie de sessão do usuário. Fazendo isso, ele terá acesso ao perfil do mesmo.</p>
+<h3 id="impactos-2">Impactos</h3>
+<p>Nos últimos anos, esse vem sendo o ataque de impacto mais comum. Atacantes podem roubar ou modificar tais dados para conduzir fraudes de cartão de crédito, roubo de identidade, entre outros crimes.</p>
+<h3 id="prevenção-2">Prevenção</h3>
+<p>Classificar os dados processados e tratá-los com a segurança necessária.</p>
+<p>Não armazenar dados sensíveis sem necessidade.</p>
+<p>Verificar se não existem dados transmitidos em texto puro e algoritmos de criptografias fracos/antigos.</p>
+<p>Armazenar senhas usando hashs adaptadas com uso de salt e funções como Argon2 e PBKDF2.</p>
+<h3 id="referências-2">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure">https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure</a></p>
+<h2 id="4-xml-external-entities-xxe">4. XML External Entities (XXE)</h2>
+<p>Processadores XML antigos ou mal configurados validam referências de entidades externas dentro de documentos XML. Entidades externas podem ser usadas para incluir conteúdos maliciosos, assim explorando vulnerabilidades de código, dependências e integrações.</p>
+<p>XML é uma linguagem de marcação legível tanto para humanos quanto para máquinas e serve para armazenar e transportar dados.</p>
+<h3 id="exemplos-3">Exemplos</h3>
+<p>Abaixo segue um exemplo de XML que pode extrair dados do arquivo /etc/passwd:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->&amp;xxe;<!-- raw HTML omitted --></p>
+<h3 id="impactos-3">Impactos</h3>
+<p>Essa vulnerabilidade pode ser usada para leitura e compartilhamentos de arquivos internos, escaneamento de portas, execução remota de códigos, negação de serviço e diversos outros ataques.</p>
+<h3 id="prevenção-3">Prevenção</h3>
+<p>Sempre que possível use formatos de dados menos complexos como JSON e evite serialização de dados sensíveis.</p>
+<p>Serialização é o processo de converter objetos em formatos mais simples e compatível para transmiti-los entre sistemas de maneira mais prática.</p>
+<p>Implemente validações ou filtros de input no servidor (whitelisting).
+Desabilite entidades externas em todos os parsers XML da aplicação.</p>
+<h3 id="referências-3">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE)">https://owasp.org/www-project-top-ten/2017/A4_2017-XML_External_Entities_(XXE)</a></p>
+<h2 id="5-broken-access-control">5. Broken Access Control</h2>
+<p>Restrições sobre o que o usuário tem acesso para fazer são frequentemente não apropriadas. Atacantes podem explorar essas falhas para acessar funcionalidades ou dados não autorizados, como acessar contas de outros usuários, ver dados sensíveis, modificar dados alheios e direitos de acesso, etc.</p>
+<h3 id="exemplos-4">Exemplos</h3>
+<p>Usuários não autorizados acessam páginas que deveriam ser restritas como /admin.</p>
+<p>IDOR, Insecure Direct Object Reference — Ato de explorar um configuração mal feita de referência de objeto.
+Ex: <a href="https://example.com/bank?account_number=1234">https://example.com/bank?account_number=1234</a>. Se eu trocar o account_number eu acessarei a conta de outro usuário.</p>
+<h3 id="impactos-4">Impactos</h3>
+<p>O atacante pode ter acessos a conta de outro usuário ou até mesmo de administrador e a partir disso fazer o que bem entender com os privilégios alcançados, principalmente atualizando e deletando registros.</p>
+<h3 id="prevenção-4">Prevenção</h3>
+<p>Tokens JWT devem ser invalidados no servidor após o logout.</p>
+<p>Implementar mecanismos de controle de acesso e reusá-lo em toda aplicação, incluindo minimizar o uso de CORS.</p>
+<p>Ter logs de falha de acessos e alertar os administradores quando apropriado (falhas repetidas).</p>
+<h3 id="referências-4">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control">https://owasp.org/www-project-top-ten/2017/A5_2017-Broken_Access_Control</a></p>
+<h2 id="6-security-misconfiguration">6. Security Misconfiguration</h2>
+<p>Configurações incorretas são as vulnerabilidades mais comum entre as citadas. Isso acontece por uma variedade de configurações padrões inseguras, armazenamentos em nuvem abertos, cabeçalhos HTTP incorretos e mensagens de erro contendo informações sensíveis.</p>
+<p>Não só todos os sistemas operacionais, frameworks, bibliotecas e aplicações devem ser seguramente configuradas, mas também corrigidas e atualizadas em tempo hábil.</p>
+<h3 id="exemplos-5">Exemplos</h3>
+<p>A aplicação do servidor vem com outras aplicações de amostra que não foram removidos do servidor de produção. Essas amostras têm vulnerabilidades conhecidas, oferecendo um potencial de comprometimento do servidor.</p>
+<p>Senhas padrão mantidas em aplicações que estão disponível a todos.</p>
+<h3 id="impactos-5">Impactos</h3>
+<p>Essas vulnerabilidades frequentemente dão aos atacantes acessos não autorizados a dados ou funcionalidades do sistema. Ocasionalmente, elas podem resultar no comprometimento completo da aplicação.</p>
+<h3 id="prevenção-5">Prevenção</h3>
+<p>Não use sistemas com credenciais padrão, especialmente para contas de admin.</p>
+<p>Um sistema de backup deve existir para rapidamente subir um novo ambiente para substituir o que está atualmente em produção caso algo aconteça.</p>
+<p>A plataforma de aplicação deve ter o mínimo necessário, sem recursos e componentes desnecessários.</p>
+<p>Deve existir a prática de revisar e atualizar as configurações de todas as medidas de segurança.</p>
+<p>Os softwares e processos usados devem ser instalados de maneira compatível com a aplicação.</p>
+<h3 id="referências-5">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration">https://owasp.org/www-project-top-ten/2017/A6_2017-Security_Misconfiguration</a></p>
+<h2 id="7-cross-site-scripting-xss">7. Cross-Site Scripting (XSS)</h2>
+<p>Falhas de XSS ocorrem quando uma aplicação inclui dados não confiáveis em uma nova página web sem a validação apropriada. XSS permite atacantes executarem scripts no navegador da vítima que podem roubar sessões de usuário, desfigurar sites ou redirecionar outros clientes para sites maliciosos.</p>
+<h3 id="exemplos-6">Exemplos</h3>
+<p>A forma mais clássica de se testar um XSS é colocando em algum formulário o código abaixo.</p>
+<!-- raw HTML omitted -->
+<p>Se um alerta for exibido na tela, a aplicação está vulnerável a XSS. Se o alerta não for exibido, não podemos confirmar que não existem outras brechas para XSS no site.</p>
+<h3 id="impactos-6">Impactos</h3>
+<p>XSS refletidos e DOM XSS tem impactos moderados. XSS armazenados são severos com execução remota de códigos no navegador da vítima, como roubo de credenciais e sessões ou entregando um malware para ela.</p>
+<h3 id="prevenção-6">Prevenção</h3>
+<p>A melhor prevenção para XSS é validar todo tipo de entrada e tratá-las corretamente limitando o tamanho do campo a ser inserido, definindo o conjunto de caracteres aceitos ou estabelecendo uma expressão regular para os dados.</p>
+<p>Existem frameworks que já “escapam” os códigos inseridos através de XSS.</p>
+<h3 id="referências-6">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)">https://owasp.org/www-project-top-ten/2017/A7_2017-Cross-Site_Scripting_(XSS)</a></p>
+<h2 id="8-insecure-deserialization">8. Insecure Deserialization</h2>
+<p>Serialização é o processo de converter objetos em formatos mais simples e compatível para transmiti-los entre sistemas de maneira mais prática.</p>
+<p>Deserialização é o processo inverso e atacantes podem usar de processos internos se essa for mal configurada.</p>
+<h3 id="exemplos-7">Exemplos</h3>
+<p>Um site PHP usa deserialização de objeto para salvar um super cookie, contento informações do usuário como ID, função, senha hashada e estado:<br>
+a:4:{i:0;i:132;i:1;s:7:&ldquo;Mallory&rdquo;;i:2;s:4:&ldquo;user&rdquo;; i:3;s:32:&ldquo;b6a8b3bea87fe0e05022f8f3c88bc960&rdquo;;}</p>
+<p>Um atacante pode modificar o objeto serializado para conseguir permissões de admin:<br>
+a:4:{i:0;i:1;i:1;s:5:&ldquo;Alice&rdquo;;i:2;s:5:&ldquo;admin&rdquo;; i:3;s:32:&ldquo;b6a8b3bea87fe0e05022f8f3c88bc960&rdquo;;}</p>
+<h3 id="impactos-7">Impactos</h3>
+<p>Deserialização insegura frequentemente leva em execução remota de código. Mesmo se a deserialização não resulte nisso, ela pode ser usada para executar ataques, incluindo ataques de injeção e elevação de privilégio.</p>
+<h3 id="prevenção-7">Prevenção</h3>
+<p>A maioria das linguagens de programação contêm bibliotecas que provêm deserializações seguras. Se a linguagem não conter uma, você terá que checar os inputs do usuário antes de qualquer outro processo.</p>
+<h3 id="referências-7">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization">https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization</a></p>
+<h2 id="9-using-components-with-known-vulnerabilities">9. Using Components with Known Vulnerabilities</h2>
+<p>Componentes como bibliotecas, frameworks, e outros módulos de software, rodam com os mesmos privilégios que a aplicação. Se um componente vulnerável é explorado, um ataque desses pode facilitar sérias perdas de dados ou derrubamentos de servidor.</p>
+<h3 id="exemplos-8">Exemplos</h3>
+<p>Os exemplos nesse caso são vulnerabilidades já descobertas. Um caso é a execução remota de códigos do Struts 2. Você pode encontrá-la nesse link.</p>
+<h3 id="impactos-8">Impactos</h3>
+<p>Aplicações e APIs usando componentes com vulnerabilidades conhecidas podem enfraquecer as defesas do aplicativo e permitir vários outros ataques. Dependendo da falha encontrada o impacto pode ser desastroso.</p>
+<h3 id="prevenção-8">Prevenção</h3>
+<p>Remover componentes, arquivos, dependências e recursos não utilizados.</p>
+<p>Apenas obter componentes de sites oficiais e links seguros.</p>
+<p>Monitorar se bibliotecas e recursos têm versões mais atualizadas de patches de segurança.</p>
+<h3 id="referências-8">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities">https://owasp.org/www-project-top-ten/2017/A9_2017-Using_Components_with_Known_Vulnerabilities</a></p>
+<h2 id="10-insufficient-logging--monitoring">10. Insufficient Logging &amp; Monitoring</h2>
+<p>Log e monitoramento insuficiente, junto com integrações ineficazes com resposta a incidentes, permite que o atacante mantenha seus ataques com mais persistência, mova-se para mais sistemas e altere ou destrua dados.</p>
+<p>Estudos dizem que o tempo para detectar uma violação é de mais de 200 dias, normalmente detectado por partes externas em vez de processos internos de monitoramento.</p>
+<h3 id="exemplos-9">Exemplos</h3>
+<p>Um atacante usa scans para usuários com senhas comuns, assim ele pode conseguir acesso a vários perfis usando essas senhas. Para todos os outros usuários, esse scan deixa apenas um login incorreto registrado. Depois de alguns dias, isso pode ser repetido com uso de outras senhas.</p>
+<h3 id="impactos-9">Impactos</h3>
+<p>A maioria dos ataques sucedidos vêm de investigações de vulnerabilidades. Permitir que essas investigações continuem aumentam a chance de você ser atacado quase em 100%.</p>
+<p>Em 2016, identificar tentativas de invasão demoravam em média 191 dias, tempos suficiente para o dano ser causado.</p>
+<h3 id="prevenção-9">Prevenção</h3>
+<p>Garantir que os logs são gerados em um formato facilmente compreensível por um gerenciador de log centralizado.</p>
+<p>Estabelecer monitoramentos e alertas que detectem casos de atividades suspeitas em tempo hábil.</p>
+<p>Estabelecer ou adotar uma plano de recuperação ou de resposta a incidentes.</p>
+<h3 id="referências-9">Referências</h3>
+<p><a href="https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring">https://owasp.org/www-project-top-ten/2017/A10_2017-Insufficient_Logging%2526Monitoring</a></p>
+<h2 id="conclusão">Conclusão</h2>
+<p>Após entendermos sobre as vulnerabilidades mais comuns, podemos entender a maioria dos ataques feitos em aplicações web.</p>
+<p>Esse top 10 é apenas uma parte do conteúdo gigantesco que a OWASP proporciona sobre segurança da informação. Se você trabalha na área é provável que vá acompanhar esse projeto aberto em grande parte da sua carreira.</p>
+<p>Acredito que essa lista também passe uma boa noção para os desenvolvedores que querem manter suas aplicações um pouco mais seguras. Aplicando os conceitos tratados você com certerá deixará seu desenvolvimento extremamente mais seguro.</p>
+<p>Obrigado por ler até aqui e qualquer dúvida você pode entrar em contato comigo pelo Linkedin.</p>
+<p>Até mais ver =).</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Minha experiência com a LPIC-1</title>
+            <link>https://b1d0ws.github.io/posts/lpic-1/</link>
+            <pubDate>Thu, 25 Feb 2021 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/lpic-1/</guid>
+            <description>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.
+Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</description>
+            <content type="html"><![CDATA[<p>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.</p>
+<p>Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</p>
+<h2 id="quem-sou-eu">Quem sou eu?</h2>
+<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou indo para o 3º semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como assistente de TI em uma empresa metalúrgica (Metasa).
+O que é e porque dessa certificação?</p>
+<p>A LPIC-1 é uma certificação BÁSICA que comprova que você consegue usar um sistema Linux e entender seu funcionamento como um todo, desde controle de tarefas como administrador por linha de comando até configurações de rede e segurança. Para conquistá-la, você deve ser aprovado em duas provas de 60 questões cada, com 90 minutos para realizá-las. Você encontra toda informação no próprio site da LPI, nesse link → <em><a href="https://www.lpi.org/our-certifications/lpic-1-overview">https://www.lpi.org/our-certifications/lpic-1-overview</a></em></p>
+<p>Eu decidi tirar essa certificação porque ela é bem vista no mercado de trabalho e muito sólida na questão de distribuir os conteúdos cobrados, ou seja, você realmente aprende o que tem que aprender de Linux estudando para ela.</p>
+<h2 id="os-estudos">Os estudos</h2>
+<p>Aproveitei meu período de férias da faculdade pra poder estudar e tentava me dedicar em média 1:30h líquidas por dia. Comecei no final de dezembro e tirei a certificação no dia 24/02. Poderia ter feito em menos tempo, mas acabei deixando a desejar em algumas semanas, falhando vários dias (a primeira semana do ano foi praticamente nula de estudo).</p>
+<p>Meus estudos se basearam em três materiais: <strong>curso e simulado do Ricardo Prudenciato</strong> na Udemy (são separados) e o <strong>livro Certificação LPI-1: 101–102</strong> do Luciano Antonio Siqueira. A maneira de estudar era basicamente essa: eu assistia as aulas e ia anotando tudo no WPS Word (quase idêntico ao Word da Microsoft só que free, muito usado no Linux). Depois fazia os exercícios propostos pelo professor e seguia adiante.</p>
+<p><img src="/pc-lpi.jpeg" alt="Meu canto de estudos" title="Meu canto de estudos"></p>
+<p>Muita gente pede dos valores, então deixo aqui bem claro os gastos (prepara o bolso).</p>
+<p>Curso → R$25,00<br>
+Simulados → R$23,00<br>
+Livro → R$50,00<br>
+Prova 101 → R$1010,00<br>
+Prova 102 → R$1050,00<br>
+Total → R$2157,00</p>
+<p>O valor das provas é de 173U$ cada, vai depender muito da cotação do dólar para saber quanto você vai gastar. Houve essa diferença de valores pra mim, pois na segunda eu não tive acesso ao cartão internacional e comprei um voucher diretamente pelo Ricardo, o que acaba saindo um pouco mais caro.</p>
+<p>As aulas, assim como o conteúdo da certificação, é dívida em tópicos do 101 ao 110, sendo que a primeira prova (LPIC-101) vai do 101 ao 104 e a segunda (LPIC-102) do 105 ao 110. Basicamente, uma semana depois de concluir um tópico pelas videoaulas, eu lia sobre o mesmo no livro. Após acabar tudo, eu sintetizava e ajeitava o resumo feito no WPS, baseado nas aulas e no livro, e usava ele como guia.</p>
+<p>Claramente eu fiz as provas em dias diferentes e distantes, estudei para a primeira prova e depois para a segunda. Dá pra fazer as duas no mesmo dia, mas não tem nenhum motivo para isso, a não ser que você já possua um conhecimento muito bom em Linux e queira rushar a certificação (nem assim vale a pena).</p>
+<p>Um auxilio aos meus estudos foi que nesse meio tempo eu fiz o <strong>Bootcamp Administrador Linux do IGTI</strong>, mas realmente agregou pouco. Esse treinamento passa uma visão geral dos diversos softwares open source que se pode usar em empresas, mas de forma muito supérflua. Pra mim não valeu a pena o tempo investido, acredito que vale pra quem quer inovar no próprio trabalho com esses programas gratuitos, apenas.</p>
+<p><em>Udemy → <a href="https://www.udemy.com/course/curso-online-certificacao-linux-lpic1-comptia/">https://www.udemy.com/course/curso-online-certificacao-linux-lpic1-comptia/</a></em>
+<em><a href="https://www.udemy.com/course/simulado-certificacao-lpic-1-e-comptia-linux/">https://www.udemy.com/course/simulado-certificacao-lpic-1-e-comptia-linux/</a></em></p>
+<p><em>Livro LPI-1 → <a href="https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-LPI-1-Luciano-Antonio-Siqueira/dp/8550810614/ref=asc_df_8550810614/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787347388&amp;hvpos=&amp;hvnetw=g&amp;hvrand=8134754864686077673&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1031798&amp;hvtargid=pla-877382152204&amp;psc=1">https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-LPI-1-Luciano-Antonio-Siqueira/dp/8550810614/ref=asc_df_8550810614/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787347388&amp;hvpos=&amp;hvnetw=g&amp;hvrand=8134754864686077673&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1031798&amp;hvtargid=pla-877382152204&amp;psc=1</a></em></p>
+<p><em>Bootcamp Administrador Linux → <a href="https://www.igti.com.br/custom/administrador-linux/">https://www.igti.com.br/custom/administrador-linux/</a></em></p>
+<p>Lembrando que a Udemy tem promoção quase toda semana para a maioria dos cursos, então não compre com os valores inteiros. Aguarde um pouco e conseguirá os dois acessos lá pela casa dos 20/30 reais cada um.</p>
+<h2 id="a-prova">A prova</h2>
+<p>Como expresso no título do texto, realizei minha prova online, pois o centro de teste mais próximo fica a mais de 100km e não vi necessidade de fazer presencialmente. Marquei minha prova através do sistema Person VUE, que é o mais usado para exames online. As provas são realizadas apenas em Inglês e Japonês, enquanto as presenciais podem ser feitas em português.</p>
+<p>Recomendo marcar a prova em algum dia que seja tranquilo pra você, pois o check-in é aberto 30 minutos antes do horário. Você tem essa janela de meia hora pra realizar esse processo, mas quanto antes fizer mais problemas serão evitados. É tudo feito por um software próprio da VUE, basta executá-lo e colocar um código que você obtém no site para acessar o exame. É importante rodar um teste antes pra ver se a sua máquina roda certinho o programa, uma vez que existem alguns requisitos que eu só descobri testando, por exemplo: o sistema não roda em Linux e nem em Windows 7.</p>
+<p>Por esse motivo tive que usar o notebook do meu pai, uma configuração muito fraca, um barulho horrendo e uma bateria viciada. A pressão das provas era maior por causa dessa máquina do que pela prova em si, vai que eu esbarro na fonte e desligo ela sem querer haha.</p>
+<p>Na hora de colocar o código, você também adiciona um número para receber um link para realização do check-in. Ele consiste em tirar algumas fotos do ambiente, de algum documento oficial (identidade, CNH) e uma própria. Após isso, livre-se do smartphone para começar a realização do teste.</p>
+<p>Depois das imagens serem verificadas pelo proctor (quem acompanha o teste), ele entrará em contato via chat ou voz. Na primeira prova fui contatado somente por chat e na segunda pelos dois. O áudio da mulher que me orientou estava muito baixo, então algumas vezes ela escreveu para eu poder entender. Os dois se comunicaram em inglês e é um conversa bem rápida, pediram se eu tinha alguma dúvida e para eu mexer a câmera para ver ao redor da mesa.</p>
+<p>Tudo certo e alinhado, começa o teste. 60 questões em uma hora e meia é tempo de sobra, então isso não será problema. As questões são no mesmo formato que você faz nos simulados (FAÇA SIMULADOS!!), única alternativa, múltiplas alternativas e preenchimento de lacuna. Quando eu treinava, muitas vezes deixava escapar o detalhe “marque 3, marque 2 alternativas”, mas isso também não é problema, pois no final existe uma revisão e se faltar alguma resposta ou marcar 2,3 alternativas na mesma pergunta, o sistema avisa você.</p>
+<p>Uma coisa que me deixou um pouco contrariado foi a quantidade de questões semelhantes às disponíveis na internet para treino na LPIC 102. Na 101 realmente as questões eram diferentes e exigiram dos meus conhecimentos, porém, na 102, MUITAS questões eram idênticas as que eu usei para estudar. Isso me deixa meio desconfiado porque sujeita muito a prova àqueles esquemas de DUMP, em que a galera só decora as questões e passa, sem realmente aprender. Enfim, acho que isso vai da consciência de cada um, eu sei que realmente aprendi estudando para os testes e é isso que importa.</p>
+<h2 id="para-onde-agora">Para onde agora?</h2>
+<p>Em certificação Linux com certeza meu próximo passo é a LPIC-2, só não irei estudar para ela tão cedo, pois tenho outros planos de estudo também (certamente trarei relatos aqui novamente sobre mais experiências).</p>
+<p>Então é isso, muito obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar que irei responder → <a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
+<p>Até mais ver =).</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Minha experiência com a LPI Essentials</title>
+            <link>https://b1d0ws.github.io/posts/lpi_essentials/</link>
+            <pubDate>Mon, 02 Nov 2020 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/lpi_essentials/</guid>
+            <description>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.
+Quem sou eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</description>
+            <content type="html"><![CDATA[<p>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.</p>
+<h2 id="quem-sou-eu">Quem sou eu?</h2>
+<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</p>
+<h2 id="o-que-é-e-porque-dessa-certificação">O que é e porque dessa certificação?</h2>
+<p>A LPI Essentials é uma certificação MUITO BÁSICA que comprova que você consegue usar um sistema Linux a nível principiante. Para conquistá-la, você deve ser aprovado em um exame de 40 questões com 60 minutos para realizá-lo. Você encontra toda informação no próprio site da LPI, nesse link → <a href="https://www.lpi.org/pt/our-certifications/linux-essentials-overview">https://www.lpi.org/pt/our-certifications/linux-essentials-overview</a></p>
+<p>Decidi tirar essa certificação porque recentemente migrei do Windows para o Linux, então ter o domínio básico é essencial para eu conseguir operá-lo de maneira eficiente. Também sempre tive interesse em aprender sobre esse SO de maneira geral e achei que ter um foco específico(a certificação) me ajudaria nesse processo.</p>
+<h2 id="os-estudos">Os estudos</h2>
+<p>Primeiramente estudei através da plataforma Alura. Eles têm uma “formação” chamada Certificação LPI Linux Essentials que abrange todos os conteúdos que caem na prova . Comecei a estudar no dia 5 de Outubro e terminei no dia 27.</p>
+<p>Eu estudava em média 1:30h por dia, para conciliar com a faculdade e o trabalho. Nesse meio tempo também tive algumas provas/compromissos que me tiraram alguns dias de estudo. Lembrando que meu conhecimento prévio de Linux era nulo.</p>
+<p>Também revisei usando o curso LPI Linux Essentials: Preparatório para a Certificação, do Matheus Müller, que se encontra no site da Udemy. Rushei as 7.5 horas de aula em 1.5x ou 2x no fim de semana anterior à prova.</p>
+<p><em>Alura → <a href="https://cursos.alura.com.br/formacao-certificacao-lpi-linux-essentials">https://cursos.alura.com.br/formacao-certificacao-lpi-linux-essentials</a></em></p>
+<p><em>Udemy → <a href="https://www.udemy.com/course/lpi-linux-essentials/">https://www.udemy.com/course/lpi-linux-essentials/</a></em></p>
+<p>Fazer os simulados é ESSENCIAL. Umas 2 questões da prova que eu fiz eram idênticas as dos simulados, me garantindo assim alguns pontos de graça. Os simulados gratuitos que existem por aí já suprem o conhecimento necessário, então não é preciso investir dinheiro em sites que disponibilizam centenas de questões, pelo menos para essa certificação.</p>
+<h2 id="a-prova">A prova</h2>
+<p>Como expresso no título do texto, realizei minha prova online, pois o centro de teste mais próxima ficava a mais de 100km e não vi necessidade de fazer presencialmente. Dia 29 marquei minha prova através do sistema Person VUE, que acredito que seja o mais usado para exames online. As provas online são realizadas apenas em Inglês e Japonês, enquanto as presenciais podem ser feitas em português.</p>
+<p>Ela custou 105 dólares, convertendo pra cotação do dólar atual, 602 reais. Sim, o preço é um absurdo, e olha que essa é a mais barata da família. As LPIC (certificações mais avançadas) 1,2,3 saem por 173 dólares cada, sendo que a 1 e a 2 são constituídas de 2 provas. Por ser em dólar, faz-se necessário o uso de um cartão de crédito internacional para comprar.</p>
+<p>Minha prova estava marcada para as 10h da manhã do dia 2 de novembro (aproveitei o feriado para ter o dia tranquilo). Às 9:30 começava meu check-in, então rodei o sistema deles com o código recebido e tive que enviar algumas fotos do meu local de prova para averiguação. Assim que enviei, livrei-me do celular para não ter problemas e fiquei olhando pra tela do notebook sem fazer nada por uns 8 minutos.</p>
+<p>OBS: O sistema deles só roda em Windows e MacOS. O porquê eu não sei dizer, sendo que a prova se trata de LINUX, ela poderia muito bem rodar em um LINUX, né?</p>
+<p>Após esse período de verificação, abriu-se um chat na minha tela e uma mulher começou a falar comigo, em inglês. Ela tinha um sotaque meio diferente do norte-americano, muito puxado para o indiano, mas deu pra compreender facilmente o que ela falou. Basicamente ela me pediu se estava tudo certo, se eu tinha alguma dúvida e mandou eu tirar o fone de ouvido, pois não era permitido. Eu respondi por áudio, mas acredito que dê pra usar o chat para responder também.</p>
+<p>Em seguida, meu teste começou. No começo eu fiquei um pouquinho nervoso, porque reprovar não ia ser nada legal, principalmente pelo custo da prova. Porém, conforme fui fazendo as questões, me acalmei bastante e segui o fluxo. Todas as questões eram de múltipla escolha, exceto 2 que eram para escrever algum comando (extremamente fáceis). Quando acabei as 40 questões eu não estava nada confiante de que iria passar, então na tela de revisão selecionei para rever todas questões e fui passando de uma a uma.</p>
+<p>Nessa revisada percebi que conseguiria passar, pois a maioria das questões eu tinha certeza da resposta. Teve uma questão que eu não fazia ideia do que se tratava e as outras que eu errei provavelmente fiquei em dúvida entre duas alternativas. Quando cliquei para enviar, uma caixa de confirmação apareceu e, ainda bem, eu li o que estava escrito. Estava dizendo que eu tinha deixado uma questão em branco e, quando voltei para olhar, eu tinha marcado apenas uma opção em uma questão que era para marcar duas. Então, não sejam ansiosos e não saiam clicando em qualquer Next que aparecer.</p>
+<p>Meu score final foi 730 de 800, o que daria uns 36/37 acertos de 40. Infelizmente não podemos ver quais acertamos e erramos.</p>
+<h2 id="vale-a-pena">Vale a pena?</h2>
+<p>Sinceramente? Não. Se você quer que a certificação lhe retorne várias oportunidades de emprego e um conhecimento 100% aplicável que vai te colocar em alguma empresa, essa certificação não vale a pena. Além da própria certificação ser muito cara, ainda tem que ter materiais complementares de estudo. Se quiser realmente um conhecimento sólido para aplicar na tua carreira, eu partiria direto para LPIC-1 e depois, talvez, para as demais.</p>
+<p>Por que eu tirei então? Acredito que o maior motivo para ir atrás dessa certificação é que eu gosto de ter pelo menos a base de conhecimento de várias áreas. Acredito que saber o básico de Linux já é um diferencial para alguém novo no ramo de TI. Provas também me ajudam a ter um foco melhor nos estudos, sem me desviar para outros assuntos. Ela serve como um suporte pra me motivar a estudar.</p>
+<h2 id="para-onde-agora">Para onde agora?</h2>
+<p>Gostei muito desse tempo que passei estudando, eu ansiava para a aula acabar logo pra retomar meus estudos. Sem contar que só de usar o Linux como SO já é sensacional.</p>
+<p>Em certificação Linux com certeza meu próximo passo é a LPIC-1, só não sei se irei estudar os tópicos cobrados tão cedo, pois tenho outros planos também (certamente trarei relatos aqui novamente sobre mais experiências).</p>
+<p>Então é isso, muito obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar que irei responder.</p>
+<p>Até mais ver =).</p>
 ]]></content>
         </item>
         

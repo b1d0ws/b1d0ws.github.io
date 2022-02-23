@@ -22,12 +22,76 @@
     </item>
     
     <item>
-      <title>Primeiro</title>
-      <link>https://b1d0ws.github.io/posts/primeiro/</link>
-      <pubDate>Wed, 23 Feb 2022 15:20:50 -0300</pubDate>
+      <title>Minha experiência com a CCNA</title>
+      <link>https://b1d0ws.github.io/posts/security&#43;/</link>
+      <pubDate>Thu, 20 Jan 2022 15:20:50 -0300</pubDate>
       
-      <guid>https://b1d0ws.github.io/posts/primeiro/</guid>
-      <description>Alow!!!</description>
+      <guid>https://b1d0ws.github.io/posts/security&#43;/</guid>
+      <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.
+A Certificação A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters.</description>
+    </item>
+    
+    <item>
+      <title>Tipos de Malware</title>
+      <link>https://b1d0ws.github.io/posts/malwares/</link>
+      <pubDate>Thu, 30 Dec 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/malwares/</guid>
+      <description>Introdução O termo malware descreve uma variedade de software que é intencionalmente projetado para causar danos a sistemas, dispositivos ou redes, sem o conhecimento ou consentimento dos usuários. Neste artigo descreverei os principais tipos de malware existentes dentro da cibersegurança.
+Vírus Antes de mais nada, quero esclarecer aqui a diferença entre malware e vírus, pois, muita gente acaba confundindo os dois.
+Como dito na introdução, malware é um conceito mais genérico que se refere aos softwares usados com intuitos maliciosos, enquanto o vírus é um tipo de malware existente, ou seja, todo vírus de computador é um malware, mas nem todo malware é um vírus.</description>
+    </item>
+    
+    <item>
+      <title>Controles Físicos em Segurança da Informação</title>
+      <link>https://b1d0ws.github.io/posts/controles-fisicos/</link>
+      <pubDate>Mon, 06 Dec 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/controles-fisicos/</guid>
+      <description>Introdução Quanto o assunto é Segurança da Informação, provavelmente a maioria das pessoas pensam imediatamente em conceitos lógicos como defesa de redes através de firewalls, proteção de dados através de aplicações seguras, restrições de acesso remoto a servidores e afins.
+Entretanto, muito se esquece dos controles físicos a esses elementos, o que deveria ser bem aplicado de maneira fundamental em qualquer empresa, visto que se um atacante pode tocar fisicamente em seus dispositivos, ele pode ganhar acesso sobre eles.</description>
+    </item>
+    
+    <item>
+      <title>Minha experiência com a CCNA</title>
+      <link>https://b1d0ws.github.io/posts/ccna/</link>
+      <pubDate>Mon, 16 Aug 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/ccna/</guid>
+      <description>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: Cisco Certified Network Associate, mais conhecida como CCNA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</description>
+    </item>
+    
+    <item>
+      <title>Um resumo sobre a OWASP TOP 10 [2017]</title>
+      <link>https://b1d0ws.github.io/posts/owasp2017/</link>
+      <pubDate>Thu, 24 Jun 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/owasp2017/</guid>
+      <description>O que é? OWASP é um projeto aberto que disponibiliza artigos e documentos, gratuitamente feitos pela comunidade, que foca em segurança da informação, área da TI que vem se expandindo cada vez mais.
+OWASP top 10 é uma lista das vulnerabilidades mais perigosas encontradas em aplicações web, sendo a última lista elaborada em 2017. Também existe as versões pra mobile e API que são menos conhecidas.
+Todo profissional de segurança ou desenvolvedor deveria saber pelo menos o básico sobre essas vulnerabilidades.</description>
+    </item>
+    
+    <item>
+      <title>Minha experiência com a LPIC-1</title>
+      <link>https://b1d0ws.github.io/posts/lpic-1/</link>
+      <pubDate>Thu, 25 Feb 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/lpic-1/</guid>
+      <description>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.
+Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</description>
+    </item>
+    
+    <item>
+      <title>Minha experiência com a LPI Essentials</title>
+      <link>https://b1d0ws.github.io/posts/lpi_essentials/</link>
+      <pubDate>Mon, 02 Nov 2020 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/lpi_essentials/</guid>
+      <description>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.
+Quem sou eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</description>
     </item>
     
   </channel>
