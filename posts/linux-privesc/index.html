@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Olá, pessoal!
+No artigo de hoje estarei mostrando a vocês algumas técnicas simples para escalação de privilégio em Linux.
+Esse texto aborda algumas táticas extremamente fáceis que vão pelo menos te direcionar em alguns CTFs básicos. Se você já estudou algo sobre, provavelmente já terá conhecimento de tudo que mostrarei aqui, então você pode utilizar isso como uma revisão.
+Mas antes de mais nada, o que é elevação de privilégios? Não tem muito segredo, é basicamente o que o nome diz!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/posts/linux-privesc/" />
+
+
+    <title>
+        
+            O Básico de Elevação de Privilégios em Linux :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="O Básico de Elevação de Privilégios em Linux">
+<meta itemprop="description" content="Olá, pessoal!
+No artigo de hoje estarei mostrando a vocês algumas técnicas simples para escalação de privilégio em Linux.
+Esse texto aborda algumas táticas extremamente fáceis que vão pelo menos te direcionar em alguns CTFs básicos. Se você já estudou algo sobre, provavelmente já terá conhecimento de tudo que mostrarei aqui, então você pode utilizar isso como uma revisão.
+Mas antes de mais nada, o que é elevação de privilégios? Não tem muito segredo, é basicamente o que o nome diz!">
+<meta itemprop="datePublished" content="2022-03-10T10:30:50-03:00" />
+<meta itemprop="dateModified" content="2022-03-10T10:30:50-03:00" />
+<meta itemprop="wordCount" content="1197">
+<meta itemprop="image" content="https://b1d0ws.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="O Básico de Elevação de Privilégios em Linux"/>
+<meta name="twitter:description" content="Olá, pessoal!
+No artigo de hoje estarei mostrando a vocês algumas técnicas simples para escalação de privilégio em Linux.
+Esse texto aborda algumas táticas extremamente fáceis que vão pelo menos te direcionar em alguns CTFs básicos. Se você já estudou algo sobre, provavelmente já terá conhecimento de tudo que mostrarei aqui, então você pode utilizar isso como uma revisão.
+Mas antes de mais nada, o que é elevação de privilégios? Não tem muito segredo, é basicamente o que o nome diz!"/>
+
+
+
+
+    <meta property="og:title" content="O Básico de Elevação de Privilégios em Linux" />
+<meta property="og:description" content="Olá, pessoal!
+No artigo de hoje estarei mostrando a vocês algumas técnicas simples para escalação de privilégio em Linux.
+Esse texto aborda algumas táticas extremamente fáceis que vão pelo menos te direcionar em alguns CTFs básicos. Se você já estudou algo sobre, provavelmente já terá conhecimento de tudo que mostrarei aqui, então você pode utilizar isso como uma revisão.
+Mas antes de mais nada, o que é elevação de privilégios? Não tem muito segredo, é basicamente o que o nome diz!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/posts/linux-privesc/" />
+<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="article:published_time" content="2022-03-10T10:30:50-03:00" />
+<meta property="article:modified_time" content="2022-03-10T10:30:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-03-10 10:30:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts/">posts</a></li><li><a href="/whoami/">whoami</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        6 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://b1d0ws.github.io/posts/linux-privesc/">O Básico de Elevação de Privilégios em Linux</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>Olá, pessoal!</p>
+<p>No artigo de hoje estarei mostrando a vocês algumas técnicas simples para escalação de privilégio em Linux.</p>
+<p>Esse texto aborda algumas táticas extremamente fáceis que vão pelo menos te direcionar em alguns CTFs básicos. Se você já estudou algo sobre, provavelmente já terá conhecimento de tudo que mostrarei aqui, então você pode utilizar isso como uma revisão.</p>
+<p>Mas antes de mais nada, o que é elevação de privilégios? Não tem muito segredo, é basicamente o que o nome diz! É você escalar seus privilégios dentro de uma máquina, passando de um usuário comum para um usuário com mais permissões, passando de um usuário comum para root por exemplo.</p>
+<h2 id="enumeração-do-sistema"><strong>Enumeração do Sistema</strong></h2>
+<p>Como um bom pentester, você sabe que tudo começa com uma boa enumeração. Então é sempre recomendado coletar algumas informações do sistema com os comandos abaixo.</p>
+<p><em>Ver informações do sistema</em><br>
+uname -a<br>
+cat /proc/version<br>
+cat /etc/issue</p>
+<p><em>Ver informações dos usuários</em><br>
+id<br>
+cat /etc/passwd</p>
+<p><em>Ver variáveis de ambiente</em><br>
+env</p>
+<p><em>Procurar por arquivos interessantes como:</em><br>
+~/.bash_history<br>
+/home/user/.ssh/id_rsa<br>
+/var/shadow.bak</p>
+<h2 id="ferramentas-automatizadas"><strong>Ferramentas Automatizadas</strong></h2>
+<p>Após a enumeração manual do sistema, é muito recomendado que você utilize pelo menos uma ferramenta automatizada para procurar por possíveis caminhos para a escalação de privilégios. Abaixo eu listo algumas ferramentas que fazem esse processo, sendo o LinPeas a mais utilizada e a que eu mais recomendo também.</p>
+<ul>
+<li>
+<p><a href="https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS">LinPeas</a></p>
+</li>
+<li>
+<p><a href="https://github.com/rebootuser/LinEnum">LinEnum</a></p>
+</li>
+<li>
+<p><a href="https://github.com/jondonas/linux-exploit-suggester-2">LES (Linux Exploit Suggester) 2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/diego-treitos/linux-smart-enumeration">Linux Smart Enumeration</a></p>
+</li>
+<li>
+<p><a href="https://github.com/sleventyeleven/linuxprivchecker">Linux Priv Checker</a></p>
+</li>
+</ul>
+<p>Ao executar a ferramenta, basta analisar o output dela e procurar por falhas que permitirão a escalação de privilégios. É claro que se você ainda não viu as vulnerabilidades abaixo provavelmente não saberá como explorar os pontos indicados por essas ferramentas.</p>
+<h2 id="kernel"><strong>Kernel</strong></h2>
+<p>Existem diversas versões de Kernel e algumas possuem vulnerabilidades que permitem a escalação de privilégio. Se você realizou a enumeração do sistema, já deve ter identificado qual a versão do Kernel utilizado.</p>
+<p>Com essa informação, você pode procurar como explorar a versão encontrada. Um dos ataques mais conhecidos é o Dirty Cow que afeta Kernels 2.x até 4.x, antes de 4.8.3. Se foi identificado uma dessas versões, vale a tentativa de exploração.</p>
+<p>A ferramenta Linux Exploit Suggester analisa isso de forma automatizada, como indicado na figura abaixo. Com o output, podemos percebemos que o sistema está vulnerável ao Dirty Cow.</p>
+<p><img src="/kernel-exploits.png" alt="LES-2"></p>
+<p>Acessamos o site <a href="https://dirtycow.ninja/">https://dirtycow.ninja/</a> para pegar o exploit e o utilizamos.</p>
+<p><img src="/dirty-cow.png" alt="dirty-cow"></p>
+<h2 id="permissões-sudo"><strong>Permissões Sudo</strong></h2>
+<p>No Linux, existe um arquivo chamado /etc/sudoers que basicamente pode atribuir aos usuários permissões para executar comandos como root.</p>
+<p>Observe na imagem abaixo, a primeira linha não comentada indica que o usuário root pode executar todos os comandos como sudo, sendo esse um comportamento padrão. Na segunda linha, está sendo indicado que o usuário kali pode executar o comando find como root, sem a necessidade de senha (NOPASSWD).</p>
+<p>Para entender mais sobre a estrutura desse arquivo eu recomendo <a href="https://medium.com/analytics-vidhya/how-to-add-users-to-sudoers-file-in-ubuntu-e89c24b7369d">esse artigo</a>.</p>
+<p><img src="/etc-sudoers.png" alt="/etc/sudoers"></p>
+<p>A questão é: como ver quais comandos podemos executar como root se não temos acesso ao arquivo /etc/sudoers?</p>
+<p>O comando <em>sudo -l</em> indica isso pra você como mostrado abaixo.</p>
+<p>Assim que identificado o comando que você pode executar como root, para saber se existe alguma forma de utilizá-lo para elevação de privilégio, você pode olhar o site <a href="https://gtfobins.github.io/">GTFOBins</a> e conferir se existe algum comando listado em Sudo para se tornar root.</p>
+<p><img src="/find-root.png" alt="sudo-l"></p>
+<p><img src="/gtfobins-find.png" alt="gtfo-find"></p>
+<p>É importante frisar que cada comando tem um jeito para escalar privilégio e obviamente nem todos eles possuem essa capacidade. Um exemplo diferente seria ter permissão para executar o cat. Com esse comando, você pode ler qualquer arquivo do sistema, então poderia procurar por flags como /root/root.txt ou analisar o /etc/shadow em busca de hashes.</p>
+<h2 id="suid"><strong>SUID</strong></h2>
+<p>Um pouco parecido com a exploração de Permissões Sudo, temos a exploração de SUID. Arquivos SUID tem uma permissão especial que determina que o arquivo/programa vai ser executado com a permissão do dono (owner).</p>
+<p>Sendo assim, se algum comando que possui a habilidade de escalar privilégio ter o SUID vinculado ao usuário root, o sistema está vulnerável à escalação de privilégio.
+Para procurar arquivos com SUID, você pode usar o comando:<br>
+<em>find / -type f -perm -04000 -ls 2&gt;/dev/null</em></p>
+<p>No começo pode ser confuso e difícil analisar qual comando pode ser utilizado, mas com a prática você terá facilidade nesse quesito.</p>
+<p>No resultado abaixo, percebemos que <em>/usr/bin/bash</em> tem o SUID para o usuário root. Agora podemos procurar esse comando no gtfobins e utilizar as sintaxes que aparecem em SUID.</p>
+<p><img src="/suid.png" alt="suids"></p>
+<p><img src="/gtfobins-bash.png" alt="gtfo-bash"></p>
+<p>Para saber mais sobre SUID e outras permissões especiais, acesse <a href="https://www.redhat.com/sysadmin/suid-sgid-sticky-bit">este link</a>.</p>
+<h2 id="cron-jobs"><strong>Cron Jobs</strong></h2>
+<p>Cron Jobs são utilizados no Linux para executar scripts em um intervalo regular de tempo e são muito úteis para programar tarefas automatizadas. Entretanto, isso por ser um fator para escalação de privilégio.</p>
+<p>Você pode checar os cron jobs da maquina no arquivo <em>/etc/crontab</em>. Na imagem abaixo percebemos que existe uma tarefa que executa o arquivo /home/kali/backup.sh a cada minuto. O intervalo de tempo é indicado pelo trecho * * * * *.</p>
+<p>Existe uma estrutura por trás dessa sintaxe que você pode entender melhor através <a href="https://ostechnix.com/a-beginners-guide-to-cron-jobs/">desse link</a>.</p>
+<p><img src="/crontab.png" alt="crontabs"></p>
+<p>Analisando o arquivo, percebemos que ele faz um backup da pasta notes. A forma para explorar essa falha é editar o arquivo backup.sh com algum comando que nos dê o acesso ao root.</p>
+<p>Nesse caso, podemos inserir o comando abaixo que abre uma conexão em nossa máquina atacante na porta 3333. Como o script será executado como root, nossa conexão também será realizada com esse usuário.</p>
+<p><img src="/backup.sh.png" alt="backup.sh"></p>
+<p>Agora basta salvar o arquivo e esperar a tarefa ser executada (a cada minuto) ouvindo a porta que você indicou no comando.</p>
+<p><img src="/crontab-root.png" alt="listener"></p>
+<h2 id="pwnkit"><strong>PwnKit</strong></h2>
+<p>PwnKit é uma vulnerabilidade recém encontrada que afeta a maioria das distribuições Linux que utilizam de um serviço chamado PolKit. Ela foi registrada como a <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-4034">CVE-2021-4034</a> e permite o escalonamento de privilégio.</p>
+<p>A maioria das máquinas em que eu tentei utilizar essa falha era vulnerável, pois somente as versões mais atuais das distribuições corrigem esse bug. Basta rodar alguma ferramenta automatizada das que indiquei que o output indicará se o sistema é vulnerável.</p>
+<p>Se você pegar um CTF mais antigo poderá usar essa tática para escalar privilégio, mas provavelmente essa não foi uma falha inserida propositalmente, então não deve ser esse o caminho a ser tomado para conseguir o root da maneira proposta pelo desafio.</p>
+<p>A exploração é extremamente simples e pode ser encontrada <a href="https://github.com/arthepsy/CVE-2021-4034">aqui</a>.</p>
+<p>Abaixo você pode ver a exploração sendo realizada em uma <a href="https://tryhackme.com/room/pwnkit">máquina do tryhackme</a> feita para aprender a explorar essa vulnerabilidade.</p>
+<p><img src="/pwnkit-thm.png" alt="pwnkit"></p>
+<p>Se você quiser saber mais sobre, acesse <a href="https://blog.qualys.com/vulnerabilities-threat-research/2022/01/25/pwnkit-local-privilege-escalation-vulnerability-discovered-in-polkits-pkexec-cve-2021-4034">esse link</a>.</p>
+<h2 id="checklist"><strong>Checklist</strong></h2>
+<ul>
+<li>Descobrir a versão do kernel e se existe alguma exploração como Dirtyc0w;</li>
+<li>Procurar por credenciais, contas de usuários e diretórios com permissões más configuradas;</li>
+<li>Ver quais comandos você pode utilizar como root;</li>
+<li>Procurar por serviços ou aplicações que podem ser exploradas como SUID e PwnKit;</li>
+<li>Procurar por scripts automatizados como tarefas de backup no crontab.</li>
+</ul>
+<h2 id="conclusão"><strong>Conclusão</strong></h2>
+<p>Nesse artigo foram passadas algumas técnicas básicas para escalação de privilégios em Linux. Apesar de simples, elas são muito utilizadas em CTFs e também aparecem em casos reais de exploração.</p>
+<p>Existem diversas outras maneiras de explorar um sistema como uso de Capabilities, exploração de PATH, NFS, LXD, entre outras, mas que não cabem nesse guia básico.</p>
+<p>Espero que você possa usufruir de algo que tenha aprendido aqui.</p>
+<p>Até mais ver =).</p>
+
+      </div>
+    </article>
+
+    
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://b1d0ws.github.io/posts/subdomains/">
+                    <span class="button__text">Ferramentas Para Enumeração de Subdomínios</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

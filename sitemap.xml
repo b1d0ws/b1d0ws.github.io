@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://b1d0ws.github.io/posts/subdomains/</loc>
-    <lastmod>2022-03-02T15:20:50-03:00</lastmod>
+    <loc>https://b1d0ws.github.io/posts/linux-privesc/</loc>
+    <lastmod>2022-03-10T10:30:50-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://b1d0ws.github.io/posts/</loc>
+    <lastmod>2022-03-10T10:30:50-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://b1d0ws.github.io/posts/subdomains/</loc>
     <lastmod>2022-03-02T15:20:50-03:00</lastmod>
   </url>
   
