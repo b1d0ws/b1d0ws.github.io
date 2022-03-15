@@ -13,6 +13,20 @@
     
     
     <item>
+      <title>toc2 - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/toc2-thm/</link>
+      <pubDate>Tue, 15 Mar 2022 10:45:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/toc2-thm/</guid>
+      <description>https://tryhackme.com/room/toc2
+User Flag First, we use nmap to see what ports are open.
+We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
+Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
+One of the nmap scripts brought us an existing robots.txt entry, so let&amp;rsquo;s check it out.
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb.</description>
+    </item>
+    
+    <item>
       <title>O Básico de Elevação de Privilégios em Linux</title>
       <link>https://b1d0ws.github.io/posts/linux-privesc/</link>
       <pubDate>Thu, 10 Mar 2022 10:30:50 -0300</pubDate>
