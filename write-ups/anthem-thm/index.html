@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="https://tryhackme.com/room/anthem
+Website Analysis First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.
+
+Next I checked the robots.txt file and found a possible password.
+
+I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/write-ups/anthem-thm/" />
+
+
+    <title>
+        
+            Anthem - TryHackMe :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Anthem - TryHackMe">
+<meta itemprop="description" content="https://tryhackme.com/room/anthem
+Website Analysis First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.
+
+Next I checked the robots.txt file and found a possible password.
+
+I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!">
+<meta itemprop="datePublished" content="2022-03-31T13:38:50-03:00" />
+<meta itemprop="dateModified" content="2022-03-31T13:38:50-03:00" />
+<meta itemprop="wordCount" content="386">
+<meta itemprop="image" content="https://b1d0ws.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="Anthem - TryHackMe"/>
+<meta name="twitter:description" content="https://tryhackme.com/room/anthem
+Website Analysis First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.
+
+Next I checked the robots.txt file and found a possible password.
+
+I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!"/>
+
+
+
+
+    <meta property="og:title" content="Anthem - TryHackMe" />
+<meta property="og:description" content="https://tryhackme.com/room/anthem
+Website Analysis First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.
+
+Next I checked the robots.txt file and found a possible password.
+
+I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/anthem-thm/" />
+<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="article:published_time" content="2022-03-31T13:38:50-03:00" />
+<meta property="article:modified_time" content="2022-03-31T13:38:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-03-31 13:38:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/posts/">posts</a></li><li><a href="/whoami/">whoami</a></li><li><a href="/write-ups/">write-ups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://b1d0ws.github.io/write-ups/anthem-thm/">Anthem - TryHackMe</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://tryhackme.com/room/anthem">https://tryhackme.com/room/anthem</a></p>
+<p><img src="/anthem/anthem.gif" alt="gif"></p>
+<h2 id="website-analysis"><strong>Website Analysis</strong></h2>
+<p>First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.</p>
+<p><img src="/anthem/nmap.png" alt="nmap-anthem"></p>
+<p><br>
+Next I checked the robots.txt file and found a possible password.</p>
+<p><img src="/anthem/robots.txt.png" alt="robots.txt"></p>
+<p><br>
+I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!</p>
+<p><img src="/anthem/login.png" alt="login"></p>
+<p><br>
+Navigating through the site, we can enumerate two users in the articles. In the first one we can get the Jane Doe user and also the domain of the website: anthem.com. We can also see that there is an email pattern, the first letters of the user name + @anthem.com.</p>
+<p><img src="/anthem/domain.png" alt="domain"></p>
+<p><br>
+In the second article we can enumerate the user James Orchard Halliwell, but there is something more interesting in the text.</p>
+<p>James said he made a poem to the admin. If we google this poem, we can find the administrator’s name and consequently guess his email with the email pattern.</p>
+<p><img src="/anthem/article.png" alt="article"></p>
+<h2 id="spot-the-flags"><strong>Spot the Flags</strong></h2>
+<p>It was possible to find 3 flags just by checking the source code in different pages.</p>
+<p><img src="/anthem/flag1.png" alt="flag1"></p>
+<p><img src="/anthem/flag2.png" alt="flag2"></p>
+<p><img src="/anthem/flag4.png" alt="flag4"></p>
+<p><br>
+Navigating through the site you can find the other flag in the Jane Doe author page. I found it when I was enumerating users.</p>
+<p><img src="/anthem/flag3.png" alt="flag3"></p>
+<h2 id="final-stage"><strong>Final Stage</strong></h2>
+<p>Using the email and password we found for the administrator, we can successfully login in the website. So, I also tried to login via RDP with the same credentials (without the domain) and was able to get the first access to the machine. The user&rsquo;s flag appears right on the desktop.</p>
+<p><img src="/anthem/flag-user.png" alt="flag-user"></p>
+<p><br>
+After that, I was looking for the machine&rsquo;s administrator password and got stuck at that point. I took a look at the hint and enabled the option to view hidden items in Windows.</p>
+<p>By doing this, I was able to find a txt that would probably have the administrator&rsquo;s password, but I couldn&rsquo;t open it.</p>
+<p>I didn&rsquo;t have permission to read the file, so I simply changed the permissions and was able to get the admin password.</p>
+<p><img src="/anthem/change-permissions.png" alt="permissions"></p>
+<p><br>
+Now we just have to login in the machine via RDP and get the root flag that is also in the desktop.</p>
+<p><img src="/anthem/root-flag.png" alt="root-flag"></p>
+<p>See ya =).</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>
