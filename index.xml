@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>How to set up and start using Burpsuite Proxy</title>
+      <link>https://b1d0ws.github.io/posts/burpsuite/</link>
+      <pubDate>Wed, 13 Apr 2022 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/burpsuite/</guid>
+      <description>Introduction BurpSuite is a tool with several functions used for penetration testing on web applications. It is indispensable when doing a pentest or an EHT (Ethical Hacking Test), because it allows us to do a deep analysis of the requests and responses made between client and server.
+Instalation The software installation is trivial, just download it and follow the procedure. Available for Windows, Linux (pre-installed on Kali) and Mac, it has two versions: Community and Professional.</description>
+    </item>
+    
+    <item>
       <title>Anthem - TryHackMe</title>
       <link>https://b1d0ws.github.io/write-ups/anthem-thm/</link>
       <pubDate>Thu, 31 Mar 2022 13:38:50 -0300</pubDate>
@@ -33,7 +43,7 @@ I also checked the disallowed entries and found a login page in /umbraco/, so we
       
       <guid>https://b1d0ws.github.io/write-ups/toc2-thm/</guid>
       <description>https://tryhackme.com/room/toc2
-User Flag First, we use nmap to see what ports are open.
+User Flag First, we use nmap to see which ports are open.
 We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
 Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
 One of the nmap scripts brought us an existing robots.txt entry, so let&amp;rsquo;s check it out.

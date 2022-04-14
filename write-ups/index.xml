@@ -33,7 +33,7 @@ I also checked the disallowed entries and found a login page in /umbraco/, so we
       
       <guid>https://b1d0ws.github.io/write-ups/toc2-thm/</guid>
       <description>https://tryhackme.com/room/toc2
-User Flag First, we use nmap to see what ports are open.
+User Flag First, we use nmap to see which ports are open.
 We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
 Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
 One of the nmap scripts brought us an existing robots.txt entry, so let&amp;rsquo;s check it out.

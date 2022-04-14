@@ -6,8 +6,101 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Thu, 10 Mar 2022 10:30:50 -0300</lastBuildDate>
+        <lastBuildDate>Wed, 13 Apr 2022 15:20:50 -0300</lastBuildDate>
         <atom:link href="https://b1d0ws.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>How to set up and start using Burpsuite Proxy</title>
+            <link>https://b1d0ws.github.io/posts/burpsuite/</link>
+            <pubDate>Wed, 13 Apr 2022 15:20:50 -0300</pubDate>
+            
+            <guid>https://b1d0ws.github.io/posts/burpsuite/</guid>
+            <description>Introduction BurpSuite is a tool with several functions used for penetration testing on web applications. It is indispensable when doing a pentest or an EHT (Ethical Hacking Test), because it allows us to do a deep analysis of the requests and responses made between client and server.
+Instalation The software installation is trivial, just download it and follow the procedure. Available for Windows, Linux (pre-installed on Kali) and Mac, it has two versions: Community and Professional.</description>
+            <content type="html"><![CDATA[<h2 id="introduction"><strong>Introduction</strong></h2>
+<p>BurpSuite is a tool with several functions used for penetration testing on web applications. It is indispensable when doing a pentest or an EHT (Ethical Hacking Test), because it allows us to do a deep analysis of the <em>requests and responses</em> made between client and server.</p>
+<h2 id="instalation"><strong>Instalation</strong></h2>
+<p>The software installation is trivial, just download it and follow the procedure. Available for Windows, Linux (pre-installed on Kali) and Mac, it has two versions: Community and Professional.</p>
+<p>The community version is free to use, while the professional version is the paid version that brings some benefits like speeding up processes (brute-force in Intruder for example), additional functions and exclusive plugins.</p>
+<p>Download Link &ndash;&gt; <a href="https://portswigger.net/burp/communitydownload">https://portswigger.net/burp/communitydownload</a></p>
+<h2 id="configuration"><strong>Configuration</strong></h2>
+<p>As soon as you open the software, the Temporary project option will normally be selected in the Comunnity version. You can use the other options if you are working with an existing project or one that is to be saved if you have the Professional Edition.</p>
+<p><img src="/burpsuite/Image1.png" alt="image1"></p>
+<p><br>
+Here we select the default Burp configuration because we don&rsquo;t have one already set up.</p>
+<p><img src="/burpsuite/Image2.png" alt="image2"></p>
+<p><br>
+This is the default screen when you start BurpSuite.</p>
+<p><img src="/burpsuite/Image3.png" alt="image3"></p>
+<p><br>
+In order to capture the requests made in our browser, we need to configure the browser to use a <em>proxy</em>. We can manually configure this option by going into the browser&rsquo;s settings, however, this would need to be done every time we use the Burp, since browsing with the proxy on all the time is not the best experience possible.</p>
+<p>To make the process easier we use an extension called <em>Foxy Proxy</em>, which will serve as a proxy to capture our requests.</p>
+<p><img src="/burpsuite/Image4.png" alt="image4"></p>
+<p><br>
+In the upper right corner of the browser we select the extension and click options.</p>
+<p><img src="/burpsuite/Image5.png" alt="image5"></p>
+<p><br>
+Click on add.</p>
+<p><img src="/burpsuite/Image6.png" alt="image6"></p>
+<p><br>
+Then we apply the following settings and save.</p>
+<p>Title - As you wish</p>
+<p>Proxy IP - 127.0.0.1 (localhost)</p>
+<p>Port – 8080</p>
+<p><img src="/burpsuite/Image7.png" alt="image7"></p>
+<p><br>
+Once this is done, we just turn on the extension and our proxy will be active. From now on every request will be captured and pass through the Burp, so you will notice that the pages don&rsquo;t &ldquo;walk&rdquo;. To stop the captures just choose the &ldquo;Turn Off&rdquo; option.</p>
+<p><img src="/burpsuite/Image8.png" alt="image8"></p>
+<p><br>
+An extra and interesting configuration to do is to add the <em>PortSwigger</em> (Burp&rsquo;s owner) <em>Certificate</em> so that we can browse without interruptions warning about strange certificates.</p>
+<p>To do this, follow the steps below.</p>
+<p>Go to http://burpsuite/ with Burp open and the proxy enabled.</p>
+<p>Click on <em>CA Certificate</em> in the upper right corner to download the certificate.</p>
+<p>Then go into Firefox settings and in the <em>Privacy and Security</em> tab scroll down to the Certificates part.</p>
+<p><img src="/burpsuite/Certificate.png" alt="certificate"></p>
+<p><br>
+Go to <em>View Certificates&hellip;</em> and click <em>Import&hellip;</em></p>
+<p>Import the newly downloaded certificate and check the Trust this CA to identify sites option and hit OK.</p>
+<p>Now you are ready to go!</p>
+<h2 id="proxy"><strong>Proxy</strong></h2>
+<p>The <em>Proxy tab</em> will probably be the one you will use the most, but first let&rsquo;s go through the Target tab to define which websites we want to capture requests from.</p>
+<h4 id="defining-the-scope"><strong>Defining the Scope</strong></h4>
+<p>In the <em>Site map sub-tab</em> click on the phrase pointed by the arrow and check the Show only in-scope items option.</p>
+<p><img src="/burpsuite/Image9.png" alt="image9"></p>
+<p><br>
+In the <em>Scope sub-tab</em> we add the sites or domains we want to intercept and give a Yes to the next message.</p>
+<p><img src="/burpsuite/Image10.png" alt="image10"></p>
+<p><br>
+Finally, we have to check the option indicated below located in the <em>Options sub-tab</em> of the Proxy tab.</p>
+<p><img src="/burpsuite/Image11.png" alt="image11"></p>
+<p>Now it&rsquo;s much better to work, we can search other sites in the same browser without being intercepted on each request.</p>
+<p><br>
+As soon as we try to access the our target site we already notice that the Proxy tab is receiving something.</p>
+<p><img src="/burpsuite/Image12.png" alt="image12"></p>
+<p>What you are seeing is a <em>request</em>, in this case a <em>GET</em>, as we can see in line 1, that is requesting page / from the host testphp.vulnweb.com. To proceed we can click <em>Forward</em>.</p>
+<p>Notice that we see written on the other box <em>&ldquo;Intercept is on&rdquo;</em>. We can click on it to disable the intercepts as well.</p>
+<p><br>
+To analyze the response that the server gave us, we can right click on the request and select <em>Response to this request</em> and as soon as we click Forward we will see the response.</p>
+<p>Basically this response brings us the site page in the body and some interesting information in the header.</p>
+<p><img src="/burpsuite/Image13.png" alt="image13"></p>
+<p><img src="/burpsuite/Image14.png" alt="image14"></p>
+<p>In line 1 we have the communication method used (HTTP) and the response code obtained from that request (200 OK). It is important to know which are the most common response codes, so below I will leave a list of them.</p>
+<p>On line 2 we have the information about which server is used and its respective version. This is a security flaw known as Information Disclosure.</p>
+<p>We are telling the user what server version we are using and this can be very bad if it is outdated, because the chances of having loopholes/exploits are considerable.</p>
+<p>On the 6th line we have another Information Disclosure, now revealing the programming language and operating system on which the application is hosted.</p>
+<p>Under Content-Lenght is the body of the response, that is, what we will return to the users. In this case it will be an HTML page.</p>
+<p><br>
+Here is a list of the most common HTTP responses:</p>
+<p><img src="/burpsuite/Image15.png" alt="image15"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Now that you have Burpsuite properly configured, you can use it to perform attacks and search for vulnerabilities on web applications using the proxy to change the intercepted requests.</p>
+<p>This was just an introduction on how to configure the tool, but you should dig deeper into it and learn how to use the other functions like Intruder and Repeater that can be very useful in the daily life of a pentester.</p>
+<p>See ya =).</p>
+<h2 id="references">References</h2>
+<p><a href="https://www.geeksforgeeks.org/what-is-burp-suite/">https://www.geeksforgeeks.org/what-is-burp-suite/</a></p>
+<p><a href="https://portswigger.net/burp/documentation/desktop">https://portswigger.net/burp/documentation/desktop</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>O Básico de Elevação de Privilégios em Linux</title>
