@@ -155,19 +155,19 @@ env</p>
 <p>Existem diversas versões de Kernel e algumas possuem vulnerabilidades que permitem a escalação de privilégio. Se você realizou a enumeração do sistema, já deve ter identificado qual a versão do Kernel utilizado.</p>
 <p>Com essa informação, você pode procurar como explorar a versão encontrada. Um dos ataques mais conhecidos é o Dirty Cow que afeta Kernels 2.x até 4.x, antes de 4.8.3. Se foi identificado uma dessas versões, vale a tentativa de exploração.</p>
 <p>A ferramenta Linux Exploit Suggester analisa isso de forma automatizada, como indicado na figura abaixo. Com o output, podemos percebemos que o sistema está vulnerável ao Dirty Cow.</p>
-<p><img src="/kernel-exploits.png" alt="LES-2"></p>
+<p><img src="/linux-privesc/kernel-exploits.png" alt="LES-2"></p>
 <p>Acessamos o site <a href="https://dirtycow.ninja/">https://dirtycow.ninja/</a> para pegar o exploit e o utilizamos.</p>
-<p><img src="/dirty-cow.png" alt="dirty-cow"></p>
+<p><img src="/linux-privesc/dirty-cow.png" alt="dirty-cow"></p>
 <h2 id="permissões-sudo"><strong>Permissões Sudo</strong></h2>
 <p>No Linux, existe um arquivo chamado /etc/sudoers que basicamente pode atribuir aos usuários permissões para executar comandos como root.</p>
 <p>Observe na imagem abaixo, a primeira linha não comentada indica que o usuário root pode executar todos os comandos como sudo, sendo esse um comportamento padrão. Na segunda linha, está sendo indicado que o usuário kali pode executar o comando find como root, sem a necessidade de senha (NOPASSWD).</p>
 <p>Para entender mais sobre a estrutura desse arquivo eu recomendo <a href="https://medium.com/analytics-vidhya/how-to-add-users-to-sudoers-file-in-ubuntu-e89c24b7369d">esse artigo</a>.</p>
-<p><img src="/etc-sudoers.png" alt="/etc/sudoers"></p>
+<p><img src="/linux-privesc/etc-sudoers.png" alt="/etc/sudoers"></p>
 <p>A questão é: como ver quais comandos podemos executar como root se não temos acesso ao arquivo /etc/sudoers?</p>
 <p>O comando <em>sudo -l</em> indica isso pra você como mostrado abaixo.</p>
 <p>Assim que identificado o comando que você pode executar como root, para saber se existe alguma forma de utilizá-lo para elevação de privilégio, você pode olhar o site <a href="https://gtfobins.github.io/">GTFOBins</a> e conferir se existe algum comando listado em Sudo para se tornar root.</p>
-<p><img src="/find-root.png" alt="sudo-l"></p>
-<p><img src="/gtfobins-find.png" alt="gtfo-find"></p>
+<p><img src="/linux-privesc/find-root.png" alt="sudo-l"></p>
+<p><img src="/linux-privesc/gtfobins-find.png" alt="gtfo-find"></p>
 <p>É importante frisar que cada comando tem um jeito para escalar privilégio e obviamente nem todos eles possuem essa capacidade. Um exemplo diferente seria ter permissão para executar o cat. Com esse comando, você pode ler qualquer arquivo do sistema, então poderia procurar por flags como /root/root.txt ou analisar o /etc/shadow em busca de hashes.</p>
 <h2 id="suid"><strong>SUID</strong></h2>
 <p>Um pouco parecido com a exploração de Permissões Sudo, temos a exploração de SUID. Arquivos SUID tem uma permissão especial que determina que o arquivo/programa vai ser executado com a permissão do dono (owner).</p>
@@ -176,26 +176,26 @@ Para procurar arquivos com SUID, você pode usar o comando:<br>
 <em>find / -type f -perm -04000 -ls 2&gt;/dev/null</em></p>
 <p>No começo pode ser confuso e difícil analisar qual comando pode ser utilizado, mas com a prática você terá facilidade nesse quesito.</p>
 <p>No resultado abaixo, percebemos que <em>/usr/bin/bash</em> tem o SUID para o usuário root. Agora podemos procurar esse comando no gtfobins e utilizar as sintaxes que aparecem em SUID.</p>
-<p><img src="/suid.png" alt="suids"></p>
-<p><img src="/gtfobins-bash.png" alt="gtfo-bash"></p>
+<p><img src="/linux-privesc/suid.png" alt="suids"></p>
+<p><img src="/linux-privesc/gtfobins-bash.png" alt="gtfo-bash"></p>
 <p>Para saber mais sobre SUID e outras permissões especiais, acesse <a href="https://www.redhat.com/sysadmin/suid-sgid-sticky-bit">este link</a>.</p>
 <h2 id="cron-jobs"><strong>Cron Jobs</strong></h2>
 <p>Cron Jobs são utilizados no Linux para executar scripts em um intervalo regular de tempo e são muito úteis para programar tarefas automatizadas. Entretanto, isso por ser um fator para escalação de privilégio.</p>
 <p>Você pode checar os cron jobs da maquina no arquivo <em>/etc/crontab</em>. Na imagem abaixo percebemos que existe uma tarefa que executa o arquivo /home/kali/backup.sh a cada minuto. O intervalo de tempo é indicado pelo trecho * * * * *.</p>
 <p>Existe uma estrutura por trás dessa sintaxe que você pode entender melhor através <a href="https://ostechnix.com/a-beginners-guide-to-cron-jobs/">desse link</a>.</p>
-<p><img src="/crontab.png" alt="crontabs"></p>
+<p><img src="/linux-privesc/crontab.png" alt="crontabs"></p>
 <p>Analisando o arquivo, percebemos que ele faz um backup da pasta notes. A forma para explorar essa falha é editar o arquivo backup.sh com algum comando que nos dê o acesso ao root.</p>
 <p>Nesse caso, podemos inserir o comando abaixo que abre uma conexão em nossa máquina atacante na porta 3333. Como o script será executado como root, nossa conexão também será realizada com esse usuário.</p>
-<p><img src="/backup.sh.png" alt="backup.sh"></p>
+<p><img src="/linux-privesc/backup.sh.png" alt="backup.sh"></p>
 <p>Agora basta salvar o arquivo e esperar a tarefa ser executada (a cada minuto) ouvindo a porta que você indicou no comando.</p>
-<p><img src="/crontab-root.png" alt="listener"></p>
+<p><img src="/linux-privesc/crontab-root.png" alt="listener"></p>
 <h2 id="pwnkit"><strong>PwnKit</strong></h2>
 <p>PwnKit é uma vulnerabilidade recém encontrada que afeta a maioria das distribuições Linux que utilizam de um serviço chamado PolKit. Ela foi registrada como a <a href="https://nvd.nist.gov/vuln/detail/CVE-2021-4034">CVE-2021-4034</a> e permite o escalonamento de privilégio.</p>
 <p>A maioria das máquinas em que eu tentei utilizar essa falha era vulnerável, pois somente as versões mais atuais das distribuições corrigem esse bug. Basta rodar alguma ferramenta automatizada das que indiquei que o output indicará se o sistema é vulnerável.</p>
 <p>Se você pegar um CTF mais antigo poderá usar essa tática para escalar privilégio, mas provavelmente essa não foi uma falha inserida propositalmente, então não deve ser esse o caminho a ser tomado para conseguir o root da maneira proposta pelo desafio.</p>
 <p>A exploração é extremamente simples e pode ser encontrada <a href="https://github.com/arthepsy/CVE-2021-4034">aqui</a>.</p>
 <p>Abaixo você pode ver a exploração sendo realizada em uma <a href="https://tryhackme.com/room/pwnkit">máquina do tryhackme</a> feita para aprender a explorar essa vulnerabilidade.</p>
-<p><img src="/pwnkit-thm.png" alt="pwnkit"></p>
+<p><img src="/linux-privesc/pwnkit-thm.png" alt="pwnkit"></p>
 <p>Se você quiser saber mais sobre, acesse <a href="https://blog.qualys.com/vulnerabilities-threat-research/2022/01/25/pwnkit-local-privilege-escalation-vulnerability-discovered-in-polkits-pkexec-cve-2021-4034">esse link</a>.</p>
 <h2 id="checklist"><strong>Checklist</strong></h2>
 <ul>
@@ -239,7 +239,7 @@ python3 sublist3r.py -d $url <span style="color:#75715e"># Definir o domínio a 
 python3 sublist3r.py -v -d $url <span style="color:#75715e"># Enumerar no modo verboso</span>
 python3 sublist3r.py -b -d $url <span style="color:#75715e"># Brute-force nos domínios</span>
 </code></pre></div><h4 id="exemplo">Exemplo</h4>
-<p><img src="/sublist3r.png" alt="sublist3r"></p>
+<p><img src="/subdomains/sublist3r.png" alt="sublist3r"></p>
 <h2 id="amass"><strong>amass</strong></h2>
 <h4 id="instalação-1">Instalação</h4>
 <p>OBS: O comando <code>mv [ferramenta] /usr/local/bin</code> move o arquivo para a pasta /usr/local/bin fazendo com que a ferramenta possa ser invocada de qualquer diretório.</p>
@@ -253,7 +253,7 @@ amass enum -d $url <span style="color:#75715e"># Definir o domínio a ser enumer
 amass enum -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
 amass enum -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
 </code></pre></div><h4 id="exemplo-1">Exemplo</h4>
-<p><img src="/amass.png" alt="amass"></p>
+<p><img src="/subdomains/amass.png" alt="amass"></p>
 <h2 id="assetfinder"><strong>assetfinder</strong></h2>
 <h4 id="instalação-2">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get -u github.com/tomnomnom/assetfinder
@@ -263,7 +263,7 @@ mv /root/go/bin/assetfinder /usr/local/bin
 </code></pre></div><h4 id="uso-2">Uso</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">assetfinder --subs-only $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
 </code></pre></div><h4 id="exemplo-2">Exemplo</h4>
-<p><img src="/assetfinder.png" alt="assetfinder"></p>
+<p><img src="/subdomains/assetfinder.png" alt="assetfinder"></p>
 <h2 id="findomain"><strong>findomain</strong></h2>
 <h4 id="instalação-3">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
@@ -276,7 +276,7 @@ findomain-linux -q -t $url <span style="color:#75715e"># Não exibe a saída no 
 findomain-linux -v -t $url <span style="color:#75715e"># Modo verboso</span>
 findomain-linux -o -t $url <span style="color:#75715e"># Joga a saída para um arquivo. O nome do arquivo será o nome do domínio no formato txt</span>
 </code></pre></div><h4 id="exemplo-3">Exemplo</h4>
-<p><img src="/findomain.png" alt="findomain"></p>
+<p><img src="/subdomains/findomain.png" alt="findomain"></p>
 <h2 id="subfinder"><strong>subfinder</strong></h2>
 <h4 id="instalação-4">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GO111MODULE<span style="color:#f92672">=</span>on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
@@ -286,7 +286,7 @@ mv /root/go/bin/subfinder /usr/local/bin
 subfinder -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
 subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
 </code></pre></div><h4 id="exemplo-4">Exemplo</h4>
-<p><img src="/subfinder.png" alt="subfinder"></p>
+<p><img src="/subdomains/subfinder.png" alt="subfinder"></p>
 <h2 id="script"><strong>Script</strong></h2>
 <p>Para facilitar o uso dessas ferramentas eu criei um script que junta algumas tools citadas nesse artigo que encontra-se <a href="https://github.com/b1d0ws/enumSubs">nesse link</a>.</p>
 <p>Note que esse é um script criado para uso pessoal, então ele conta com ferramentas que precisam estar pré-instaladas e acessíveis globalmente para funcionar corretamente, sendo elas:</p>
@@ -299,75 +299,10 @@ subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída par
 <li>httpx</li>
 </ul>
 <p>Basicamente o script roda todas as ferramentas de enumeração e cria um arquivo para cada resultado, além de criar um arquivo com todos os subdomínios encontrados e outro com todos os que estão acessíveis.</p>
-<p><img src="/script.png" alt="script"></p>
+<p><img src="/subdomains/script.png" alt="script"></p>
 <h2 id="conclusão"><strong>Conclusão</strong></h2>
 <p>Nesse artigo foram apresentadas 5 ferramentas para enumeração de subdomínios, sendo essa uma parte muito importante na hora de realizar um pentest, análise de vulnerabilidades, entre outras atividades que envolvem o mapeamento de um alvo.</p>
 <p>Com a realização dessa enumeração, a superfície que pode sofrer ataques e possuir vulnerabilidades muitas vezes aumenta consideravelmente.</p>
-<p>Até mais ver =).</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Minha experiência com a Security&#43;</title>
-            <link>https://b1d0ws.github.io/posts/security&#43;/</link>
-            <pubDate>Thu, 20 Jan 2022 15:20:50 -0300</pubDate>
-            
-            <guid>https://b1d0ws.github.io/posts/security&#43;/</guid>
-            <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.
-Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.
-A Certificação A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters.</description>
-            <content type="html"><![CDATA[<p><img src="/security+.png" alt="Security+"></p>
-<p>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.</p>
-<h2 id="quem-sou-eu">Quem Sou Eu?</h2>
-<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.</p>
-<h2 id="a-certificação">A Certificação</h2>
-<p>A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters. Também possui tópicos como Cloud e Governança/Compliance.</p>
-<p>A prova é constituída entre 80–90 questões, sendo que até 5 delas podem ser questões de performance (PBQs) que não são apenas múltiplas alternativas, normalmente envolvendo um raciocínio mais prático por trás. A nota máxima é de 900 pontos e é necessário fazer 750 para ser aprovado.</p>
-<p>O tempo para realização é de 90 minutos, mas por inglês não ser meu idioma nativo, eu acabei ganhando 30 minutos a mais, totalizando assim 120 minutos para concluir o exame.</p>
-<h2 id="os-estudos">Os Estudos</h2>
-<p>Eu estudei cerca de 5 meses para a prova, comecei em setembro de 2021 e realizei a prova dia 19 de janeiro de 2022. Acredito que dê para se preparar para ele em menos tempo, porém, realizei os estudos paralelamente com a faculdade e outros conteúdos, então foi esse o tempo que levei para realizar tudo o que eu havia planejado para estudar.</p>
-<p>Os materiais que utilizei foram os seguintes:</p>
-<ul>
-<li>
-<p><a href="https://www.amazon.com.br/CompTIA-Security-Study-Guide-SY0-601/dp/1119736250/ref=sxts_rp_s1_0?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=9J9U69VJXY51&amp;cv_ct_cx=security%2B&amp;keywords=security%2B&amp;pd_rd_i=1119736250&amp;pd_rd_r=905313a8-3bdb-4c12-8615-cd756a8587f3&amp;pd_rd_w=sOtaj&amp;pd_rd_wg=Tr93v&amp;pf_rd_p=2ed3c95d-fb99-4567-8b9a-89b24a300075&amp;pf_rd_r=3E3XTMMMZHGQFQD7DX9J&amp;psc=1&amp;qid=1642682199&amp;sprefix=security+%2Caps%2C351&amp;sr=1-1-f0029781-b79b-4b60-9cb0-eeda4dea34d6&amp;ufe=app_do%3Aamzn1.fos.4bddec23-2dcf-4403-8597-e1a02442043d">Livro - Comptia Security+ Study Guide: Exam Sy0–601</a></p>
-</li>
-<li>
-<p><a href="https://www.udemy.com/course/securityplus/">Curso em Vídeo - CompTIA Security+ (SY0–601) Complete Course &amp; Exam</a></p>
-</li>
-<li>
-<p><a href="https://www.udemy.com/course/security-601-exams/">Simulados - CompTIA Security+ (SY0–601) Practice Exams &amp; Simulated PBQs</a></p>
-</li>
-</ul>
-<p>Acredito que essa escolha de material foi ótima, pois ambos se complementaram. O curso do Jason Dion traz um PDF contendo anotações que são muito úteis para utilizar e os simulados ajudam a fixar o conteúdo.</p>
-<p>O livro é de fácil compreensão e acaba sendo bem divertido conseguir ler um livro inteiro de 600 páginas todo em inglês. Os temas não são muito complexos, por isso não exige tanto esforço mental quanto parece.</p>
-<p>Ao terminar de ler e sublinhar tudo de interessante e assistir todo o curso na Udemy, juntei as anotações dos dois materiais e sintetizei no meu GitBook. Assim eu montei um resumo bem bom para utilizar como fonte de consulta e constante estudo.</p>
-<p><img src="/gitbook-security+.png" alt="Gitbook Security+"></p>
-<h2 id="custos">Custos</h2>
-<p>Chegou a hora que todo mundo teme, os valores gastos nessa brincadeira toda! Obter certificações no Brasil sempre foi caro e aqui não foi diferente. A Security+ custou 381$, ou seja, com impostos, gastei R$2.340,06.</p>
-<p>Você adquire a prova pelo site da PersonVUE e marca por lá se quer fazer online ou presencial. Todas as certificações que eu fiz até hoje foram online devido a grande distância da minha cidade para os centros presenciais.</p>
-<p>Voucher Security+ → R$2.340,06<br>
-Curso em Vídeo Jason Dion → R$22,90<br>
-Simulados Jason Dion → R$22,90<br>
-Livro Security+ SY0–601 → R$ 231,97<br>
-Total → R$2.617,83</p>
-<p>Sim, é um valor bem absurdo para uma simples certificação, mas eu penso nisso como um investimento. Além de aproveitar todo conteúdo que aprendi, certamente portas são abertas e no médio/longo prazo você recupera esse dinheiro.</p>
-<p>Você também pode pedir para a sua empresa reembolsar o valor total ou parcial do voucher como investimento em educação e treinamento. Lembrando que esses valores frequentemente estão variando, por exemplo, o voucher há 2 meses atrás era 11$ mais barato. O livro hoje em dia está mais caro e os cursos na Udemy sempre entram em promoção na casa dos 20 reais, então se o preço estiver acima disso, espere um pouco e logo ele abaixará para esse valor.</p>
-<h2 id="a-prova">A Prova</h2>
-<p>Como dito anteriormente, fiz minha prova na modalidade online. Como eu já estou acostumado a fazer provas desse tipo (meu 4º teste nesse estilo), fiquei bem tranquilo na realização do exame. Você marca a prova no horário X e o seu check-in começa 30 minutos antes. Nesse check-in você precisa mandar algumas fotos suas, do ambiente e da identidade, pelo seu celular, tudo bem orientado pela plataforma da PersonVUE. Após esse processo, um pouco antes da prova, o examinador entra em contato com você e pede para movimentar a webcam ao redor da mesa para conferir se não tem nada inadequado (colas, anotações, etc).</p>
-<p>A única diferença que notei dessa vez para as outras é que tive que fazer um teste de sistema antes de começar a prova. Esse teste normalmente é recomendado para ver se a sua máquina possui tudo necessário para realização do exame: microfone, câmera, áudio e uma internet estável.</p>
-<p>Entretanto, dessa vez eu fui obrigado a fazer esse teste antes do início da prova, sendo que das outras vezes o teste não era obrigatório, era apenas um método de conferir que tudo está certo para realização do exame. Fiquei um pouco nervoso porque na hora de checagem do sistema minha máquina falhou duas vezes na parte de rede, dizendo que a banda não estava boa e constante, sendo que no dia anterior fiz esse teste e estava tudo certo. Na terceira vez desliguei o wi-fi do celular e deu tudo certo, partiu prova!</p>
-<p>Em todos os exames que fiz, o proctor tinha um sotaque indiano e falava em inglês, mas como normalmente ele fala pouca coisa, dava pra entender perfeitamente. Dessa vez ele perguntou se o documento que utilizei para me identificar era “Life-time”, só que ele falou muito rápido e eu tive que pedir 2 vezes para ele repetir.</p>
-<p>Assim que comecei o exame, me deparei com 4 questões de performance. Dei uma olhada por cima, me assustei um pouco e fui para as próximas. Minha prova era composta por 82 questões. Entre essas, haviam as que eu tinha certeza da resposta, haviam as que eu fiquei em dúvida entre 2 alternativas e também as que eu não fazia do que se tratava. No início do exame eles comentam que podem existir perguntas um pouco diferentes dos tópicos cobrados, mas que essas são apenas para avaliação interna deles e não conta na nota final.</p>
-<p>Ao finalizar as questões de alternativa, voltei para os simulados e com calma consegui desenrolar os 2 primeiros. Nunca tinha feito nenhum simulado parecido, eram questões de configurar máquinas como servidor, computadores e controladores wifi, mas tendo uma noção básica de redes dá para acertar uns 75% em cada questão prática. O terceiro era sobre tipos de malwares e remediações, bem tranquilo de fazer, e o quarto era sobre a estrutura de um certificado digital, o qual eu chutei absolutamente tudo.</p>
-<p>Na primeira passada pelas perguntas é natural ficar mais nervoso, portanto revisei novamente todas as questões e me senti mais confiante. Parece que na revisão você percebe que tem mais domínio sobre o conteúdo cobrado.</p>
-<p>Levei cerca de 1h20min para finalizar tudo, faltando ainda 40 minutos caso precisasse de mais tempo, então acho que o período para realização do exame é bem justa. Caso eu não tivesse a meia hora adicional, talvez ficasse um pouco apertado se eu me enrolasse em alguma questão.</p>
-<p>Ao concluir e finalizar a prova, já é exibido na tela o meu resultado e minha nota final. Acabei tirando 795 de 900, o que não é a nota mais extraordinária, mas é suficiente para passar, então estou extremamente satisfeito.</p>
-<h2 id="conclusão">Conclusão</h2>
-<p>Nesses 5 meses de estudo eu aprendi muita coisa e recomendo a todos que trabalham com segurança da informação a obter a Security+. Estudar para ela te dá uma base absurda sobre segurança que com certeza vai te auxiliar, independente da área de especialização que você seguir.
-Para onde agora?</p>
-<p>Como atuo diretamente com segurança ofensiva, pretendo focar em certificações mais focadas na área como a DCPT. Para 2022 não tenho como objetivo tirar alguma certificação e sim focar em CTFs no TryHackMe e as próprias aulas da Desec. A faculdade também vai ser bem puxada esse ano, então o tempo dedicado à segurança não vai ser tão alto.</p>
-<p>Obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar pelo LinkedIn que irei responder com muito gosto →
-<a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
 <p>Até mais ver =).</p>
 ]]></content>
         </item>
@@ -381,7 +316,7 @@ Para onde agora?</p>
             <description>Introdução O termo malware descreve uma variedade de software que é intencionalmente projetado para causar danos a sistemas, dispositivos ou redes, sem o conhecimento ou consentimento dos usuários. Neste artigo descreverei os principais tipos de malware existentes dentro da cibersegurança.
 Vírus Antes de mais nada, quero esclarecer aqui a diferença entre malware e vírus, pois, muita gente acaba confundindo os dois.
 Como dito na introdução, malware é um conceito mais genérico que se refere aos softwares usados com intuitos maliciosos, enquanto o vírus é um tipo de malware existente, ou seja, todo vírus de computador é um malware, mas nem todo malware é um vírus.</description>
-            <content type="html"><![CDATA[<p><img src="/malware-banner.jpg" alt="Malware Banner"></p>
+            <content type="html"><![CDATA[<p><img src="/malwares-types/malware-banner.jpg" alt="Malware Banner"></p>
 <h2 id="introdução">Introdução</h2>
 <p>O termo malware descreve uma variedade de software que é intencionalmente projetado para causar danos a sistemas, dispositivos ou redes, sem o conhecimento ou consentimento dos usuários. Neste artigo descreverei os principais tipos de malware existentes dentro da cibersegurança.</p>
 <h2 id="vírus">Vírus</h2>
@@ -433,7 +368,7 @@ Como dito na introdução, malware é um conceito mais genérico que se refere a
 <p>Os bots ou zumbis são sistemas ou dispositivos controlados remotamente que já sofreram uma infecção por malware e que agora estão sob controle do atacante. Grupos de bots são conhecidos como botnets e são utilizados para realizar várias ações utilizando do processamento da máquina da vítima.</p>
 <p>As botnets podem ser usadas para atacar serviços e aplicações. Os ataques distribuídos de negação de serviço (DDoS) contra aplicações são extremamente comuns nesse caso. Esses ataques também vêm sendo cada mais frequentes no cenário atual e se o ataque é massivo podemos ter certeza que envolve uma rede de bots por trás.</p>
 <p>Conforme representa a imagem abaixo, o atacante também pode usar seus zumbis para realizar diversos ataques, desviando a origem desses ataques da sua máquina para às máquinas infectadas.</p>
-<p><img src="/botnet.png" alt="Botnet"></p>
+<p><img src="/malwares-types/botnet.png" alt="Botnet"></p>
 <h2 id="keyloggers">Keyloggers</h2>
 <p>Os keyloggers são programas que principalmente capturam toques de teclas de teclados, embora também possam capturar outras entradas como movimento do mouse, entradas de tela sensível ao toque ou utilizações de cartão de crédito de dispositivos anexados.
 Logic Bombs</p>
@@ -469,7 +404,7 @@ Entretanto, muito se esquece dos controles físicos a esses elementos, o que dev
 <p>Algumas organizações usam <strong>camuflagem industrial</strong> para protegê-las e escondê-las de atacantes. Um exemplo comum são os locais discretos que as empresas escolhem para seus data centers.</p>
 <p>Muitas instalações utilizam <strong>cercas</strong> como primeira linha de defesa. As cercas atuam como um elemento dissuasor, tanto fazendo parecer um desafio o acesso a uma instalação, quanto como uma defesa física real.</p>
 <p>Um segundo controle físico comum é a colocação de <strong>barreiras de proteção</strong>. Os <strong>pilaretes (dissuasores)</strong> são postes ou outros obstáculos, como os mostrados abaixo, que impedem que veículos atravessem uma determinada área. Eles podem parecer postes, pilares ou até mesmo plantas para uma segurança mais despercebida. Alguns são projetados para serem removíveis ou acionados mecanicamente para que sejam levantados e abaixados conforme necessário.</p>
-<p><img src="/bollards.jpg" alt="Pilaretes"></p>
+<p><img src="/controles-fisicos/bollards.jpg" alt="Pilaretes"></p>
 <h2 id="câmeras-e-sensores">Câmeras e Sensores</h2>
 <p>Os sistemas de câmeras são maneiras comuns de controle de segurança física, permitindo aos profissionais de segurança e outros observarem o que está acontecendo em tempo real e capturar imagens de vídeo de áreas e locais para uso futuro ao conduzir investigações.</p>
 <p>As <strong>câmeras de reconhecimento</strong> de movimento são ativadas somente quando ocorre movimento, dessa forma poupando espaço em disco para armazenamento dos vídeos gravados.</p>
@@ -483,7 +418,7 @@ Entretanto, muito se esquece dos controles físicos a esses elementos, o que dev
 <blockquote>
 <p>Piggybacking e tailgating consistem em pegar “carona” com alguém que tem permissão e acesso, ou seja, tentar entrar despercebido em determinada região passando junto com uma pessoa autorizada.</p>
 </blockquote>
-<p><img src="/mantrap.jpg" alt="Mantrap"></p>
+<p><img src="/controles-fisicos/mantrap.jpg" alt="Mantrap"></p>
 <h2 id="leitores-biométricos">Leitores Biométricos</h2>
 <p>Baseiam-se em características físicas de uma pessoa para identificá-las, sendo as partes mais comuns: <strong>impressão digital, olhos e vasos sanguíneos da mão.</strong> Biometria é considerado “algo que você é” (something you are).</p>
 <p>Sistemas biométricos possuem avaliações sobre taxas de sucesso e falha baseadas em 3 métricas chamadas FAR, FRR e CER, na qual não entraremos em detalhes nesse artigo.</p>
@@ -510,7 +445,7 @@ Sprinkler (Chuveiro Automático)</p>
 <h2 id="zonas-de-segurança-melhoradas-e-áreas-seguras">Zonas de Segurança Melhoradas e Áreas Seguras</h2>
 <p>Um projetor de corredor quente/corredor frio coloca entradas e exaustores de ar em corredores alternados para garantir um fluxo de ar adequado, permitindo que os projetistas de datacenter saibam onde fornecer ar frio e onde o exaustor precisa ser colocado.</p>
 <p>A segurança de rede também desempenha um papel em áreas seguras, incluindo o uso de uma <strong>sub-rede com tela</strong> (também frequentemente chamada de <strong>zona desmilitarizada [DMZ]</strong>). As sub-redes dependem de dispositivos de segurança como firewalls para fornecer <strong>segmentações</strong> que limitam o fluxo de tráfego de entrada e saída delas, mantendo assim zonas de segurança mais elevadas seguras.</p>
-<p><img src="/DMZ.png" alt="Zona Desmilitarizada (DMZ)"></p>
+<p><img src="/controles-fisicos/DMZ.png" alt="Zona Desmilitarizada (DMZ)"></p>
 <p><strong>Air-gaps</strong> são arquiteturas utilizadas para segmentar redes fisicamente, impedindo assim a conectividade entre elas.</p>
 <p>As instalações governamentais e outras instalações de segurança extremamente alta podem utilizar travas, fixar conduítes e canais de cabos, vedações invioláveis e até mesmo cabos que possam detectar tentativas de acesso através de mudanças de pressão, mudanças na condutividade da blindagem, entre outras técnicas.</p>
 <h2 id="destruição-segura-de-dados">Destruição Segura de Dados</h2>
@@ -532,60 +467,6 @@ Limpa <strong>magneticamente</strong> os dados de fitas e meios magnéticos trad
 <p>É de extrema importância que o acesso físico aos dados da empresa ou aos equipamentos que contém essas informações sejam devidamente protegidos. Caso algum atacante malicioso consiga esse acesso, danos irreversíveis podem vir a acontecer.</p>
 <p>Como citados acima, existem muitos controles para garantir que esses acesso sejam feitos de maneira segura e confiável, seja com controles automáticos ou manuais, ou até mesmo, com a mistura dos dois elementos.</p>
 <p>Também é de suma importância garantir que as mídias que não são mais utilizadas tenham um destino correto, para evitar que os dados contidos nelas não acabem caindo em mãos erradas.</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Minha experiência com a CCNA</title>
-            <link>https://b1d0ws.github.io/posts/ccna/</link>
-            <pubDate>Mon, 16 Aug 2021 15:20:50 -0300</pubDate>
-            
-            <guid>https://b1d0ws.github.io/posts/ccna/</guid>
-            <description>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: Cisco Certified Network Associate, mais conhecida como CCNA.
-Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</description>
-            <content type="html"><![CDATA[<p>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: <strong>Cisco Certified Network Associate</strong>, mais conhecida como CCNA.</p>
-<h2 id="quem-sou-eu">Quem Sou Eu?</h2>
-<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</p>
-<h2 id="a-certificação">A Certificação</h2>
-<p>A CCNA é uma certificação oferecida pela Cisco (empresa que trabalha com equipamentos de rede) que comprova que você tem os conhecimentos básicos de rede e dos equipamentos oferecidos por ela. É uma das certificações mais reconhecidas no mercado atualmente, se não a mais popular no âmbito de infraestrutura e redes.</p>
-<p>A prova é constituída de 100 a 105 questões para serem realizadas no período de 120 minutos caso seu idioma nativo seja inglês/japonês, que são as línguas oferecidas para realização do exame. Caso contrário, são cedidos 30 minutos a mais (150 minutos) para a conclusão da mesma.</p>
-<p>Os conteúdos cobrados são: Fundamentos de Rede, Acesso à Rede, Conectividade IP, Serviços IP, Fundamentos de Segurança e Automação e Programabilidade. Você acha o conteúdo mais detalhe nesse link → <a href="https://learningnetwork.cisco.com/s/ccna-exam-topics">https://learningnetwork.cisco.com/s/ccna-exam-topics</a>.</p>
-<h2 id="por-que-ela">Por que ela?</h2>
-<p>As certificações me ajudam a traçar um plano de estudos e me manter focado nos estudos, por isso resolvi obter a CCNA, para solidificar meus conhecimentos em redes.</p>
-<p>Esse assunto é fundamental pra quem quer ser um bom profissional em Segurança da Informação, então segui o cronograma de estudos e ao mesmo tempo que conquistei a aprovação, aprendi bastante sobre redes de computadores.</p>
-<p>Pra quem é da área de redes, com certeza a CCNA precisa ser um objetivo, realmente agrega muito no técnico e também no reconhecimento em geral do profissional.</p>
-<h2 id="os-estudos">Os Estudos</h2>
-<p>Eu estudei cerca de 4 meses até o dia da prova. É impossível eu determinar uma média de horas líquidas de estudos, pois eu estudava mais no sábado do que na semana toda. Como eu trabalho e faço faculdade, o tempo para estudo diário era bem limitado. Haviam semanas que eu estudava 1 hora por dia, haviam semanas que eu nem estudava, principalmente nos períodos de prova.</p>
-<p>No último mês aproveitei para focar bastante porque entrei nas férias da faculdade. A questão é que nessa reta final eu tentei manter a constância, considero mais importante estudar um pouquinho por dia, do que muitas hora seguidas, mas sem frequência. A qualidade de aprendizado do primeiro método é infinitamente superior.</p>
-<blockquote>
-<p>Sobre a preparação, pode-se aprender todo conteúdo cobrado em menos tempo, mas não estava apressado e fui no meu ritmo.</p>
-</blockquote>
-<p>Meus materiais de estudo foram esses: <strong>Curso do Gustavo Kalau, livro Análise de Tráfego em Redes TCP/IP e muitas questões.</strong></p>
-<p>O custo do Kalau é ótimo, os PDFs que ele entrega são realmente de ótima qualidade e ele faz umas analogias bem boas. O livro é bem famoso também, mas pra certificação eu só utilizei 1/3 dele. Acredito que o aprendizado por livros é mais válido para uma aprofundamento maior dos conteúdos, o que não é necessário para essa prova. Resumindo, o livro é bom, mas não é preciso para a aprovação.</p>
-<p>Como eu já tinha feito uma matéria de Redes de Computadores na faculdade, alguns conteúdos foram facilmente absorvidos, principalmente cálculo de sub-rede. No geral, o conteúdo é bem tranquilo de aprender, o mais difícil é memorizar alguns comandos e suas diferenças, mas nada que a prática não resolva.</p>
-<p>Exercícios, faça exercícios!! O Gustavo disponibiliza questões para revisão depois de todo conteúdo ensinado e um simulado para cada tópico também. Como a meta é acertar 80% das questões para prosseguir, você “meio que é obrigado” a saber um conteúdo para passar para os outros.</p>
-<p>Nas últimas semanas, eu reassisti todas as aulas e refiz os exercícios para tirar tudo a limpo. Como você já tem as anotações e já absorveu grande parte do conteúdo, dá até pra aumentar a velocidade dos vídeos e não demora muito para passar por tudo de novo.</p>
-<p>Para toda aula assistida, eu fazia anotações e colocava num Word. Na hora de passar a limpo, eu joguei tudo no GitBook, um aplicativo Web que eu uso para deixar meus resumos.</p>
-<p><img src="/gitbook-ccna.png" alt="GitBook CCNA"></p>
-<h2 id="custos">Custos</h2>
-<p>Chegou a hora que todo mundo teme, os valores gastos nessa brincadeira toda! Obter certificações no Brasil sempre foi caro e aqui não foi diferente. A CCNA custa míseros 300$, ou seja, na casa dos R$1600 + impostos.</p>
-<p>Você adquire ela no site da PersonVUE, plataforma responsável pelo agendamento desses tipos de exame. No meu caso, fiz a prova online, mas ela também pode ser presencial. Como a Person é estrangeira, você precisará de um cartão internacional para realizar a transação.</p>
-<p>Voucher CCNA → R$1.758,80<br>
-Curso Gustavo Kalau (Sem Risco Zero) → R$ 624,08<br>
-Livro Análise de Tráfego em Redes TCP/IP → R$ 65,05<br>
-Total → R$2.447,93</p>
-<p>Sim, é um valor bem absurdo para uma simples certificação, mas eu penso nisso como um investimento. Além de aproveitar todo conteúdo que aprendi, certamente portas são abertas e no médio/longo prazo você recupera esse dinheiro.</p>
-<h2 id="a-prova">A Prova</h2>
-<p>Como dito anteriormente, fiz minha prova na modalidade online. Escolhi um dia que teoricamente deveria ser calmo aqui em casa, para evitar qualquer tipo de problema com os proctors (quem vai acompanhar o seu teste). Eu disse teoricamente porque na prática não foi assim. A casa ficou bastante movimentada e eu realmente fiquei com receio de que cancelassem minha prova pelo barulho externo, mas felizmente deu tudo certo.</p>
-<p>Como eu já estou acostumado a fazer provas desse tipo (meu 3º teste nesse estilo), fiquei bem tranquilo na realização do exame. Você marca a prova no horário X e o seu check-in começa 30 minutos antes. Nesse check-in você precisa mandar algumas fotos suas, do ambiente e da identidade, pelo seu celular, tudo bem orientado pela plataforma da PersonVUE. Após esse processo, um pouco antes da prova, o examinador entra em contato com você e pede para movimentar a webcam ao redor da mesa para conferir se não tem nada inadequado (colas, anotações, etc).</p>
-<p>Em todos os exames que fiz, o proctor tinha um sotaque indiano e falava em inglês, mas como ele fala pouca coisa, deu pra entender perfeitamente. Feito o check-in, comecei a prova. As primeiras questões me deram um pouco de confiança, não eram extremamente fáceis, mas eram do meu conhecimento.</p>
-<p>No meio do teste, as questões começaram a complicar. Lembro de ter alguns questões (2 ou 3) que eu não fazia ideia da resposta, chutei com base nos outros conhecimentos que eu tinha. No final da prova eu tinha certeza de que não tinha atingido os 80% necessários para a aprovação, estava muito pessimista. Ao todo foram 104 questões no meu exame.</p>
-<p>Quando concluí, fiquei muito surpreso. Fiz 901 pontos!! Não é uma nota extraordinária, visto que é necessário fazer 825 pontos dos 1000, porém, é ótimo pra quem achou que não ia passar haha.</p>
-<h2 id="para-onde-agora">Para onde agora?</h2>
-<p>Como não atuo diretamente com redes, não pretendo realizar outras certificações mais avançadas da área (CCNP, CCIE). Acredito que o conteúdo aprendido foi o suficiente para ter um boa base.</p>
-<p>Então é isso, obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar pelo LinkedIn que irei responder com muito gosto →
-<a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
-<p>Até mais ver =).</p>
 ]]></content>
         </item>
         
@@ -758,97 +639,6 @@ a:4:{i:0;i:1;i:1;s:5:&ldquo;Alice&rdquo;;i:2;s:5:&ldquo;admin&rdquo;; i:3;s:32:&
 <p>Esse top 10 é apenas uma parte do conteúdo gigantesco que a OWASP proporciona sobre segurança da informação. Se você trabalha na área é provável que vá acompanhar esse projeto aberto em grande parte da sua carreira.</p>
 <p>Acredito que essa lista também passe uma boa noção para os desenvolvedores que querem manter suas aplicações um pouco mais seguras. Aplicando os conceitos tratados você com certerá deixará seu desenvolvimento extremamente mais seguro.</p>
 <p>Obrigado por ler até aqui e qualquer dúvida você pode entrar em contato comigo pelo Linkedin.</p>
-<p>Até mais ver =).</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Minha experiência com a LPIC-1</title>
-            <link>https://b1d0ws.github.io/posts/lpic-1/</link>
-            <pubDate>Thu, 25 Feb 2021 15:20:50 -0300</pubDate>
-            
-            <guid>https://b1d0ws.github.io/posts/lpic-1/</guid>
-            <description>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.
-Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</description>
-            <content type="html"><![CDATA[<p>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.</p>
-<p>Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</p>
-<h2 id="quem-sou-eu">Quem sou eu?</h2>
-<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou indo para o 3º semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como assistente de TI em uma empresa metalúrgica (Metasa).
-O que é e porque dessa certificação?</p>
-<p>A LPIC-1 é uma certificação BÁSICA que comprova que você consegue usar um sistema Linux e entender seu funcionamento como um todo, desde controle de tarefas como administrador por linha de comando até configurações de rede e segurança. Para conquistá-la, você deve ser aprovado em duas provas de 60 questões cada, com 90 minutos para realizá-las. Você encontra toda informação no próprio site da LPI, nesse link → <em><a href="https://www.lpi.org/our-certifications/lpic-1-overview">https://www.lpi.org/our-certifications/lpic-1-overview</a></em></p>
-<p>Eu decidi tirar essa certificação porque ela é bem vista no mercado de trabalho e muito sólida na questão de distribuir os conteúdos cobrados, ou seja, você realmente aprende o que tem que aprender de Linux estudando para ela.</p>
-<h2 id="os-estudos">Os estudos</h2>
-<p>Aproveitei meu período de férias da faculdade pra poder estudar e tentava me dedicar em média 1:30h líquidas por dia. Comecei no final de dezembro e tirei a certificação no dia 24/02. Poderia ter feito em menos tempo, mas acabei deixando a desejar em algumas semanas, falhando vários dias (a primeira semana do ano foi praticamente nula de estudo).</p>
-<p>Meus estudos se basearam em três materiais: <strong>curso e simulado do Ricardo Prudenciato</strong> na Udemy (são separados) e o <strong>livro Certificação LPI-1: 101–102</strong> do Luciano Antonio Siqueira. A maneira de estudar era basicamente essa: eu assistia as aulas e ia anotando tudo no WPS Word (quase idêntico ao Word da Microsoft só que free, muito usado no Linux). Depois fazia os exercícios propostos pelo professor e seguia adiante.</p>
-<p><img src="/pc-lpi.jpeg" alt="Meu canto de estudos" title="Meu canto de estudos"></p>
-<p>Muita gente pede dos valores, então deixo aqui bem claro os gastos (prepara o bolso).</p>
-<p>Curso → R$25,00<br>
-Simulados → R$23,00<br>
-Livro → R$50,00<br>
-Prova 101 → R$1010,00<br>
-Prova 102 → R$1050,00<br>
-Total → R$2157,00</p>
-<p>O valor das provas é de 173U$ cada, vai depender muito da cotação do dólar para saber quanto você vai gastar. Houve essa diferença de valores pra mim, pois na segunda eu não tive acesso ao cartão internacional e comprei um voucher diretamente pelo Ricardo, o que acaba saindo um pouco mais caro.</p>
-<p>As aulas, assim como o conteúdo da certificação, é dívida em tópicos do 101 ao 110, sendo que a primeira prova (LPIC-101) vai do 101 ao 104 e a segunda (LPIC-102) do 105 ao 110. Basicamente, uma semana depois de concluir um tópico pelas videoaulas, eu lia sobre o mesmo no livro. Após acabar tudo, eu sintetizava e ajeitava o resumo feito no WPS, baseado nas aulas e no livro, e usava ele como guia.</p>
-<p>Claramente eu fiz as provas em dias diferentes e distantes, estudei para a primeira prova e depois para a segunda. Dá pra fazer as duas no mesmo dia, mas não tem nenhum motivo para isso, a não ser que você já possua um conhecimento muito bom em Linux e queira rushar a certificação (nem assim vale a pena).</p>
-<p>Um auxilio aos meus estudos foi que nesse meio tempo eu fiz o <strong>Bootcamp Administrador Linux do IGTI</strong>, mas realmente agregou pouco. Esse treinamento passa uma visão geral dos diversos softwares open source que se pode usar em empresas, mas de forma muito supérflua. Pra mim não valeu a pena o tempo investido, acredito que vale pra quem quer inovar no próprio trabalho com esses programas gratuitos, apenas.</p>
-<p><em>Udemy → <a href="https://www.udemy.com/course/curso-online-certificacao-linux-lpic1-comptia/">https://www.udemy.com/course/curso-online-certificacao-linux-lpic1-comptia/</a></em>
-<em><a href="https://www.udemy.com/course/simulado-certificacao-lpic-1-e-comptia-linux/">https://www.udemy.com/course/simulado-certificacao-lpic-1-e-comptia-linux/</a></em></p>
-<p><em>Livro LPI-1 → <a href="https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-LPI-1-Luciano-Antonio-Siqueira/dp/8550810614/ref=asc_df_8550810614/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787347388&amp;hvpos=&amp;hvnetw=g&amp;hvrand=8134754864686077673&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1031798&amp;hvtargid=pla-877382152204&amp;psc=1">https://www.amazon.com.br/Certifica%C3%A7%C3%A3o-LPI-1-Luciano-Antonio-Siqueira/dp/8550810614/ref=asc_df_8550810614/?tag=googleshopp00-20&amp;linkCode=df0&amp;hvadid=379787347388&amp;hvpos=&amp;hvnetw=g&amp;hvrand=8134754864686077673&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=1031798&amp;hvtargid=pla-877382152204&amp;psc=1</a></em></p>
-<p><em>Bootcamp Administrador Linux → <a href="https://www.igti.com.br/custom/administrador-linux/">https://www.igti.com.br/custom/administrador-linux/</a></em></p>
-<p>Lembrando que a Udemy tem promoção quase toda semana para a maioria dos cursos, então não compre com os valores inteiros. Aguarde um pouco e conseguirá os dois acessos lá pela casa dos 20/30 reais cada um.</p>
-<h2 id="a-prova">A prova</h2>
-<p>Como expresso no título do texto, realizei minha prova online, pois o centro de teste mais próximo fica a mais de 100km e não vi necessidade de fazer presencialmente. Marquei minha prova através do sistema Person VUE, que é o mais usado para exames online. As provas são realizadas apenas em Inglês e Japonês, enquanto as presenciais podem ser feitas em português.</p>
-<p>Recomendo marcar a prova em algum dia que seja tranquilo pra você, pois o check-in é aberto 30 minutos antes do horário. Você tem essa janela de meia hora pra realizar esse processo, mas quanto antes fizer mais problemas serão evitados. É tudo feito por um software próprio da VUE, basta executá-lo e colocar um código que você obtém no site para acessar o exame. É importante rodar um teste antes pra ver se a sua máquina roda certinho o programa, uma vez que existem alguns requisitos que eu só descobri testando, por exemplo: o sistema não roda em Linux e nem em Windows 7.</p>
-<p>Por esse motivo tive que usar o notebook do meu pai, uma configuração muito fraca, um barulho horrendo e uma bateria viciada. A pressão das provas era maior por causa dessa máquina do que pela prova em si, vai que eu esbarro na fonte e desligo ela sem querer haha.</p>
-<p>Na hora de colocar o código, você também adiciona um número para receber um link para realização do check-in. Ele consiste em tirar algumas fotos do ambiente, de algum documento oficial (identidade, CNH) e uma própria. Após isso, livre-se do smartphone para começar a realização do teste.</p>
-<p>Depois das imagens serem verificadas pelo proctor (quem acompanha o teste), ele entrará em contato via chat ou voz. Na primeira prova fui contatado somente por chat e na segunda pelos dois. O áudio da mulher que me orientou estava muito baixo, então algumas vezes ela escreveu para eu poder entender. Os dois se comunicaram em inglês e é um conversa bem rápida, pediram se eu tinha alguma dúvida e para eu mexer a câmera para ver ao redor da mesa.</p>
-<p>Tudo certo e alinhado, começa o teste. 60 questões em uma hora e meia é tempo de sobra, então isso não será problema. As questões são no mesmo formato que você faz nos simulados (FAÇA SIMULADOS!!), única alternativa, múltiplas alternativas e preenchimento de lacuna. Quando eu treinava, muitas vezes deixava escapar o detalhe “marque 3, marque 2 alternativas”, mas isso também não é problema, pois no final existe uma revisão e se faltar alguma resposta ou marcar 2,3 alternativas na mesma pergunta, o sistema avisa você.</p>
-<p>Uma coisa que me deixou um pouco contrariado foi a quantidade de questões semelhantes às disponíveis na internet para treino na LPIC 102. Na 101 realmente as questões eram diferentes e exigiram dos meus conhecimentos, porém, na 102, MUITAS questões eram idênticas as que eu usei para estudar. Isso me deixa meio desconfiado porque sujeita muito a prova àqueles esquemas de DUMP, em que a galera só decora as questões e passa, sem realmente aprender. Enfim, acho que isso vai da consciência de cada um, eu sei que realmente aprendi estudando para os testes e é isso que importa.</p>
-<h2 id="para-onde-agora">Para onde agora?</h2>
-<p>Em certificação Linux com certeza meu próximo passo é a LPIC-2, só não irei estudar para ela tão cedo, pois tenho outros planos de estudo também (certamente trarei relatos aqui novamente sobre mais experiências).</p>
-<p>Então é isso, muito obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar que irei responder → <a href="https://www.linkedin.com/in/eduardo-bido-541430193/">https://www.linkedin.com/in/eduardo-bido-541430193/</a>.</p>
-<p>Até mais ver =).</p>
-]]></content>
-        </item>
-        
-        <item>
-            <title>Minha experiência com a LPI Essentials</title>
-            <link>https://b1d0ws.github.io/posts/lpi_essentials/</link>
-            <pubDate>Mon, 02 Nov 2020 15:20:50 -0300</pubDate>
-            
-            <guid>https://b1d0ws.github.io/posts/lpi_essentials/</guid>
-            <description>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.
-Quem sou eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</description>
-            <content type="html"><![CDATA[<p>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.</p>
-<h2 id="quem-sou-eu">Quem sou eu?</h2>
-<p>Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</p>
-<h2 id="o-que-é-e-porque-dessa-certificação">O que é e porque dessa certificação?</h2>
-<p>A LPI Essentials é uma certificação MUITO BÁSICA que comprova que você consegue usar um sistema Linux a nível principiante. Para conquistá-la, você deve ser aprovado em um exame de 40 questões com 60 minutos para realizá-lo. Você encontra toda informação no próprio site da LPI, nesse link → <a href="https://www.lpi.org/pt/our-certifications/linux-essentials-overview">https://www.lpi.org/pt/our-certifications/linux-essentials-overview</a></p>
-<p>Decidi tirar essa certificação porque recentemente migrei do Windows para o Linux, então ter o domínio básico é essencial para eu conseguir operá-lo de maneira eficiente. Também sempre tive interesse em aprender sobre esse SO de maneira geral e achei que ter um foco específico(a certificação) me ajudaria nesse processo.</p>
-<h2 id="os-estudos">Os estudos</h2>
-<p>Primeiramente estudei através da plataforma Alura. Eles têm uma “formação” chamada Certificação LPI Linux Essentials que abrange todos os conteúdos que caem na prova . Comecei a estudar no dia 5 de Outubro e terminei no dia 27.</p>
-<p>Eu estudava em média 1:30h por dia, para conciliar com a faculdade e o trabalho. Nesse meio tempo também tive algumas provas/compromissos que me tiraram alguns dias de estudo. Lembrando que meu conhecimento prévio de Linux era nulo.</p>
-<p>Também revisei usando o curso LPI Linux Essentials: Preparatório para a Certificação, do Matheus Müller, que se encontra no site da Udemy. Rushei as 7.5 horas de aula em 1.5x ou 2x no fim de semana anterior à prova.</p>
-<p><em>Alura → <a href="https://cursos.alura.com.br/formacao-certificacao-lpi-linux-essentials">https://cursos.alura.com.br/formacao-certificacao-lpi-linux-essentials</a></em></p>
-<p><em>Udemy → <a href="https://www.udemy.com/course/lpi-linux-essentials/">https://www.udemy.com/course/lpi-linux-essentials/</a></em></p>
-<p>Fazer os simulados é ESSENCIAL. Umas 2 questões da prova que eu fiz eram idênticas as dos simulados, me garantindo assim alguns pontos de graça. Os simulados gratuitos que existem por aí já suprem o conhecimento necessário, então não é preciso investir dinheiro em sites que disponibilizam centenas de questões, pelo menos para essa certificação.</p>
-<h2 id="a-prova">A prova</h2>
-<p>Como expresso no título do texto, realizei minha prova online, pois o centro de teste mais próxima ficava a mais de 100km e não vi necessidade de fazer presencialmente. Dia 29 marquei minha prova através do sistema Person VUE, que acredito que seja o mais usado para exames online. As provas online são realizadas apenas em Inglês e Japonês, enquanto as presenciais podem ser feitas em português.</p>
-<p>Ela custou 105 dólares, convertendo pra cotação do dólar atual, 602 reais. Sim, o preço é um absurdo, e olha que essa é a mais barata da família. As LPIC (certificações mais avançadas) 1,2,3 saem por 173 dólares cada, sendo que a 1 e a 2 são constituídas de 2 provas. Por ser em dólar, faz-se necessário o uso de um cartão de crédito internacional para comprar.</p>
-<p>Minha prova estava marcada para as 10h da manhã do dia 2 de novembro (aproveitei o feriado para ter o dia tranquilo). Às 9:30 começava meu check-in, então rodei o sistema deles com o código recebido e tive que enviar algumas fotos do meu local de prova para averiguação. Assim que enviei, livrei-me do celular para não ter problemas e fiquei olhando pra tela do notebook sem fazer nada por uns 8 minutos.</p>
-<p>OBS: O sistema deles só roda em Windows e MacOS. O porquê eu não sei dizer, sendo que a prova se trata de LINUX, ela poderia muito bem rodar em um LINUX, né?</p>
-<p>Após esse período de verificação, abriu-se um chat na minha tela e uma mulher começou a falar comigo, em inglês. Ela tinha um sotaque meio diferente do norte-americano, muito puxado para o indiano, mas deu pra compreender facilmente o que ela falou. Basicamente ela me pediu se estava tudo certo, se eu tinha alguma dúvida e mandou eu tirar o fone de ouvido, pois não era permitido. Eu respondi por áudio, mas acredito que dê pra usar o chat para responder também.</p>
-<p>Em seguida, meu teste começou. No começo eu fiquei um pouquinho nervoso, porque reprovar não ia ser nada legal, principalmente pelo custo da prova. Porém, conforme fui fazendo as questões, me acalmei bastante e segui o fluxo. Todas as questões eram de múltipla escolha, exceto 2 que eram para escrever algum comando (extremamente fáceis). Quando acabei as 40 questões eu não estava nada confiante de que iria passar, então na tela de revisão selecionei para rever todas questões e fui passando de uma a uma.</p>
-<p>Nessa revisada percebi que conseguiria passar, pois a maioria das questões eu tinha certeza da resposta. Teve uma questão que eu não fazia ideia do que se tratava e as outras que eu errei provavelmente fiquei em dúvida entre duas alternativas. Quando cliquei para enviar, uma caixa de confirmação apareceu e, ainda bem, eu li o que estava escrito. Estava dizendo que eu tinha deixado uma questão em branco e, quando voltei para olhar, eu tinha marcado apenas uma opção em uma questão que era para marcar duas. Então, não sejam ansiosos e não saiam clicando em qualquer Next que aparecer.</p>
-<p>Meu score final foi 730 de 800, o que daria uns 36/37 acertos de 40. Infelizmente não podemos ver quais acertamos e erramos.</p>
-<h2 id="vale-a-pena">Vale a pena?</h2>
-<p>Sinceramente? Não. Se você quer que a certificação lhe retorne várias oportunidades de emprego e um conhecimento 100% aplicável que vai te colocar em alguma empresa, essa certificação não vale a pena. Além da própria certificação ser muito cara, ainda tem que ter materiais complementares de estudo. Se quiser realmente um conhecimento sólido para aplicar na tua carreira, eu partiria direto para LPIC-1 e depois, talvez, para as demais.</p>
-<p>Por que eu tirei então? Acredito que o maior motivo para ir atrás dessa certificação é que eu gosto de ter pelo menos a base de conhecimento de várias áreas. Acredito que saber o básico de Linux já é um diferencial para alguém novo no ramo de TI. Provas também me ajudam a ter um foco melhor nos estudos, sem me desviar para outros assuntos. Ela serve como um suporte pra me motivar a estudar.</p>
-<h2 id="para-onde-agora">Para onde agora?</h2>
-<p>Gostei muito desse tempo que passei estudando, eu ansiava para a aula acabar logo pra retomar meus estudos. Sem contar que só de usar o Linux como SO já é sensacional.</p>
-<p>Em certificação Linux com certeza meu próximo passo é a LPIC-1, só não sei se irei estudar os tópicos cobrados tão cedo, pois tenho outros planos também (certamente trarei relatos aqui novamente sobre mais experiências).</p>
-<p>Então é isso, muito obrigado por ler até aqui e qualquer dúvida sobre a prova pode me contatar que irei responder.</p>
 <p>Até mais ver =).</p>
 ]]></content>
         </item>

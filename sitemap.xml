@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://b1d0ws.github.io/</loc>
+    <lastmod>2022-04-13T15:20:50-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://b1d0ws.github.io/posts/burpsuite/</loc>
     <lastmod>2022-04-13T15:20:50-03:00</lastmod>
   </url>
@@ -38,17 +43,12 @@
   </url>
   
   <url>
-    <loc>https://b1d0ws.github.io/</loc>
-    <lastmod>2022-02-23T15:44:32-03:00</lastmod>
+    <loc>https://b1d0ws.github.io/certifications/</loc>
+    <lastmod>2022-01-20T15:20:50-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://b1d0ws.github.io/whoami/</loc>
-    <lastmod>2022-02-23T15:44:32-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://b1d0ws.github.io/posts/security&#43;/</loc>
+    <loc>https://b1d0ws.github.io/certifications/security&#43;/</loc>
     <lastmod>2022-01-20T15:20:50-03:00</lastmod>
   </url>
   
@@ -63,7 +63,7 @@
   </url>
   
   <url>
-    <loc>https://b1d0ws.github.io/posts/ccna/</loc>
+    <loc>https://b1d0ws.github.io/certifications/ccna/</loc>
     <lastmod>2021-08-16T15:20:50-03:00</lastmod>
   </url>
   
@@ -73,12 +73,12 @@
   </url>
   
   <url>
-    <loc>https://b1d0ws.github.io/posts/lpic-1/</loc>
+    <loc>https://b1d0ws.github.io/certifications/lpic-1/</loc>
     <lastmod>2021-02-25T15:20:50-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://b1d0ws.github.io/posts/lpi_essentials/</loc>
+    <loc>https://b1d0ws.github.io/certifications/lpi_essentials/</loc>
     <lastmod>2020-11-02T15:20:50-03:00</lastmod>
   </url>
   

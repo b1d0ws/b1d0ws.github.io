@@ -120,7 +120,7 @@ Hoje vou demonstrar algumas ferramentas que são utilizadas nesse processo e ens
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/posts/">posts</a></li><li><a href="/whoami/">whoami</a></li><li><a href="/write-ups/">write-ups</a></li>
+    <ul class="menu__inner"><li><a href="/certifications/">certifications</a></li><li><a href="/posts/">posts</a></li><li><a href="/write-ups/">write-ups</a></li>
     </ul>
 </nav>
 
@@ -180,7 +180,7 @@ python3 sublist3r.py -d $url <span style="color:#75715e"># Definir o domínio a 
 python3 sublist3r.py -v -d $url <span style="color:#75715e"># Enumerar no modo verboso</span>
 python3 sublist3r.py -b -d $url <span style="color:#75715e"># Brute-force nos domínios</span>
 </code></pre></div><h4 id="exemplo">Exemplo</h4>
-<p><img src="/sublist3r.png" alt="sublist3r"></p>
+<p><img src="/subdomains/sublist3r.png" alt="sublist3r"></p>
 <h2 id="amass"><strong>amass</strong></h2>
 <h4 id="instalação-1">Instalação</h4>
 <p>OBS: O comando <code>mv [ferramenta] /usr/local/bin</code> move o arquivo para a pasta /usr/local/bin fazendo com que a ferramenta possa ser invocada de qualquer diretório.</p>
@@ -194,7 +194,7 @@ amass enum -d $url <span style="color:#75715e"># Definir o domínio a ser enumer
 amass enum -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
 amass enum -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
 </code></pre></div><h4 id="exemplo-1">Exemplo</h4>
-<p><img src="/amass.png" alt="amass"></p>
+<p><img src="/subdomains/amass.png" alt="amass"></p>
 <h2 id="assetfinder"><strong>assetfinder</strong></h2>
 <h4 id="instalação-2">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get -u github.com/tomnomnom/assetfinder
@@ -204,7 +204,7 @@ mv /root/go/bin/assetfinder /usr/local/bin
 </code></pre></div><h4 id="uso-2">Uso</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">assetfinder --subs-only $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
 </code></pre></div><h4 id="exemplo-2">Exemplo</h4>
-<p><img src="/assetfinder.png" alt="assetfinder"></p>
+<p><img src="/subdomains/assetfinder.png" alt="assetfinder"></p>
 <h2 id="findomain"><strong>findomain</strong></h2>
 <h4 id="instalação-3">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
@@ -217,7 +217,7 @@ findomain-linux -q -t $url <span style="color:#75715e"># Não exibe a saída no 
 findomain-linux -v -t $url <span style="color:#75715e"># Modo verboso</span>
 findomain-linux -o -t $url <span style="color:#75715e"># Joga a saída para um arquivo. O nome do arquivo será o nome do domínio no formato txt</span>
 </code></pre></div><h4 id="exemplo-3">Exemplo</h4>
-<p><img src="/findomain.png" alt="findomain"></p>
+<p><img src="/subdomains/findomain.png" alt="findomain"></p>
 <h2 id="subfinder"><strong>subfinder</strong></h2>
 <h4 id="instalação-4">Instalação</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GO111MODULE<span style="color:#f92672">=</span>on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
@@ -227,7 +227,7 @@ mv /root/go/bin/subfinder /usr/local/bin
 subfinder -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
 subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
 </code></pre></div><h4 id="exemplo-4">Exemplo</h4>
-<p><img src="/subfinder.png" alt="subfinder"></p>
+<p><img src="/subdomains/subfinder.png" alt="subfinder"></p>
 <h2 id="script"><strong>Script</strong></h2>
 <p>Para facilitar o uso dessas ferramentas eu criei um script que junta algumas tools citadas nesse artigo que encontra-se <a href="https://github.com/b1d0ws/enumSubs">nesse link</a>.</p>
 <p>Note que esse é um script criado para uso pessoal, então ele conta com ferramentas que precisam estar pré-instaladas e acessíveis globalmente para funcionar corretamente, sendo elas:</p>
@@ -240,7 +240,7 @@ subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída par
 <li>httpx</li>
 </ul>
 <p>Basicamente o script roda todas as ferramentas de enumeração e cria um arquivo para cada resultado, além de criar um arquivo com todos os subdomínios encontrados e outro com todos os que estão acessíveis.</p>
-<p><img src="/script.png" alt="script"></p>
+<p><img src="/subdomains/script.png" alt="script"></p>
 <h2 id="conclusão"><strong>Conclusão</strong></h2>
 <p>Nesse artigo foram apresentadas 5 ferramentas para enumeração de subdomínios, sendo essa uma parte muito importante na hora de realizar um pentest, análise de vulnerabilidades, entre outras atividades que envolvem o mapeamento de um alvo.</p>
 <p>Com a realização dessa enumeração, a superfície que pode sofrer ataques e possuir vulnerabilidades muitas vezes aumenta consideravelmente.</p>
@@ -272,8 +272,8 @@ subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída par
 
             
             <span class="button next">
-                <a href="https://b1d0ws.github.io/posts/security&#43;/">
-                    <span class="button__text">Minha experiência com a Security&#43;</span>
+                <a href="https://b1d0ws.github.io/posts/malwares/">
+                    <span class="button__text">Tipos de Malware</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>

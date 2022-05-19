@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/mnt/c/Users/Bido/Documents/Blog/blog/b1d0ws",
+	"sourceRoot": "/mnt/c/Users/bido/Documents/Blog/blog/b1d0ws",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",
