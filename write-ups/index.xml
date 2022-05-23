@@ -14,10 +14,10 @@
     
     <item>
       <title>Biblioteca - TryHackMe</title>
-      <link>https://b1d0ws.github.io/write-ups/biblioteca/</link>
+      <link>https://b1d0ws.github.io/write-ups/biblioteca-thm/</link>
       <pubDate>Mon, 23 May 2022 20:20:50 -0300</pubDate>
       
-      <guid>https://b1d0ws.github.io/write-ups/biblioteca/</guid>
+      <guid>https://b1d0ws.github.io/write-ups/biblioteca-thm/</guid>
       <description>https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
