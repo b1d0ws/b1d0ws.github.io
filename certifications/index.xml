@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 22 May 2022 15:20:50 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 23 May 2022 09:20:50 -0300</lastBuildDate>
     
 	<atom:link href="https://b1d0ws.github.io/certifications/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,10 +15,10 @@
     <item>
       <title>Minha experiência com a DCPT</title>
       <link>https://b1d0ws.github.io/certifications/dcpt/</link>
-      <pubDate>Sun, 22 May 2022 15:20:50 -0300</pubDate>
+      <pubDate>Mon, 23 May 2022 09:20:50 -0300</pubDate>
       
       <guid>https://b1d0ws.github.io/certifications/dcpt/</guid>
-      <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecida no Brasil, a DCPT da Desec.
+      <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas no Brasil, a DCPT da Desec.
 Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Analista de Segurança de Software, em home office.
 A Certificação A DCPT (Desec Certified Penetration Tester) é uma certificação prática que tem por objetivo provar que o profissional/estudante possui os conhecimentos de um Pentester.</description>
     </item>
