@@ -48,6 +48,19 @@ I also checked the disallowed entries and found a login page in /umbraco/, so we
     </item>
     
     <item>
+      <title>Biblioteca - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/biblioteca/</link>
+      <pubDate>Tue, 22 Mar 2022 10:45:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/biblioteca/</guid>
+      <description>https://tryhackme.com/room/biblioteca
+User Flag First, we start by enumerating the ports and services.
+In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
+
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there.</description>
+    </item>
+    
+    <item>
       <title>toc2 - TryHackMe</title>
       <link>https://b1d0ws.github.io/write-ups/toc2-thm/</link>
       <pubDate>Tue, 15 Mar 2022 10:45:50 -0300</pubDate>
