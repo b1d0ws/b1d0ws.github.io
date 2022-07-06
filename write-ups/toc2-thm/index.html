@@ -49,14 +49,9 @@ User Flag First, we use nmap to see which ports are open.
 We notice that ports 22 and 80 are open. Since we hardly have something to explore on SSH, we start by accessing the website.
 Here we collect a username and password (cmsmuser:devpass) and maybe another possible username (Hunter).
 One of the nmap scripts brought us an existing robots.txt entry, so let&rsquo;s check it out.
-Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb.">
-<meta itemprop="datePublished" content="2022-03-15T10:45:50-03:00" />
+Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb."><meta itemprop="datePublished" content="2022-03-15T10:45:50-03:00" />
 <meta itemprop="dateModified" content="2022-03-15T10:45:50-03:00" />
-<meta itemprop="wordCount" content="653">
-<meta itemprop="image" content="https://b1d0ws.github.io/"/>
-
-
-
+<meta itemprop="wordCount" content="653"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://b1d0ws.github.io/"/>
@@ -80,10 +75,10 @@ Here we collect a username and password (cmsmuser:devpass) and maybe another pos
 One of the nmap scripts brought us an existing robots.txt entry, so let&rsquo;s check it out.
 Here we find the installation path for cmsms, which is the manager that should be installed in this application, and we also collect the name of the db to be used: cmsmsdb." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://b1d0ws.github.io/write-ups/toc2-thm/" />
-<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/toc2-thm/" /><meta property="og:image" content="https://b1d0ws.github.io/"/><meta property="article:section" content="write-ups" />
 <meta property="article:published_time" content="2022-03-15T10:45:50-03:00" />
 <meta property="article:modified_time" content="2022-03-15T10:45:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
 
 
 
@@ -178,7 +173,7 @@ First of all, since we can check the version used, let&rsquo;s look for any know
 <a href="https://www.exploit-db.com/exploits/44192">https://www.exploit-db.com/exploits/44192</a></p>
 <p><img src="/toc2/exploit-toc2.png" alt="exploit-toc2"></p>
 <p>Following the exploit, we notice that it already starts to be exploited when installing the manager itself.</p>
-<p>To perform the installation, we enter the data collected earlier. Before proceeding to the next step, we intercept this request and enter the payload <em>junk&rsquo;;echo%20system($_GET[&lsquo;cmd&rsquo;]);$junk='junk</em> in the UTC field.</p>
+<p>To perform the installation, we enter the data collected earlier. Before proceeding to the next step, we intercept this request and enter the payload <em>junk&rsquo;;echo%20system($_GET[&lsquo;cmd&rsquo;]);$junk=&lsquo;junk</em> in the UTC field.</p>
 <p><img src="/toc2/database-toc2.png" alt="database-toc2"></p>
 <p><img src="/toc2/cmsms2-toc2.png" alt="burpsuite-toc2"></p>
 <p>Now we access the address <em>http://10.10.169.35/cmsms/config.php?cmd=id;uname</em> and notice that the command entered in the cmd parameter is executed on the victim host and returned to us.</p>
@@ -234,7 +229,7 @@ First of all, since we can check the version used, let&rsquo;s look for any know
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.feebdc8d801e3fb1791305e362b6d11557f029604dd5b3c27e2686bc88787ee90ae1ccf0afe81bd7d959d7617cfe1fc73062aa82b4e1fa830d6941193d2cbddf.js" integrity="sha512-/uvcjYAeP7F5EwXjYrbRFVfwKWBN1bPCfiaGvIh4fukK4czwr&#43;gb19lZ12F8/h/HMGKqgrTh&#43;oMNaUEZPSy93w=="></script>
 
 
 

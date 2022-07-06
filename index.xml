@@ -7,10 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 23 May 2022 20:20:50 -0300</lastBuildDate>
-    
-	<atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 05 Jul 2022 13:38:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Annie - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/annie-thm/</link>
+      <pubDate>Tue, 05 Jul 2022 13:38:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/annie-thm/</guid>
+      <description>https://tryhackme.com/room/annie
+User Flag First, I did the standard nmap scan and found that ports 22 and 7070 are open.
+Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an AnyDesk on port 7070, recognized by the &amp;ldquo;commonName=AnyDesk Client&amp;rdquo; snippet.
+Searching for exploits in AnyDesk we see that there is an RCE vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid.</description>
+    </item>
     
     <item>
       <title>Biblioteca - TryHackMe</title>
@@ -21,7 +29,6 @@
       <description>https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
-
 I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there.</description>
     </item>
     
@@ -32,8 +39,7 @@ I access the website and see that there is a login page. I try to create a user 
       
       <guid>https://b1d0ws.github.io/certifications/dcpt/</guid>
       <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas no Brasil, a DCPT da Desec.
-Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Analista de Segurança de Software, em home office.
-A Certificação A DCPT (Desec Certified Penetration Tester) é uma certificação prática que tem por objetivo provar que o profissional/estudante possui os conhecimentos de um Pentester.</description>
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Analista de Segurança de Software, em home office.</description>
     </item>
     
     <item>
@@ -54,9 +60,7 @@ Instalation The software installation is trivial, just download it and follow th
       <guid>https://b1d0ws.github.io/write-ups/anthem-thm/</guid>
       <description>https://tryhackme.com/room/anthem
 Website Analysis First of all, we run nmap and check which ports are open. As you can see, I ran a version scan with default scripts on the ports I found which were 80 (HTTP) and 3389 (RDP) to see if I could find anything interesting, but nothing turned up.
-
 Next I checked the robots.txt file and found a possible password.
-
 I also checked the disallowed entries and found a login page in /umbraco/, so we need to find our user since we already have the password!</description>
     </item>
     

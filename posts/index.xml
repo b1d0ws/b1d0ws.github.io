@@ -230,62 +230,62 @@ Hoje vou demonstrar algumas ferramentas que são utilizadas nesse processo e ens
 <p>Para as instalações abaixo funcionarem, é necessário que você tenha python3 e GO instalado na sua máquina.</p>
 <h2 id="sublist3r"><strong>sublist3r</strong></h2>
 <h4 id="instalação">Instalação</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/aboul3la/Sublist3r.git
-cd sublist3r
-sudo pip install -r requirements.txt
-</code></pre></div><h4 id="uso">Uso</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 sublist3r.py -h <span style="color:#75715e"># Ver ajuda</span>
-python3 sublist3r.py -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
-python3 sublist3r.py -v -d $url <span style="color:#75715e"># Enumerar no modo verboso</span>
-python3 sublist3r.py -b -d $url <span style="color:#75715e"># Brute-force nos domínios</span>
-</code></pre></div><h4 id="exemplo">Exemplo</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/aboul3la/Sublist3r.git
+</span></span><span style="display:flex;"><span>cd sublist3r
+</span></span><span style="display:flex;"><span>sudo pip install -r requirements.txt
+</span></span></code></pre></div><h4 id="uso">Uso</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 sublist3r.py -h <span style="color:#75715e"># Ver ajuda</span>
+</span></span><span style="display:flex;"><span>python3 sublist3r.py -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
+</span></span><span style="display:flex;"><span>python3 sublist3r.py -v -d $url <span style="color:#75715e"># Enumerar no modo verboso</span>
+</span></span><span style="display:flex;"><span>python3 sublist3r.py -b -d $url <span style="color:#75715e"># Brute-force nos domínios</span>
+</span></span></code></pre></div><h4 id="exemplo">Exemplo</h4>
 <p><img src="/subdomains/sublist3r.png" alt="sublist3r"></p>
 <h2 id="amass"><strong>amass</strong></h2>
 <h4 id="instalação-1">Instalação</h4>
 <p>OBS: O comando <code>mv [ferramenta] /usr/local/bin</code> move o arquivo para a pasta /usr/local/bin fazendo com que a ferramenta possa ser invocada de qualquer diretório.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/OWASP/Amass/releases/download/v3.17.0/amass_linux_arm64.zip
-unzip amass_linux_arm64.zip
-cd amass_linux_arm64
-mv amass /usr/local/bin
-</code></pre></div><h4 id="uso-1">Uso</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">amass enum -h <span style="color:#75715e"># Ver ajuda</span>
-amass enum -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
-amass enum -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
-amass enum -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
-</code></pre></div><h4 id="exemplo-1">Exemplo</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/OWASP/Amass/releases/download/v3.17.0/amass_linux_arm64.zip
+</span></span><span style="display:flex;"><span>unzip amass_linux_arm64.zip
+</span></span><span style="display:flex;"><span>cd amass_linux_arm64
+</span></span><span style="display:flex;"><span>mv amass /usr/local/bin
+</span></span></code></pre></div><h4 id="uso-1">Uso</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>amass enum -h <span style="color:#75715e"># Ver ajuda</span>
+</span></span><span style="display:flex;"><span>amass enum -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
+</span></span><span style="display:flex;"><span>amass enum -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
+</span></span><span style="display:flex;"><span>amass enum -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
+</span></span></code></pre></div><h4 id="exemplo-1">Exemplo</h4>
 <p><img src="/subdomains/amass.png" alt="amass"></p>
 <h2 id="assetfinder"><strong>assetfinder</strong></h2>
 <h4 id="instalação-2">Instalação</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get -u github.com/tomnomnom/assetfinder
-<span style="color:#75715e"># Localize aonde a ferramenta foi instalada.</span>
-<span style="color:#75715e"># Como eu instalei com o usuário root, ela está em /root/go/bin/</span>
-mv /root/go/bin/assetfinder /usr/local/bin
-</code></pre></div><h4 id="uso-2">Uso</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">assetfinder --subs-only $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
-</code></pre></div><h4 id="exemplo-2">Exemplo</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>go get -u github.com/tomnomnom/assetfinder
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Localize aonde a ferramenta foi instalada.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Como eu instalei com o usuário root, ela está em /root/go/bin/</span>
+</span></span><span style="display:flex;"><span>mv /root/go/bin/assetfinder /usr/local/bin
+</span></span></code></pre></div><h4 id="uso-2">Uso</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>assetfinder --subs-only $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
+</span></span></code></pre></div><h4 id="exemplo-2">Exemplo</h4>
 <p><img src="/subdomains/assetfinder.png" alt="assetfinder"></p>
 <h2 id="findomain"><strong>findomain</strong></h2>
 <h4 id="instalação-3">Instalação</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
-chmod +x findomain-linux
-mv /root/go/bin/findomain-linux /usr/local/bin
-</code></pre></div><h4 id="uso-3">Uso</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">findomain-linux -h <span style="color:#75715e"># Ver ajuda</span>
-findomain-linux -t $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
-findomain-linux -q -t $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
-findomain-linux -v -t $url <span style="color:#75715e"># Modo verboso</span>
-findomain-linux -o -t $url <span style="color:#75715e"># Joga a saída para um arquivo. O nome do arquivo será o nome do domínio no formato txt</span>
-</code></pre></div><h4 id="exemplo-3">Exemplo</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/findomain/findomain/releases/latest/download/findomain-linux
+</span></span><span style="display:flex;"><span>chmod +x findomain-linux
+</span></span><span style="display:flex;"><span>mv /root/go/bin/findomain-linux /usr/local/bin
+</span></span></code></pre></div><h4 id="uso-3">Uso</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>findomain-linux -h <span style="color:#75715e"># Ver ajuda</span>
+</span></span><span style="display:flex;"><span>findomain-linux -t $url <span style="color:#75715e"># Definir o domínio (target) a ser enumerado</span>
+</span></span><span style="display:flex;"><span>findomain-linux -q -t $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
+</span></span><span style="display:flex;"><span>findomain-linux -v -t $url <span style="color:#75715e"># Modo verboso</span>
+</span></span><span style="display:flex;"><span>findomain-linux -o -t $url <span style="color:#75715e"># Joga a saída para um arquivo. O nome do arquivo será o nome do domínio no formato txt</span>
+</span></span></code></pre></div><h4 id="exemplo-3">Exemplo</h4>
 <p><img src="/subdomains/findomain.png" alt="findomain"></p>
 <h2 id="subfinder"><strong>subfinder</strong></h2>
 <h4 id="instalação-4">Instalação</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GO111MODULE<span style="color:#f92672">=</span>on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
-mv /root/go/bin/subfinder /usr/local/bin
-</code></pre></div><h4 id="uso-4">Uso</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">subfinder -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
-subfinder -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
-subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
-</code></pre></div><h4 id="exemplo-4">Exemplo</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GO111MODULE<span style="color:#f92672">=</span>on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+</span></span><span style="display:flex;"><span>mv /root/go/bin/subfinder /usr/local/bin
+</span></span></code></pre></div><h4 id="uso-4">Uso</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>subfinder -d $url <span style="color:#75715e"># Definir o domínio a ser enumerado</span>
+</span></span><span style="display:flex;"><span>subfinder -silent -d $url <span style="color:#75715e"># Não exibe a saída no terminal</span>
+</span></span><span style="display:flex;"><span>subfinder -o exemplo.txt -d $url <span style="color:#75715e"># Joga a saída para o arquivo exemplo.txt</span>
+</span></span></code></pre></div><h4 id="exemplo-4">Exemplo</h4>
 <p><img src="/subdomains/subfinder.png" alt="subfinder"></p>
 <h2 id="script"><strong>Script</strong></h2>
 <p>Para facilitar o uso dessas ferramentas eu criei um script que junta algumas tools citadas nesse artigo que encontra-se <a href="https://github.com/b1d0ws/enumSubs">nesse link</a>.</p>
@@ -493,7 +493,7 @@ OWASP top 10 → <a href="https://owasp.org/www-project-top-ten/">https://owasp.
 <p><strong>Uma situação simples para explicar essa técnica é usar o trecho:</strong><br>
 password&rsquo; OR 1=1<br>
 Como resultado, o banco rodará a seguinte query:<br>
-SELECT id FROM users WHERE username='username&rsquo; AND password='password&rsquo; OR 1=1&rsquo;</p>
+SELECT id FROM users WHERE username=&lsquo;username&rsquo; AND password=&lsquo;password&rsquo; OR 1=1&rsquo;</p>
 <h3 id="impactos">Impactos</h3>
 <p>Injeções podem resultar em perda e corrupção de dados, negação de acesso, acessos não autorizados e até mesmo perda total do sistema. Tudo depende do qual é a aplicação e seus dados.</p>
 <h3 id="prevenção">Prevenção</h3>

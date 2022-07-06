@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="https://tryhackme.com/room/annie
+User Flag First, I did the standard nmap scan and found that ports 22 and 7070 are open.
+Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an AnyDesk on port 7070, recognized by the &amp;ldquo;commonName=AnyDesk Client&amp;rdquo; snippet.
+Searching for exploits in AnyDesk we see that there is an RCE vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/write-ups/annie-thm/" />
+
+
+    <title>
+        
+            Annie - TryHackMe :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Annie - TryHackMe">
+<meta itemprop="description" content="https://tryhackme.com/room/annie
+User Flag First, I did the standard nmap scan and found that ports 22 and 7070 are open.
+Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an AnyDesk on port 7070, recognized by the &ldquo;commonName=AnyDesk Client&rdquo; snippet.
+Searching for exploits in AnyDesk we see that there is an RCE vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid."><meta itemprop="datePublished" content="2022-07-05T13:38:50-03:00" />
+<meta itemprop="dateModified" content="2022-07-05T13:38:50-03:00" />
+<meta itemprop="wordCount" content="474"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="Annie - TryHackMe"/>
+<meta name="twitter:description" content="https://tryhackme.com/room/annie
+User Flag First, I did the standard nmap scan and found that ports 22 and 7070 are open.
+Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an AnyDesk on port 7070, recognized by the &ldquo;commonName=AnyDesk Client&rdquo; snippet.
+Searching for exploits in AnyDesk we see that there is an RCE vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid."/>
+
+
+
+
+    <meta property="og:title" content="Annie - TryHackMe" />
+<meta property="og:description" content="https://tryhackme.com/room/annie
+User Flag First, I did the standard nmap scan and found that ports 22 and 7070 are open.
+Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an AnyDesk on port 7070, recognized by the &ldquo;commonName=AnyDesk Client&rdquo; snippet.
+Searching for exploits in AnyDesk we see that there is an RCE vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/annie-thm/" /><meta property="og:image" content="https://b1d0ws.github.io/"/><meta property="article:section" content="write-ups" />
+<meta property="article:published_time" content="2022-07-05T13:38:50-03:00" />
+<meta property="article:modified_time" content="2022-07-05T13:38:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-07-05 13:38:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/certifications/">certifications</a></li><li><a href="/posts/">posts</a></li><li><a href="/write-ups/">write-ups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://b1d0ws.github.io/write-ups/annie-thm/">Annie - TryHackMe</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://tryhackme.com/room/annie">https://tryhackme.com/room/annie</a></p>
+<p><img src="/annie/banner.png" alt="bannerg-annie"></p>
+<h2 id="user-flag"><strong>User Flag</strong></h2>
+<p>First, I did the standard nmap scan and found that <em>ports 22 and 7070</em> are open.</p>
+<p>Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an <em>AnyDesk</em> on port 7070, recognized by the &ldquo;commonName=AnyDesk Client&rdquo; snippet.</p>
+<p><img src="/annie/nmap.png" alt="nmap-annie"></p>
+<p><br>
+Searching for <em>exploits in AnyDesk</em> we see that there is an <em>RCE</em> vulnerability in anydesk 5.5.2. Although we do not know the version of anydesk, the attempt is valid.</p>
+<p><img src="/annie/searchsploit.png" alt="searchsploit-annie"></p>
+<p><br>
+Looking inside the code we see that some changes are needed.</p>
+<p>We have to <em>change the IP</em> to our victim IP address.</p>
+<p>Note: the port is 50001 because this is the UDP port used by Anydesk.</p>
+<p>We also need to <em>generate shellcode</em> with our VPN IP address using the commented msfvenom command.</p>
+<p><img src="/annie/firstCode.png" alt="firstCode-annie"></p>
+<p><br>
+Generating the shellcode with my <em>tun0 IP</em> and the <em>port 2222</em>.</p>
+<p><img src="/annie/shellcode.png" alt="shellcode-annie"></p>
+<p><br>
+So, the <em>final exploit</em> code is this:</p>
+<p><img src="/annie/finalCode.png" alt="finalCode-annie"></p>
+<p><br>
+Now just <em>execute the code</em> with python2 with an open <em>listener</em> in the port selected and get the reverse shell.</p>
+<p><img src="/annie/firstRevShell.png" alt="revShell-annie"></p>
+<p><br>
+The <em>user flag</em> is in our user home.</p>
+<p><img src="/annie/user-flag.png" alt="userFlag-annie"></p>
+<h2 id="root-flag"><strong>Root Flag</strong></h2>
+<p>Now we need to find a way to get the root shell by privilege escalation, but first let’s try to get a <em>SSH session</em> since port 22 is open.</p>
+<p>To do this, we access the .ssh folder and copy the private <em>SSH key</em> to our computer and try to access the machine.</p>
+<p><img src="/annie/sshKey.png" alt="sshKey-annie"></p>
+<p><br>
+We set the correct permissions for the key with <em>chmod 600</em>.</p>
+<p><img src="/annie/tryingSSH.png" alt="tryingSSH-annie"></p>
+<p><br>
+The key has a passphrase to login in SSH, so we need to find that password. We can do that with <em>ssh2john</em>.</p>
+<p>First we turn the key into a hash with <em>ssh2john id_rsa &gt; hashRSA</em>, then we use brute force with the rockyou wordlist.</p>
+<p>Probably the password will show up in orange for you, but since I had done this CTF before, john returns me that the hash was already cracked, so I just use &ndash;show to see it.</p>
+<p><img src="/annie/sshPassword.png" alt="sshPassword-annie"></p>
+<p><br>
+Now we can move on to privilege escalation.</p>
+<p>Looking through the SUID files we find <em>setcap</em>, which is an interesting file to have a SUID bit.</p>
+<p><img src="/annie/setcapSuid.png" alt="sshPassword-annie"></p>
+<p>Searching for how to exploit this binary to escalate to root I found this great article from Hacking Articles. I recommend reading it if you don&rsquo;t know the concept of capabilities.</p>
+<p><em><a href="https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/">https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/</a></em></p>
+<p>The setcap command is used to <em>set capabilities</em> to other binaries. Being able to execute this as root, we can set capabilities to any file we want, so the choose was <em>python3</em>, but we can use others like perl and tar.</p>
+<p>First, we copy python3 binary to our home, then we set the capability to it with <em>setcap cap_setuid_ep /home/annie/python3</em> command.</p>
+<p>Now our python3 binary can run as root permission, therefore we just need to <em>invoke a new bash</em> with the UID 0 that is the root UID.</p>
+<p><img src="/annie/rootFlag.png" alt="rootFlag-annie"></p>
+<p>See ya =).</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.feebdc8d801e3fb1791305e362b6d11557f029604dd5b3c27e2686bc88787ee90ae1ccf0afe81bd7d959d7617cfe1fc73062aa82b4e1fa830d6941193d2cbddf.js" integrity="sha512-/uvcjYAeP7F5EwXjYrbRFVfwKWBN1bPCfiaGvIh4fukK4czwr&#43;gb19lZ12F8/h/HMGKqgrTh&#43;oMNaUEZPSy93w=="></script>
+
+
+
+    </body>
+</html>
