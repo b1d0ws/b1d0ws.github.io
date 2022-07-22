@@ -149,7 +149,7 @@ Searching for exploits in AnyDesk we see that there is an RCE vulnerability in a
 
             <div class="post-content">
                 <p><a href="https://tryhackme.com/room/annie">https://tryhackme.com/room/annie</a></p>
-<p><img src="/annie/banner.png" alt="bannerg-annie"></p>
+<p><img src="/annie/banner.png" alt="banner-annie"></p>
 <h2 id="user-flag"><strong>User Flag</strong></h2>
 <p>First, I did the standard nmap scan and found that <em>ports 22 and 7070</em> are open.</p>
 <p>Next, I did an aggressive scan on these ports to find what service is behind it and found SSH on port 22 and probably an <em>AnyDesk</em> on port 7070, recognized by the &ldquo;commonName=AnyDesk Client&rdquo; snippet.</p>
@@ -195,7 +195,7 @@ Now we can move on to privilege escalation.</p>
 <p><em><a href="https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/">https://www.hackingarticles.in/linux-privilege-escalation-using-capabilities/</a></em></p>
 <p>The setcap command is used to <em>set capabilities</em> to other binaries. Being able to execute this as root, we can set capabilities to any file we want, so the choose was <em>python3</em>, but we can use others like perl and tar.</p>
 <p>First, we copy python3 binary to our home, then we set the capability to it with <em>setcap cap_setuid_ep /home/annie/python3</em> command.</p>
-<p>Now our python3 binary can run as root permission, therefore we just need to <em>invoke a new bash</em> with the UID 0 that is the root UID.</p>
+<p>Now our python3 binary can run with root permission, therefore we just need to <em>invoke a new bash</em> with the UID 0 that is the root UID.</p>
 <p><img src="/annie/rootFlag.png" alt="rootFlag-annie"></p>
 <p>See ya =).</p>
 

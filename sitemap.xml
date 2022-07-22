@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://b1d0ws.github.io/write-ups/annie-thm/</loc>
-    <lastmod>2022-07-05T13:38:50-03:00</lastmod>
-  </url><url>
     <loc>https://b1d0ws.github.io/</loc>
-    <lastmod>2022-07-05T13:38:50-03:00</lastmod>
+    <lastmod>2022-07-22T14:30:50-03:00</lastmod>
+  </url><url>
+    <loc>https://b1d0ws.github.io/write-ups/netmon-htb/</loc>
+    <lastmod>2022-07-22T14:30:50-03:00</lastmod>
   </url><url>
     <loc>https://b1d0ws.github.io/write-ups/</loc>
+    <lastmod>2022-07-22T14:30:50-03:00</lastmod>
+  </url><url>
+    <loc>https://b1d0ws.github.io/write-ups/annie-thm/</loc>
     <lastmod>2022-07-05T13:38:50-03:00</lastmod>
   </url><url>
     <loc>https://b1d0ws.github.io/write-ups/biblioteca-thm/</loc>

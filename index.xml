@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 05 Jul 2022 13:38:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Jul 2022 14:30:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Netmon - HackTheBox</title>
+      <link>https://b1d0ws.github.io/write-ups/netmon-htb/</link>
+      <pubDate>Fri, 22 Jul 2022 14:30:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/netmon-htb/</guid>
+      <description>https://app.hackthebox.com/machines/Netmon
+Recon and User Flag First, we start with a nmap scan and discover that ports 21, 80, 139, 445 and 5985 are open.
+Next, we perform nmap with default scripts and service detection flags on those ports.
+As FTP is open, we connect to it with Anonymous login and see that we have an entire Windows Machine to explore in it. Going directly to the Public User we already get our user flag.</description>
+    </item>
+    
     <item>
       <title>Annie - TryHackMe</title>
       <link>https://b1d0ws.github.io/write-ups/annie-thm/</link>
