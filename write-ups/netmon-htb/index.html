@@ -47,7 +47,7 @@ Recon and User Flag First, we start with a nmap scan and discover that ports 21,
 Next, we perform nmap with default scripts and service detection flags on those ports.
 As FTP is open, we connect to it with Anonymous login and see that we have an entire Windows Machine to explore in it. Going directly to the Public User we already get our user flag."><meta itemprop="datePublished" content="2022-07-22T14:30:50-03:00" />
 <meta itemprop="dateModified" content="2022-07-22T14:30:50-03:00" />
-<meta itemprop="wordCount" content="278"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
+<meta itemprop="wordCount" content="280"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://b1d0ws.github.io/"/>
@@ -158,8 +158,8 @@ As FTP is open, we connect to it with Anonymous login and see that we have an en
 As FTP is open, we connect to it with <em>Anonymous login</em> and see that we have an entire Windows Machine to explore in it. Going directly to the Public User we already get our <em>user flag.</em></p>
 <p>I think this is the easiest user flag that exists in HTB.</p>
 <p><img src="/netmon/userFlag.png" alt="netmon-userFlag"></p>
-<p><br>
-Going to the website, we find a <em>PTRG Network Monitor</em> login page. Now we need to find the credentials of it.</p>
+<h2 id="root-flag"><strong>Root Flag</strong></h2>
+<p>Going to the website, we find a <em>PTRG Network Monitor</em> login page. Now we need to find the credentials of it.</p>
 <p>The default credentials <em>prtgadmin:prtgadmin</em> doesn’t work here.</p>
 <p><img src="/netmon/httpSite.png" alt="netmon-httpSite"></p>
 <p><br>

@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 22 Jul 2022 14:30:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Sep 2022 11:00:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dreaming - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/dreaming-thm/</link>
+      <pubDate>Mon, 05 Sep 2022 11:00:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/dreaming-thm/</guid>
+      <description>https://tryhackme.com/room/dreaming
+This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
+Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
+Recon and Helm Flag First, we perform a nmap scan to discover what ports are open.</description>
+    </item>
+    
     <item>
       <title>Netmon - HackTheBox</title>
       <link>https://b1d0ws.github.io/write-ups/netmon-htb/</link>
