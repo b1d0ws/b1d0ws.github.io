@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &amp;ldquo;Merchant Central&amp;rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &amp;ldquo;ResetUser&amp;rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://b1d0ws.github.io/write-ups/road-thm/" />
+
+
+    <title>
+        
+            Road - TryHackMe :: b1d0ws 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.4e5c639214707eff609bb55fe49e183dee42258a73bc90e4cc7b0a84f900798a.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Road - TryHackMe">
+<meta itemprop="description" content="https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &ldquo;Merchant Central&rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &ldquo;ResetUser&rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?"><meta itemprop="datePublished" content="2023-01-09T15:30:50-03:00" />
+<meta itemprop="dateModified" content="2023-01-09T15:30:50-03:00" />
+<meta itemprop="wordCount" content="314"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://b1d0ws.github.io/"/>
+
+<meta name="twitter:title" content="Road - TryHackMe"/>
+<meta name="twitter:description" content="https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &ldquo;Merchant Central&rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &ldquo;ResetUser&rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?"/>
+
+
+
+
+    <meta property="og:title" content="Road - TryHackMe" />
+<meta property="og:description" content="https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &ldquo;Merchant Central&rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &ldquo;ResetUser&rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://b1d0ws.github.io/write-ups/road-thm/" /><meta property="og:image" content="https://b1d0ws.github.io/"/><meta property="article:section" content="write-ups" />
+<meta property="article:published_time" content="2023-01-09T15:30:50-03:00" />
+<meta property="article:modified_time" content="2023-01-09T15:30:50-03:00" /><meta property="og:site_name" content="b1d0ws" />
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2023-01-09 15:30:50 -0300 -03" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark"> </span>
+            <span class="logo__text">/home/b1d0ws</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/certifications/">certifications</a></li><li><a href="/posts/">posts</a></li><li><a href="/write-ups/">write-ups</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://b1d0ws.github.io/write-ups/road-thm/">Road - TryHackMe</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><a href="https://tryhackme.com/room/road">https://tryhackme.com/room/road</a></p>
+<p><img src="/road/roadBanner.png" alt="road-banner"></p>
+<h2 id="recon-and-user-flag"><strong>Recon and User Flag</strong></h2>
+<p>First, we do a nmap scan to discover that port 22 and 80 are open.</p>
+<p><img src="/road/nmap.png" alt="nmap"></p>
+<p><br>
+Visiting the website, there is a &ldquo;Merchant Central&rdquo; button that led us to an admin login page.</p>
+<p><img src="/road/website.png" alt="website"></p>
+<p><img src="/road/loginPage.png" alt="loginPage"></p>
+<p><br>
+We can register our user.</p>
+<p><img src="/road/registering.png" alt="registering"></p>
+<p><br>
+After the login, we see just a normal dashboard.</p>
+<p><img src="/road/dashboard.png" alt="dashboard"></p>
+<p><br>
+In the &ldquo;ResetUser&rdquo; option, we see that we can alter our user password.<br>
+But what if we can alter the request to another user?</p>
+<p><img src="/road/resetPassword.png" alt="resetPassword"></p>
+<p><img src="/road/resetTestPasswordRequest.png" alt="resetPasswordRequest"></p>
+<p><br>
+Now we need to discover another username to change it password.<br>
+Looking at the profile configurations, there is a change profile image function that only admins can access, and there is a possible username for the admin: <a href="mailto:admin@sky.thm">admin@sky.thm</a>.</p>
+<p><img src="/road/profile.png" alt="profile"></p>
+<p><img src="/road/changeProfileImage.png" alt="changeProfileImage"></p>
+<p><br>
+Let’s modify the change password request to this username.</p>
+<p><img src="/road/resetingAdmin.png" alt="resetingAdmin"></p>
+<p><br>
+Apparently, it worked!</p>
+<p><img src="/road/resetSucessful.png" alt="resetingSucessful"></p>
+<p><br>
+Now we just login with the new password and get permission to update profile images, so we can upload a php reverse shell here.</p>
+<p><img src="/road/uploadReverseShell.png" alt="uploadReverseShell"></p>
+<p><br>
+But now we need to find where this file is stored.<br>
+Looking at the source code of this profile page, we find a comment reveling where the profile images are stored.</p>
+<p><img src="/road/profileImages.png" alt="profileImages"></p>
+<p><br>
+Direct access is not permitted in this directory, so we need to access the file in http://10.10.28.242/v2/profileimages/php-reverse-shell.php.</p>
+<p><img src="/road/profileImagesForbidden.png" alt="profileImagesForbidden"></p>
+<p><br>
+Now we get the reverse shell and cat the user.txt file.</p>
+<p><img src="/road/ncAndUserFlag.png" alt="ncAndUserFlag"></p>
+<h2 id="webdeveloper-user-access"><strong>Webdeveloper User Access</strong></h2>
+<p>Doing some port enumeration, we see that there is an open port number 27017. This is the port of mongo database.</p>
+<p><img src="/road/openPorts.png" alt="openPorts"></p>
+<p><br>
+Accessing the mongo, in the database &ldquo;backup&rdquo;  and collection &ldquo;user&rdquo;, we found the webdeveloper password.</p>
+<p><img src="/road/mongoDB.png" alt="mongo"></p>
+<p><br>
+With this, we have SSH access.</p>
+<p><img src="/road/sshLogin.png" alt="ssh"></p>
+<h2 id="root-flag"><strong>Root Flag</strong></h2>
+<p>Doing further enumeration, we see that we can use /usr/bin/sky_backup_utility with LD_PRELOAD set environment permission with the root user.
+With that we can execute the command with our own libraries and escalate our privileges.</p>
+<p><img src="/road/sudo.png" alt="sudo"></p>
+<p><br>
+First, we create a C file to compile our library.</p>
+<p><img src="/road/shell.c.png" alt="shell.c"></p>
+<p><br>
+Then we compile it, execute the /usr/bin/sky_backup_utility with our library and get the root flag.</p>
+<p><img src="/road/rootFlag.png" alt="shell.c"></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
+
+
+
+    </body>
+</html>

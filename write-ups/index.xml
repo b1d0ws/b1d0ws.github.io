@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 05 Sep 2022 11:00:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jan 2023 15:30:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Road - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/road-thm/</link>
+      <pubDate>Mon, 09 Jan 2023 15:30:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/road-thm/</guid>
+      <description>https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &amp;ldquo;Merchant Central&amp;rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &amp;ldquo;ResetUser&amp;rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?</description>
+    </item>
+    
     <item>
       <title>Dreaming - TryHackMe</title>
       <link>https://b1d0ws.github.io/write-ups/dreaming-thm/</link>

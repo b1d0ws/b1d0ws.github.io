@@ -7,7 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 05 Sep 2022 11:00:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jan 2023 15:30:50 -0300</lastBuildDate><atom:link href="https://b1d0ws.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Road - TryHackMe</title>
+      <link>https://b1d0ws.github.io/write-ups/road-thm/</link>
+      <pubDate>Mon, 09 Jan 2023 15:30:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/write-ups/road-thm/</guid>
+      <description>https://tryhackme.com/room/road
+Recon and User Flag First, we do a nmap scan to discover that port 22 and 80 are open.
+Visiting the website, there is a &amp;ldquo;Merchant Central&amp;rdquo; button that led us to an admin login page.
+We can register our user.
+After the login, we see just a normal dashboard.
+In the &amp;ldquo;ResetUser&amp;rdquo; option, we see that we can alter our user password.
+But what if we can alter the request to another user?</description>
+    </item>
+    
     <item>
       <title>Dreaming - TryHackMe</title>
       <link>https://b1d0ws.github.io/write-ups/dreaming-thm/</link>
@@ -127,11 +142,31 @@ Hoje vou demonstrar algumas ferramentas que são utilizadas nesse processo e ens
     </item>
     
     <item>
+      <title>whoami</title>
+      <link>https://b1d0ws.github.io/whoami/</link>
+      <pubDate>Wed, 23 Feb 2022 15:44:32 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/whoami/</guid>
+      <description>definitely not root</description>
+    </item>
+    
+    <item>
       <title>Minha experiência com a Security&#43;</title>
       <link>https://b1d0ws.github.io/certifications/security&#43;/</link>
       <pubDate>Thu, 20 Jan 2022 15:20:50 -0300</pubDate>
       
       <guid>https://b1d0ws.github.io/certifications/security&#43;/</guid>
+      <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.
+A Certificação A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters.</description>
+    </item>
+    
+    <item>
+      <title>Minha experiência com a Security&#43;</title>
+      <link>https://b1d0ws.github.io/posts/security&#43;/</link>
+      <pubDate>Thu, 20 Jan 2022 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/security&#43;/</guid>
       <description>Olá, pessoas, como vão? No texto de hoje irei relatar minha experiência com uma das certificações de segurança mais conhecidas, a Security+ da CompTIA.
 Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 5° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Consultor em Segurança da Informação Júnior, em home office.
 A Certificação A Security+ é uma certificação de entrada muito cobiçada na área de Segurança da Informação visto que o conteúdo abordado nela é bem amplo e abrange diversos temas do ramo, desde tipos de malwares, ataques maliciosos, métodos de exploração, até ferramentas defensivas como firewalls, IDS/IPS, URL filters.</description>
@@ -169,6 +204,16 @@ Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim
     </item>
     
     <item>
+      <title>Minha experiência com a CCNA</title>
+      <link>https://b1d0ws.github.io/posts/ccna/</link>
+      <pubDate>Mon, 16 Aug 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/ccna/</guid>
+      <description>Olá, pessoas, como vão? No texto de hoje irei relatar a minha experiência com a famosa certificação da Cisco: Cisco Certified Network Associate, mais conhecida como CCNA.
+Quem Sou Eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, estou cursando o 4° semestre de Ciências da Computação na IMED | Passo Fundo e atualmente trabalho como Trainee em Segurança da Informação na Berghem, em home office.</description>
+    </item>
+    
+    <item>
       <title>Um resumo sobre a OWASP TOP 10 [2017]</title>
       <link>https://b1d0ws.github.io/posts/owasp2017/</link>
       <pubDate>Thu, 24 Jun 2021 15:20:50 -0300</pubDate>
@@ -190,11 +235,31 @@ Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials 
     </item>
     
     <item>
+      <title>Minha experiência com a LPIC-1</title>
+      <link>https://b1d0ws.github.io/posts/lpic-1/</link>
+      <pubDate>Thu, 25 Feb 2021 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/lpic-1/</guid>
+      <description>Olá pessoal, nesse meu segundo texto aqui no Medium venho relatar minha experiência com a segunda certificação em TI que obtive: LPIC-1.
+Esse artigo vai ser bem semelhante ao que eu já escrevi sobre a LPI Essentials e vou fazê-lo assim, visto que mais pessoas tem interesse nessa certificação do que na Essentials, então quero trazer o máximo de informações, inclusive o que já havia trazido previamente no outro conteúdo.</description>
+    </item>
+    
+    <item>
       <title>Minha experiência com a LPI Essentials</title>
       <link>https://b1d0ws.github.io/certifications/lpi_essentials/</link>
       <pubDate>Mon, 02 Nov 2020 15:20:50 -0300</pubDate>
       
       <guid>https://b1d0ws.github.io/certifications/lpi_essentials/</guid>
+      <description>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.
+Quem sou eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</description>
+    </item>
+    
+    <item>
+      <title>Minha experiência com a LPI Essentials</title>
+      <link>https://b1d0ws.github.io/posts/lpi_essentials/</link>
+      <pubDate>Mon, 02 Nov 2020 15:20:50 -0300</pubDate>
+      
+      <guid>https://b1d0ws.github.io/posts/lpi_essentials/</guid>
       <description>Olá pessoal, nesse meu primeiro texto aqui no Medium (e em qualquer outra plataforma também), venho relatar minha experiência com a primeira certificação em TI que tirei: LPI Essentials.
 Quem sou eu? Primeiramente, deixe-me ambientar vocês falando um pouco sobre mim. Meu nome é Eduardo Bido, tenho 19 anos, estou no 2º semestre de Ciências da Computação na IMED e atualmente trabalho como estagiário de TI em uma função relativa a auxiliar de TI.</description>
     </item>
