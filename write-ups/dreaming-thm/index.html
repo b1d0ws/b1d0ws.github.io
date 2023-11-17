@@ -8,7 +8,7 @@
 <meta name="description" content="https://tryhackme.com/room/dreaming
 This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
 Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
-Recon and Helm Flag First, we perform a nmap scan to discover what ports are open." />
+Foothold First, we perform a nmap scan to discover what ports are open." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -45,9 +45,9 @@ Recon and Helm Flag First, we perform a nmap scan to discover what ports are ope
 <meta itemprop="description" content="https://tryhackme.com/room/dreaming
 This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
 Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
-Recon and Helm Flag First, we perform a nmap scan to discover what ports are open."><meta itemprop="datePublished" content="2022-09-05T11:00:50-03:00" />
+Foothold First, we perform a nmap scan to discover what ports are open."><meta itemprop="datePublished" content="2022-09-05T11:00:50-03:00" />
 <meta itemprop="dateModified" content="2022-09-05T11:00:50-03:00" />
-<meta itemprop="wordCount" content="566"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
+<meta itemprop="wordCount" content="453"><meta itemprop="image" content="https://b1d0ws.github.io/"/>
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://b1d0ws.github.io/"/>
@@ -56,7 +56,7 @@ Recon and Helm Flag First, we perform a nmap scan to discover what ports are ope
 <meta name="twitter:description" content="https://tryhackme.com/room/dreaming
 This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
 Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
-Recon and Helm Flag First, we perform a nmap scan to discover what ports are open."/>
+Foothold First, we perform a nmap scan to discover what ports are open."/>
 
 
 
@@ -65,7 +65,7 @@ Recon and Helm Flag First, we perform a nmap scan to discover what ports are ope
 <meta property="og:description" content="https://tryhackme.com/room/dreaming
 This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
 Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
-Recon and Helm Flag First, we perform a nmap scan to discover what ports are open." />
+Foothold First, we perform a nmap scan to discover what ports are open." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://b1d0ws.github.io/write-ups/dreaming-thm/" /><meta property="og:image" content="https://b1d0ws.github.io/"/><meta property="article:section" content="write-ups" />
 <meta property="article:published_time" content="2022-09-05T11:00:50-03:00" />
@@ -149,86 +149,82 @@ Recon and Helm Flag First, we perform a nmap scan to discover what ports are ope
 
             <div class="post-content">
                 <p><a href="https://tryhackme.com/room/dreaming">https://tryhackme.com/room/dreaming</a></p>
-<p><img src="/dreaming/sandmanIcon.jpg" alt="sandmanIcon"></p>
-<p>This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).</p>
+<p><img src="/dreaming/icon.png" alt="icon"></p>
+<p><br>
+This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).</p>
 <p>Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.</p>
-<h2 id="recon-and-helm-flag"><strong>Recon and Helm Flag</strong></h2>
+<h2 id="foothold"><strong>Foothold</strong></h2>
 <p>First, we perform a <em>nmap scan</em> to discover what ports are open.</p>
-<p><img src="/dreaming/initial-nmap.png" alt="nmap"></p>
-<p>I perform an aggressive scan after that but nothing interesting comes up.</p>
+<p><img src="/dreaming/nmap.png" alt="nmap"></p>
 <p><br>
-Since FTP is available, we can connect with <em>anonymous Login</em>.</p>
-<p><img src="/dreaming/ftp-anonymous.png" alt="ftp"></p>
+Website is apache default page, so we can enumerate directories with gobuster.</p>
+<p><img src="/dreaming/website.png" alt="apache"></p>
+<p><img src="/dreaming/goBuster.png" alt="gobuster"></p>
 <p><br>
-That works, so we find a zip file, but as we can see, it is protected by a <em>password</em>.</p>
-<p><img src="/dreaming/zip-password-protected.png" alt="zip-password"></p>
+We discover a hidden directory that contains a website CMS called <strong>Pluck</strong>.</p>
+<p><img src="/dreaming/app.png" alt="app"></p>
 <p><br>
-We can crack the password with <em>zip2john</em> and extract the files.</p>
-<p><img src="/dreaming/zip-cracking.png" alt="zip-password"></p>
-<p><br>
-Doing that, we have 3 text files, one of them has our <em>first flag</em> and other indicate to us that there is a website in this server and a show a possible password: <em>matthew333#</em></p>
-<p><img src="/dreaming/reading-files.png" alt="zip-cracking"></p>
-<h2 id="first-access"><strong>First Access</strong></h2>
-<p>Accessing the website, it seems that there is nothing on the main page.</p>
-<p><img src="/dreaming/website.png" alt="website"></p>
-<p><br>
-Doing some enumeration with <em>GoBuster</em>, we discover a hidden directory that contains a website CMS called <em>Pluck</em>.</p>
-<p><img src="/dreaming/gobuster.png" alt="gobuster"></p>
-<p><img src="/dreaming/accessing-app.png" alt="app"></p>
-<p><img src="/dreaming/accessing-dream.png" alt="dream"></p>
-<p><br>
-There is a link to access <em>admin page</em> and we can access the panel with the password we found before.</p>
-<p><img src="/dreaming/admin-login.png" alt="login"></p>
-<p><img src="/dreaming/admin-panel.png" alt="admin"></p>
-<p><br>
-At the bottom of the page, we discover that the CMS being used is <em>Pluck 4.7.13</em>, so we can use <em>searchsploit</em> to look for it.</p>
-<p>Doing that, we find a <em>public exploit</em> that can be used to create a webshell.</p>
+This seems to be a CMS that has an authenticated RCE.</p>
 <p><img src="/dreaming/searchsploit.png" alt="searchsploit"></p>
 <p><br>
-The usage is: <em>python3 exploit.py [IP] [PORT] [ADMIN PASSWORD] [PATH TO PLUCK]</em></p>
-<p><img src="/dreaming/using-exploit.png" alt="exploit"></p>
+Click on &ldquo;admin&rdquo; to login. We try some common passwords and find that &ldquo;password&rdquo; is the correct one.</p>
+<p><em>Note: here we could challenge ourselves and create a script to brute force the password.</em></p>
+<p><img src="/dreaming/pluck.png" alt="login"></p>
+<p><img src="/dreaming/login.png" alt="admin"></p>
+<p><img src="/dreaming/loggedIn.png" alt="loggedIn"></p>
 <p><br>
-From the webshell we can make a <em>reverse shell</em> to get control via command line.</p>
-<p><img src="/dreaming/webshell.png" alt="webshell"></p>
+Use the exploit found with searchsploit to get a webshell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python3 exploit.py <span style="color:#f92672">[</span>IP<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PORT<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>ADMIN PASSWORD<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>PATH TO PLUCK<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p><img src="/dreaming/usingExploit.png" alt="usingExploit"></p>
+<p><br>
+Upgrade to a reverse shell with mkfifo.</p>
+<p><img src="/dreaming/gettingRevShell.png" alt="gettingRevShell"></p>
 <h2 id="lucien-flag"><strong>Lucien Flag</strong></h2>
 <p>As we note, our user is <em>www-data</em>, so we need to escalate privilege to other users.</p>
-<p>First, we upload <em>linpeas</em> to the machine using <em>python and wget</em>.</p>
-<p><img src="/dreaming/linpeas-download.png" alt="webshell"></p>
+<p><img src="/dreaming/listingUsers.png" alt="users"></p>
 <p><br>
-Running linpeas.sh, we observe that <em>/etc/shadow is readable</em> to everyone, so we can <em>unshadow and crack it with john</em>.</p>
-<p><img src="/dreaming/linpeas-shadow.png" alt="linpeas-shadow"></p>
+Doing some manual enumeration, we find lucien password found <strong>/opt/test.py</strong> and can login into SSH with it.</p>
+<p><img src="/dreaming/lucienPassword.png" alt="lucienPassword"></p>
+<h2 id="death-user"><strong>Death User</strong></h2>
+<p>Lucien can execute <em>getDreams.py</em> as death user without a password, but we cannot read it.</p>
+<p><img src="/dreaming/lucienSudoers.png" alt="lucienSudoers"></p>
 <p><br>
-To copy these files to my machine, I simply read with cat to copy and paste into text files in my host.</p>
-<p><img src="/dreaming/cracking-lucien.png" alt="unshadow"></p>
+Executing it, we can’t discover many things.</p>
+<p><img src="/dreaming/executingGetDreams.png" alt="executingGetDreams"></p>
 <p><br>
-Now just login into Lucien and read her flag.</p>
-<p><img src="/dreaming/lucien-flag.png" alt="lucien-flag"></p>
-<h2 id="death-flag"><strong>Death Flag</strong></h2>
-<p>Enumerating the machine, listing the listening ports, we discover that there is a <em>mysql running</em>.</p>
-<p><img src="/dreaming/listing-ports.png" alt="listing-ports"></p>
-<p>We try to connect in mysql with Lucien credentials and succeed.</p>
-<p>There is an interesting <em>database called dreamers</em>, so we decide to take a look into it.</p>
-<p><img src="/dreaming/connecting-mysql.png" alt="mysql"></p>
+Inside /opt, there is a copy of getDreams.py. Here we see a mysql connection, but the credentials are redacted.</p>
+<p><img src="/dreaming/getDreams.png" alt="getDreams"></p>
 <p><br>
-We see that there some data and one string called our attention that seems it is a <em>base64 encoded text</em>.</p>
-<p>When we decode it, we discover the <em>password</em> for death user.</p>
-<p><img src="/dreaming/mysql-password.png" alt="dreamers"></p>
-<p><img src="/dreaming/death-flag.png" alt="death-flag"></p>
+Putting the code in a code editor to get the syntax highlighted, we can discover a command injection.</p>
+<p><img src="/dreaming/findingCommandInjection.png" alt="findingCommandInjection"></p>
+<p><br>
+Command execution happens here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>command <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;echo </span><span style="color:#e6db74">{</span>dreamer<span style="color:#e6db74">}</span><span style="color:#e6db74"> + </span><span style="color:#e6db74">{</span>dream<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Variables <em>dreamer</em> and <em>dream</em> come from the mysql connection, so we need to connect to it someway.</p>
+<p>We can find the db credentials for Lucien on her <em>.bash_history</em> file.</p>
+<p><img src="/dreaming/dbPassword.png" alt="dbPassword"></p>
+<p><br>
+Enumerating the database library, we see that is here where the information from getDreams are being retrieved.</p>
+<p><img src="/dreaming/connectingToDB.png" alt="connectingToDB"></p>
+<p><img src="/dreaming/dbPart1.png" alt="dbPart1"></p>
+<p><img src="/dreaming/dbPart2.png" alt="dbPart2"></p>
+<p><br>
+Since lucien can insert into table &ldquo;dreams&rdquo;, we can insert a payload to get us a reverse shell.</p>
+<p>Create a bash script file that returns a python reverse shell to be executed.</p>
+<p><img src="/dreaming/tmpReverse.png" alt="tmpReverse"></p>
+<p><br>
+Insert into “dreams” table the payload above and execute getDreams.py as death.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#a6e22e">dreams</span> (dreamer, dream) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;aaaa; `/tmp/reverse`;&#39;</span>, <span style="color:#e6db74">&#39;TEST&#39;</span>);
+</span></span></code></pre></div><p><img src="/dreaming/deathPrivEsc.png" alt="deathPrivEsc"></p>
 <h2 id="morpheus-flag"><strong>Morpheus Flag</strong></h2>
-<p>In death’s home, we see that here is a file called <em>restore.py</em>, but this file is owned by Root and we can’t execute it.</p>
-<p><img src="/dreaming/restore-py.png" alt="restore"></p>
+<p>Enumerating Morpheus home, we see that there is a restore file that backup /home/morpheus/kingdom to /kingdom_backup/kingdom.</p>
+<p><img src="/dreaming/restoreFile.png" alt="restoreFile"></p>
 <p><br>
-Doing more enumeration, we observe that death can run this file with python3 with <em>Morpheus permissions</em>.</p>
-<p><img src="/dreaming/first-use.png" alt="mysql"></p>
-<p><br>
-Analyzing what the python code does, it is doing the backup of the dream kingdom calling a <em>&ldquo;shutil&rdquo;</em> library.</p>
-<p>Since we can run it as morpheus and it is calling a python library, we can escalate privilege with the <em>Python Library Hijacking</em> technique.</p>
-<p>First, we copy the file of the library located in <em>/usr/lib/python3.10/shutil.py</em> to <em>/tmp/</em> directory, insert a <em>reverse shell</em> inside it and <em>call the restore.py as Morpheus</em>.</p>
-<p><img src="/dreaming/copy-shutil.png" alt="copy-shutil"></p>
-<p><img src="/dreaming/shutil-py.png" alt="shutil-py"></p>
-<p><br>
-Finally, we get the connection with Morpheus user and find the last flag.</p>
-<p><img src="/dreaming/morpheus-flag.png" alt="morpheus-flag"></p>
+Here you observe that <em>shutil library</em> is being used.</p>
+<p>Searching for this library, we see that death can write into it. Put a python reverse shell inside it and get a reverse shell as Morpheus when restore.py get executed.</p>
+<p><img src="/dreaming/shutilLibrary.png" alt="shutilLibrary"></p>
+<p><img src="/dreaming/morpheusPrivEsc.png" alt="shutilLibrary"></p>
+<p><em>Note: here we could use pspy to confirm that restore.py is being used by a root cronjob.</em></p>
 <p>See yaa =).</p>
 <p><a href="https://www.linkedin.com/in/eduardo-bido-541430193/">My LinkedIn</a><br>
 <a href="https://www.linkedin.com/in/julio-cfa/">Julio&rsquo;s LinkedIn</a></p>
@@ -259,7 +255,7 @@ Finally, we get the connection with Morpheus user and find the last flag.</p>
 
 
 
-<script type="text/javascript" src="/bundle.min.cf7fb2a9e24608a783e05e4472da2fdf008293289de1ad88d1cba5c143e7e414496dd33b6a228e92f8461ce0c8cbad3c9f9847e73e46dfbce0463393ddd1733a.js" integrity="sha512-z3&#43;yqeJGCKeD4F5Ectov3wCCkyid4a2I0culwUPn5BRJbdM7aiKOkvhGHODIy608n5hH5z5G37zgRjOT3dFzOg=="></script>
+<script type="text/javascript" src="/bundle.min.feebdc8d801e3fb1791305e362b6d11557f029604dd5b3c27e2686bc88787ee90ae1ccf0afe81bd7d959d7617cfe1fc73062aa82b4e1fa830d6941193d2cbddf.js" integrity="sha512-/uvcjYAeP7F5EwXjYrbRFVfwKWBN1bPCfiaGvIh4fukK4czwr&#43;gb19lZ12F8/h/HMGKqgrTh&#43;oMNaUEZPSy93w=="></script>
 
 
 

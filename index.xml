@@ -32,7 +32,7 @@ But what if we can alter the request to another user?</description>
       <description>https://tryhackme.com/room/dreaming
 This machine was made by me and my friend Julio. Our Linkedin will be in the end of this write-up in case of any doubts or suggestions you guys have =).
 Note: this write-up assumes that you know how the tools being used works and understand some basic concepts like reverse shells, since this is an intermediate CTF level.
-Recon and Helm Flag First, we perform a nmap scan to discover what ports are open.</description>
+Foothold First, we perform a nmap scan to discover what ports are open.</description>
     </item>
     
     <item>
